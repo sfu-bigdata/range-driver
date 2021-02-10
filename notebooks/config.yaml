@@ -1,0 +1,55 @@
+reader:
+  otn:
+    data_dir: '{repo_path}/data'
+    detections_csv: range_test_raw.csv
+    otn_metadata: metadata-from-initial-range-test.xls
+    vendor_tag_specs: tag-specs-Mahone-Bay-range-test/tag-summary-mahone-bay-range-test.xls
+settings:
+  otn_transmitter_patch: false
+  auto_dr: true
+data:
+  sources:
+  #  load_bathymetry: 'chs'
+    load_wavedir: 'era5'
+    load_waveheight: 'era5'
+    load_waveperiod: 'era5'
+    load_wind_uv: 'era5'
+    load_wind_u: 'era5'
+    load_wind_v: 'era5'
+  #  load_wind_uv: 'era5'    # -> kadlu is returning abs(wind_u) for this currentl
+  #  load_wind_u: 'era5'    
+  #  load_wind_v: 'era5'    
+  #  load_temp: 'hycom'
+  #  load_salinity: 'hycom'
+  #  load_water_uv: 'hycom'
+  #  load_water_u: 'hycom'
+  #  load_water_v: 'hycom'
+  tidal:
+    tidal_times_ods: '{repo_path}/data/Extracted_tidal_times_for_Halifax_2016_2sheets.ods'
+    tidal_times_output_csv: "output_tidal_times_for_Halifax_2016_flat.csv"
+    tidal_interpolation_output_csv: "output_tidal_times_for_Halifax_2016_5min.csv"
+    year: 2016
+  calculated_columns:
+  - water_vel
+  - water_vel_bottom
+bounds:
+  description: Mahone Bay, NS
+  start: 2016-03-09
+  end: 2016-03-11
+  lat_center: 44.5541333
+  lon_center: -64.17682
+  n_offset: 0.2
+  s_offset: 1
+  e_offset: 1
+  w_offset: 1
+file_map:
+  data_dir: '{repo_path}/data/HYCOM_20160309_20160404'
+  salinity_bottom: bottom_sal_20160309_20160404_expt_56.3.nc
+  salinity: column_sal_20160309_20160404_expt_56.3.nc
+  water_v: column_v_vel_20160309_20160404_expt_56.3.nc
+  water_v_bottom: bottom_v_vel_20160309_20160404_expt_56.3.nc
+  surf_el: surf_el_20160309_20160404_expt_56.3.nc
+  water_temp_bottom: bottom_temp_20160309_20160404_expt_56.3.nc
+  water_temp: column_temp_20160309_20160404_expt_56.3.nc
+  water_u_bottom: bottom_u_vel_20160309_20160404_expt_56.3.nc
+  water_u: column_u_vel_20160309_20160404_expt_56.3.nc

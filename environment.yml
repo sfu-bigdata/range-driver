@@ -1,0 +1,65 @@
+name: acoustic_env
+channels:
+  - conda-forge
+dependencies:
+  # Base
+  - python=3.8
+  - jupyter
+  - pip
+  - setuptools
+  # Data Prep
+  - pandas>=1
+  - numpy
+  - scipy
+  - geopy
+  - xlrd
+  - xarray
+  # Plotting
+  - matplotlib
+  - seaborn
+  - ipyleaflet
+  - ipywidgets
+  - pyproj
+  # Modeling
+  - scikit-learn
+
+
+  - pip:
+    - pyyaml
+    - pandas_ods_reader
+    - kadlu
+    - streamlit
+    - streamlit-folium
+    - streamlit-ace
+    - sphinx
+    - sphinx-rtd-theme
+  # Kadlu
+  - python=3.8
+  - cartopy
+  #- cftime
+  - cdsapi
+  - cython
+  - geos
+  - gsw
+  #- h5py
+  - imageio
+  - jupyter
+  - make
+  - matplotlib
+  #- mpl_scatter_density
+  - netCDF4
+  - numpy
+  - pandas
+  - Pillow
+  - pip
+  - Proj
+  - pygrib
+  - pyproj
+  #- pyqt5
+  - pytest
+  - scipy
+  - setuptools
+  #- tqdm
+
+
+

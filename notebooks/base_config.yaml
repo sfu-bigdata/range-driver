@@ -1,0 +1,12 @@
+settings:
+  time_bin_length: 60Min
+  otn_transmitter_patch: false
+  show_details: false
+  auto_dr: false
+
+bounds:
+  top: 0
+  bottom: 0
+
+view:
+  show_dr_plots: true

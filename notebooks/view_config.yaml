@@ -1,0 +1,24 @@
+view:
+  tidal: false
+  columns:
+  - 'salinity_bottom'
+  - 'water_temp_bottom'
+  - 'water_u_bottom'
+  - 'water_v_bottom'
+  - 'salinity'
+  - 'water_temp'
+  - 'water_u'
+  - 'water_v'
+  colnames:
+    water_vel: 'water velocity'
+    water_vel_bottom: 'water velocity bottom'
+  column: 'water_vel'
+  params:
+    t2bin_stepsize: 0.05
+    t2bin_max: 2
+    min_detections: 100 # skip receiver/transmitter combinations that have less than this number of detections
+    scatter_alpha: .5
+  rcParams:
+    figure.figsize: [16, 5]
+    font.size: 11
+    figure.max_open_warning: 50
