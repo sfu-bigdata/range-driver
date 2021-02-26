@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plotting &mdash; Acoustic Tracking 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet"/> 
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Reporting" href="../reporting.html" />
+    <link rel="prev" title="Detections" href="../detections.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+							
+				<a href="https://meridian.cs.dal.ca/documentation/">
+				<img src="../../_static/logos/MERIDIAN_Col_Logo.png" class="logo" alt="Logo"/>
+				</a>				
+				<br/><br/>
+				
+					<a href="../../index.html" class="icon"> Acoustic Tracking </a>
+				 
+				
+				  				  
+				  
+			    		 
+			<br/><br/>
+			
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+			
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../config.html">Configuration Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_prep/index.html">Data Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data_prep/environment.html">Environmental Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_prep/tidal.html">Tidal Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_prep/metadata.html">Metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../detections.html">Detections</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plotting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.plotting.maps">Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.plotting.heatmaps">Heatmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.plotting">Other Plots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reporting.html">Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../utilities/index.html">Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.dict_utils">Dictionary Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.geo_utils">Geospatial Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.ipython_utils">iPython Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.mpl_utils">MatPlotLib Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.pandas_utils">Pandas Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.utils">Other Utilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Acoustic Tracking</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">acoustic_tracking</a> &raquo;</li>
+        
+      <li>Plotting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/plotting/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plotting">
+<h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-acoustic_tracking.plotting.maps">
+<span id="maps"></span><h2>Maps<a class="headerlink" href="#module-acoustic_tracking.plotting.maps" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.maps.plot_bounds">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.maps.</code><code class="sig-name descname">plot_bounds</code><span class="sig-paren">(</span><em class="sig-param">bounds</em>, <em class="sig-param">receiver_locations=[]</em>, <em class="sig-param">receiver_info=Empty DataFrame Columns: [] Index: []</em>, <em class="sig-param">node_locations=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.maps.plot_bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a map view widget for the given region with further info. The map widget displays
+inside IPython notebooks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bounds</strong> (<em>dict</em>) – Dictionary containing the keys ‘north’, ‘east’, ‘south’, ‘west’. Each value
+should be a latitude or longitude in degrees.</p></li>
+<li><p><strong>receiver_locations</strong> (<em>list</em>) – List of tuples containing the locations (lat, lon) of receivers.</p></li>
+<li><p><strong>receiver_info</strong> (<em>pandas.DataFrame</em>) – A dataframe containing receiver information to be displayed on the map.</p></li>
+<li><p><strong>node_locations</strong> (<em>set</em>) – Set of tuples containing the locations (lat, lon) of data nodes.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-acoustic_tracking.plotting.heatmaps">
+<span id="heatmaps"></span><h2>Heatmaps<a class="headerlink" href="#module-acoustic_tracking.plotting.heatmaps" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.heatmaps.plot_feature_heatmap">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.heatmaps.</code><code class="sig-name descname">plot_feature_heatmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_df</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'pearson'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.heatmaps.plot_feature_heatmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots and displays a heat-map showing the correlation between features of interest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature_df</strong> (<em>pandas.DataFrame</em>) – Dataframe where each column is a feature being compared.</p></li>
+<li><p><strong>method</strong> (<em>str {'pearson'</em><em>, </em><em>'kendall'</em><em>, </em><em>'spearman'}</em><em> or </em><em>callable</em><em>, </em><em>optional</em>) – Method of correlation. As described in detail <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html">here</a>.
+Defaults to ‘pearson’. This method will be applied to each pair of features (columns) in
+feature_df.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None. Displays the heatmap.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-acoustic_tracking.plotting">
+<span id="other-plots"></span><h2>Other Plots<a class="headerlink" href="#module-acoustic_tracking.plotting" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.plot_group_dr">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_group_dr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gn</span></em>, <em class="sig-param"><span class="n">tgroup</span></em>, <em class="sig-param"><span class="n">mdb</span></em>, <em class="sig-param"><span class="n">with_details</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">figsize</span><span class="o">=</span><span class="default_value">(15, 1)</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_group_dr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays a line graph showing detection rates for a particular receiver/transmitter pair over
+time. Also shows the metadata associated with the receiver/transmitter pair.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.plot_per_detection_density">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_per_detection_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_per_detection_density" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.plot_per_detection_rate">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_per_detection_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bins_df</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_per_detection_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a scatter plot showing the chosen column_name on the X-axis (e.g. water velocity) and
+detection rate on the Y-axis.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.plot_stack_with_dr">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_stack_with_dr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">mainax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_stack_with_dr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot detection_rate and water_velocity in two vertically stacked plots.
+These plots show how water velocity * detection rate vary according to time.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.plot_tidal_phase">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_tidal_phase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">ax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_tidal_phase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds interval lengths to the plot showing how detection density, water_velocity, and interval
+lengths all vary with tidal phase (t2).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.plot_with_detection_count">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_with_detection_count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfcount</span></em>, <em class="sig-param"><span class="n">tdfmean</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_with_detection_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds detection count &amp; water velocity to the plot showing how detection density, water_velocity,
+and interval lengths all vary with tidal phase (t2).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.plot_with_detection_interval">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_with_detection_interval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_with_detection_interval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.plot_with_detection_interval_and_rate">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_with_detection_interval_and_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_with_detection_interval_and_rate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="acoustic_tracking.plotting.plot_with_dr">
+<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_with_dr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">rt_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_with_dr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a plot that shows how detection rate and <cite>column_name</cite> (a specified column) change over
+time.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reporting.html" class="btn btn-neutral float-right" title="Reporting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../detections.html" class="btn btn-neutral float-left" title="Detections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, SFU<br/><img style="padding-top: 10px;" width="100" src="_static/logos/CCby.png" alt="Creative Commons CC-BY 4.0 logo" height="70" width="200"/>
+
+    </p>
+  </div>
+  The Marine Environmental Research Infrastructure for Data Integration and Application Network is funded by the Canada Foundation for Innovation through their Cyberinfrastructure Initiative, Challenge 1.
+  <br/><br/>
+  With financial contributions from the provinces of British Columbia, Nova Scotia & Québec, Dalhousie University, Simon Fraser University, the University of Victoria, the University of British Columbia, the St. Lawrence Global Observatory, ExactEarth, and JASCO.
+	<br/><br/>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs and customized by MERIDIAN</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxMerRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

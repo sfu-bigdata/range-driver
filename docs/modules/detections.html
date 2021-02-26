@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Detections &mdash; Acoustic Tracking 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet"/> 
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plotting" href="plotting/index.html" />
+    <link rel="prev" title="acoustic_tracking.data_prep.metadata module" href="data_prep/metadata.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+							
+				<a href="https://meridian.cs.dal.ca/documentation/">
+				<img src="../_static/logos/MERIDIAN_Col_Logo.png" class="logo" alt="Logo"/>
+				</a>				
+				<br/><br/>
+				
+					<a href="../index.html" class="icon"> Acoustic Tracking </a>
+				 
+				
+				  				  
+				  
+			    		 
+			<br/><br/>
+			
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+			
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configuration Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_prep/index.html">Data Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_prep/environment.html">Environmental Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep/tidal.html">Tidal Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep/metadata.html">Metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Detections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting/index.html">Plotting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plotting/index.html#module-acoustic_tracking.plotting.maps">Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotting/index.html#module-acoustic_tracking.plotting.heatmaps">Heatmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotting/index.html#module-acoustic_tracking.plotting">Other Plots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reporting.html">Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities/index.html">Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.dict_utils">Dictionary Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.geo_utils">Geospatial Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.ipython_utils">iPython Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.mpl_utils">MatPlotLib Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.pandas_utils">Pandas Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.utils">Other Utilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Acoustic Tracking</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">acoustic_tracking</a> &raquo;</li>
+        
+      <li>Detections</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/detections.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-acoustic_tracking.detections">
+<span id="detections"></span><h1>Detections<a class="headerlink" href="#module-acoustic_tracking.detections" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="acoustic_tracking.detections.Detections">
+<em class="property">class </em><code class="sig-prename descclassname">acoustic_tracking.detections.</code><code class="sig-name descname">Detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">do_processing</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manage detections: load, process, enhance, access</p>
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.add_calculated_columns">
+<code class="sig-name descname">add_calculated_columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.add_calculated_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.add_custom_data">
+<code class="sig-name descname">add_custom_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.add_custom_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.add_env_data">
+<code class="sig-name descname">add_env_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.add_env_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.add_tidal_data">
+<code class="sig-name descname">add_tidal_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.add_tidal_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.bounds">
+<em class="property">property </em><code class="sig-name descname">bounds</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.bounds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.get_events_bins">
+<code class="sig-name descname">get_events_bins</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.get_events_bins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.init_via_config">
+<code class="sig-name descname">init_via_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.init_via_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.make_detection_rate">
+<code class="sig-name descname">make_detection_rate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.make_detection_rate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.node_locations">
+<em class="property">property </em><code class="sig-name descname">node_locations</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.node_locations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.prepare_group_data">
+<code class="sig-name descname">prepare_group_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.prepare_group_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.prepare_rt_groups">
+<code class="sig-name descname">prepare_rt_groups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.prepare_rt_groups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.receiver_info">
+<em class="property">property </em><code class="sig-name descname">receiver_info</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.receiver_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.receiver_locations">
+<em class="property">property </em><code class="sig-name descname">receiver_locations</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.receiver_locations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.show_details">
+<em class="property">property </em><code class="sig-name descname">show_details</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.show_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean to indicate whether details should be displayed</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="acoustic_tracking.detections.Detections.sources">
+<em class="property">property </em><code class="sig-name descname">sources</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.sources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="plotting/index.html" class="btn btn-neutral float-right" title="Plotting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data_prep/metadata.html" class="btn btn-neutral float-left" title="acoustic_tracking.data_prep.metadata module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, SFU<br/><img style="padding-top: 10px;" width="100" src="_static/logos/CCby.png" alt="Creative Commons CC-BY 4.0 logo" height="70" width="200"/>
+
+    </p>
+  </div>
+  The Marine Environmental Research Infrastructure for Data Integration and Application Network is funded by the Canada Foundation for Innovation through their Cyberinfrastructure Initiative, Challenge 1.
+  <br/><br/>
+  With financial contributions from the provinces of British Columbia, Nova Scotia & Québec, Dalhousie University, Simon Fraser University, the University of Victoria, the University of British Columbia, the St. Lawrence Global Observatory, ExactEarth, and JASCO.
+	<br/><br/>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs and customized by MERIDIAN</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxMerRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
