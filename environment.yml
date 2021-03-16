@@ -14,6 +14,7 @@ dependencies:
   - geopy
   - xlrd
   - xarray
+  - openpyxl
   # Plotting
   - matplotlib
   - seaborn
