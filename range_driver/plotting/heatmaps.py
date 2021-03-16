@@ -32,7 +32,7 @@ def plot_feature_heatmap(feature_df, method='pearson'):
     # Generate a custom diverging colormap
     cmap = sns.diverging_palette(240, 10, as_cmap=True)
     sns.heatmap(corr, mask=mask,
-                cmap=cmap, vmax=.3, center=0,
+                cmap=cmap, vmin=-1, vmax=1, center=0,
                 square=True, linewidths=.5, cbar_kws={"shrink": .5})
 
     return f
