@@ -3,10 +3,10 @@ import numpy as np
 
 from .metadata import *
 from .tidal import *
-from acoustic_tracking.geo_utils import dist_m
-from acoustic_tracking.utils import *
-from acoustic_tracking.pandas_utils import *
-from acoustic_tracking.dict_utils import *
+from range_driver.geo_utils import dist_m
+from range_driver.utils import *
+from range_driver.pandas_utils import *
+from range_driver.dict_utils import *
 
 from .metadata import read_otn_metadata
 from .environment import add_kadlu_env_data

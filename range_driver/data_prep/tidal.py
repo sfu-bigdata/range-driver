@@ -4,10 +4,10 @@
 
 import pandas as pd
 import numpy as np
-from acoustic_tracking.utils import *
+from range_driver.utils import *
 
-def flatten_tidal_table(df, year,
-                        format_str = "%d %B %Y %H%M", display=False):
+
+def flatten_tidal_table(df, year, format_str="%d %B %Y %H%M", display=False):
     """ Convert a multi-column tidal table (up to 4 extrema per day) into a flat
         datetime indexed DataFrame.
         `df` is expected to have time1, height1, time2, height2, ..., height4 columns
@@ -39,6 +39,7 @@ def flatten_tidal_table(df, year,
         display_full_df(dflat)
     return dflat
 
+
 def ipf_cos(t):
     """ Interpolation function based on cosine smoothly progressing in t = [0,1]
     First derivative at interval end points is 0 (flat).
@@ -48,7 +49,8 @@ def ipf_cos(t):
         1 - if t=1
     """
     return 0.5 * (1-np.cos(t*np.pi))
-     
+
+
 def tidal_phase(dflat, new_times=None, interpolation_func=ipf_cos):
     """ Calcualte tidal phase and tidal height changes
         `dflat` DataFrame is expected to have datetime index and columns

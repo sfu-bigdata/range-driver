@@ -1,19 +1,19 @@
 # Installation & Setup
 
 ### Clone Git Repo
-Clone the git repo & navigate into the created acoustic_tracking directory. 
+Clone the git repo & navigate into the created range_driver directory. 
 ```
-git clone git@gitlab.rcg.sfu.ca:bdh-dev/acoustic_tracking.git
-cd acoustic_tracking
+git clone git@github.com:sfu-bigdata/range-driver.git
+cd range_driver
 ```
 
 ### Create & Activate Conda Environment
-1. From within the `acoustic_tracking` directory, install dependencies using Anaconda. 
+1. From within the `range_driver` directory, install dependencies using Anaconda. 
 ```
-conda env create -f environment.yml python=3.8
+conda env create -f environment.yml
 ```
 * Manual installation of packages to run notebooks
-The manual installation of packages is not required, when creating the acoustic_env conda environment as described above.
+The manual installation of packages is not required, when creating the range_driver conda environment as described above.
 ```
 pip install pandas_ods_reader
 pip install sklearn
@@ -23,10 +23,10 @@ pip install xarray
 ```
 2. Activate the conda environment.
 ```
-conda activate acoustic_env
+conda activate range_driver
 ```
 
-3. Install acoustic_tracking
+3. Install range_driver
 ```
 pip install -e .
 ```

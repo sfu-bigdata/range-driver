@@ -3,9 +3,9 @@ import pandas as pd
 
 import seaborn as sns
 import matplotlib.pyplot as plt
-from acoustic_tracking.mpl_utils import *
-from acoustic_tracking.ipython_utils import displaymd
-from acoustic_tracking.data_prep import unpack_column_name
+from range_driver.mpl_utils import *
+from range_driver.ipython_utils import displaymd
+from range_driver.data_prep import unpack_column_name
 from .maps import *
 
 
