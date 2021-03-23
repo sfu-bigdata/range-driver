@@ -9,7 +9,7 @@ Data Preparation
     Metadata <metadata>
 
 
-.. automodule:: acoustic_tracking.data_prep
+.. automodule:: range_driver.data_prep
    :members:
    :undoc-members:
    :show-inheritance:

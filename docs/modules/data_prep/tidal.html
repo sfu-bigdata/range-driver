@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>acoustic_tracking.data_prep.tidal module &mdash; Acoustic Tracking 0.0.0 documentation</title>
+  <title>range_driver.data_prep.tidal module &mdash; Range Driver 0.0.0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="acoustic_tracking.data_prep.metadata module" href="metadata.html" />
+    <link rel="next" title="range_driver.data_prep.metadata module" href="metadata.html" />
     <link rel="prev" title="Environmental Data" href="environment.html" /> 
 </head>
 
@@ -54,7 +54,7 @@
 				</a>				
 				<br/><br/>
 				
-					<a href="../../index.html" class="icon"> Acoustic Tracking </a>
+					<a href="../../index.html" class="icon"> Range Driver </a>
 				 
 				
 				  				  
@@ -96,19 +96,19 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../detections.html">Detections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plotting/index.html">Plotting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-acoustic_tracking.plotting.maps">Maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-acoustic_tracking.plotting.heatmaps">Heatmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-acoustic_tracking.plotting">Other Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting.maps">Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting.heatmaps">Heatmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting">Other Plots</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reporting.html">Reporting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utilities/index.html">Utilities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.dict_utils">Dictionary Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.geo_utils">Geospatial Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.ipython_utils">iPython Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.mpl_utils">MatPlotLib Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.pandas_utils">Pandas Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.utils">Other Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.dict_utils">Dictionary Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.geo_utils">Geospatial Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.ipython_utils">iPython Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.mpl_utils">MatPlotLib Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.pandas_utils">Pandas Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.utils">Other Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -128,7 +128,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Acoustic Tracking</a>
+          <a href="../../index.html">Range Driver</a>
         
       </nav>
 
@@ -159,11 +159,11 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../index.html">acoustic_tracking</a> &raquo;</li>
+          <li><a href="../index.html">range_driver</a> &raquo;</li>
         
           <li><a href="index.html">Data Preparation</a> &raquo;</li>
         
-      <li>acoustic_tracking.data_prep.tidal module</li>
+      <li>range_driver.data_prep.tidal module</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -182,20 +182,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-acoustic_tracking.data_prep.tidal">
-<span id="acoustic-tracking-data-prep-tidal-module"></span><h1>acoustic_tracking.data_prep.tidal module<a class="headerlink" href="#module-acoustic_tracking.data_prep.tidal" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-range_driver.data_prep.tidal">
+<span id="range-driver-data-prep-tidal-module"></span><h1>range_driver.data_prep.tidal module<a class="headerlink" href="#module-range_driver.data_prep.tidal" title="Permalink to this headline">¶</a></h1>
 <p>tidal table processing</p>
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.tidal.flatten_tidal_table">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.tidal.</code><code class="sig-name descname">flatten_tidal_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">format_str</span><span class="o">=</span><span class="default_value">'%d %B %Y %H%M'</span></em>, <em class="sig-param"><span class="n">display</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.tidal.flatten_tidal_table" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.tidal.flatten_tidal_table">
+<code class="sig-prename descclassname">range_driver.data_prep.tidal.</code><code class="sig-name descname">flatten_tidal_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">format_str</span><span class="o">=</span><span class="default_value">'%d %B %Y %H%M'</span></em>, <em class="sig-param"><span class="n">display</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.tidal.flatten_tidal_table" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a multi-column tidal table (up to 4 extrema per day) into a flat
 datetime indexed DataFrame.
 <cite>df</cite> is expected to have time1, height1, time2, height2, …, height4 columns</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.tidal.ipf_cos">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.tidal.</code><code class="sig-name descname">ipf_cos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.tidal.ipf_cos" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.tidal.ipf_cos">
+<code class="sig-prename descclassname">range_driver.data_prep.tidal.</code><code class="sig-name descname">ipf_cos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.tidal.ipf_cos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolation function based on cosine smoothly progressing in t = [0,1]
 First derivative at interval end points is 0 (flat).</p>
 <dl class="simple">
@@ -206,8 +206,8 @@ First derivative at interval end points is 0 (flat).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.tidal.tidal_phase">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.tidal.</code><code class="sig-name descname">tidal_phase</code><span class="sig-paren">(</span><em class="sig-param">dflat</em>, <em class="sig-param">new_times=None</em>, <em class="sig-param">interpolation_func=&lt;function ipf_cos&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.tidal.tidal_phase" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.tidal.tidal_phase">
+<code class="sig-prename descclassname">range_driver.data_prep.tidal.</code><code class="sig-name descname">tidal_phase</code><span class="sig-paren">(</span><em class="sig-param">dflat</em>, <em class="sig-param">new_times=None</em>, <em class="sig-param">interpolation_func=&lt;function ipf_cos&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.tidal.tidal_phase" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Calcualte tidal phase and tidal height changes</dt><dd><p><cite>dflat</cite> DataFrame is expected to have datetime index and columns
 ‘height’, ‘highlow’ where dflat[‘highlow’] == ‘h’ indicates high tide</p>
@@ -229,7 +229,7 @@ and ‘dheight_cm_per_hr’</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="metadata.html" class="btn btn-neutral float-right" title="acoustic_tracking.data_prep.metadata module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="metadata.html" class="btn btn-neutral float-right" title="range_driver.data_prep.metadata module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="environment.html" class="btn btn-neutral float-left" title="Environmental Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

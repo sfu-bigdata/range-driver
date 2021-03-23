@@ -1,7 +1,7 @@
 Reporting
 ---------
 
-.. automodule:: acoustic_tracking.reporting
+.. automodule:: range_driver.reporting
    :members:
    :undoc-members:
    :show-inheritance:

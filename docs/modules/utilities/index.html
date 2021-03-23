@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Utilities &mdash; Acoustic Tracking 0.0.0 documentation</title>
+  <title>Utilities &mdash; Range Driver 0.0.0 documentation</title>
   
 
   
@@ -53,7 +53,7 @@
 				</a>				
 				<br/><br/>
 				
-					<a href="../../index.html" class="icon"> Acoustic Tracking </a>
+					<a href="../../index.html" class="icon"> Range Driver </a>
 				 
 				
 				  				  
@@ -95,19 +95,19 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../detections.html">Detections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plotting/index.html">Plotting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-acoustic_tracking.plotting.maps">Maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-acoustic_tracking.plotting.heatmaps">Heatmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-acoustic_tracking.plotting">Other Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting.maps">Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting.heatmaps">Heatmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting">Other Plots</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reporting.html">Reporting</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Utilities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.dict_utils">Dictionary Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.geo_utils">Geospatial Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.ipython_utils">iPython Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.mpl_utils">MatPlotLib Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.pandas_utils">Pandas Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.utils">Other Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-range_driver.dict_utils">Dictionary Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-range_driver.geo_utils">Geospatial Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-range_driver.ipython_utils">iPython Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-range_driver.mpl_utils">MatPlotLib Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-range_driver.pandas_utils">Pandas Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-range_driver.utils">Other Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -127,7 +127,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Acoustic Tracking</a>
+          <a href="../../index.html">Range Driver</a>
         
       </nav>
 
@@ -158,7 +158,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../index.html">acoustic_tracking</a> &raquo;</li>
+          <li><a href="../index.html">range_driver</a> &raquo;</li>
         
       <li>Utilities</li>
     
@@ -181,19 +181,19 @@
             
   <div class="section" id="utilities">
 <h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-acoustic_tracking.dict_utils">
-<span id="dictionary-utilities"></span><h2>Dictionary Utilities<a class="headerlink" href="#module-acoustic_tracking.dict_utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-range_driver.dict_utils">
+<span id="dictionary-utilities"></span><h2>Dictionary Utilities<a class="headerlink" href="#module-range_driver.dict_utils" title="Permalink to this headline">¶</a></h2>
 <p>Convenience functions for dictionary access and YAML</p>
 <dl class="py exception">
-<dt id="acoustic_tracking.dict_utils.YAMLProcessingError">
-<em class="property">exception </em><code class="sig-prename descclassname">acoustic_tracking.dict_utils.</code><code class="sig-name descname">YAMLProcessingError</code><a class="headerlink" href="#acoustic_tracking.dict_utils.YAMLProcessingError" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.dict_utils.YAMLProcessingError">
+<em class="property">exception </em><code class="sig-prename descclassname">range_driver.dict_utils.</code><code class="sig-name descname">YAMLProcessingError</code><a class="headerlink" href="#range_driver.dict_utils.YAMLProcessingError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Indicate downstream processing error of loaded YAML structure</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.dict_utils.deep_update">
-<code class="sig-prename descclassname">acoustic_tracking.dict_utils.</code><code class="sig-name descname">deep_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d1</span></em>, <em class="sig-param"><span class="n">d2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.dict_utils.deep_update" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.dict_utils.deep_update">
+<code class="sig-prename descclassname">range_driver.dict_utils.</code><code class="sig-name descname">deep_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d1</span></em>, <em class="sig-param"><span class="n">d2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.dict_utils.deep_update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recursively updates <cite>d1</cite> with <cite>d2</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -214,8 +214,8 @@ overwritten by the d2 value. Works recursively to update nested dictionaries.</p
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.dict_utils.make_Bunch">
-<code class="sig-prename descclassname">acoustic_tracking.dict_utils.</code><code class="sig-name descname">make_Bunch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">docstr</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.dict_utils.make_Bunch" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.dict_utils.make_Bunch">
+<code class="sig-prename descclassname">range_driver.dict_utils.</code><code class="sig-name descname">make_Bunch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">docstr</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.dict_utils.make_Bunch" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Construct a Bunch collection with alternative doc string</dt><dd><p>All arguments after <cite>docstr</cite> are passed to the Bunch dict constructor.
 The main appeal of a bunch d over a dict, is that keys can be accessed 
@@ -230,8 +230,8 @@ help(B)</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.dict_utils.merge_dicts">
-<code class="sig-prename descclassname">acoustic_tracking.dict_utils.</code><code class="sig-name descname">merge_dicts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d1</span></em>, <em class="sig-param"><span class="n">d2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.dict_utils.merge_dicts" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.dict_utils.merge_dicts">
+<code class="sig-prename descclassname">range_driver.dict_utils.</code><code class="sig-name descname">merge_dicts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d1</span></em>, <em class="sig-param"><span class="n">d2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.dict_utils.merge_dicts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs a deep_update() of d1 using d2.
 Recursively updates <cite>d1</cite> with <cite>d2</cite>, while also making a deep copy of d1.</p>
 <dl class="field-list simple">
@@ -254,32 +254,32 @@ dictionaries.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.dict_utils.nested_value">
-<code class="sig-prename descclassname">acoustic_tracking.dict_utils.</code><code class="sig-name descname">nested_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">keys</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.dict_utils.nested_value" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.dict_utils.nested_value">
+<code class="sig-prename descclassname">range_driver.dict_utils.</code><code class="sig-name descname">nested_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">keys</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.dict_utils.nested_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access an element in nested dictioary <cite>d</cite> with path given by list of <cite>keys</cite></p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.dict_utils.select_keys">
-<code class="sig-prename descclassname">acoustic_tracking.dict_utils.</code><code class="sig-name descname">select_keys</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">keys</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.dict_utils.select_keys" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.dict_utils.select_keys">
+<code class="sig-prename descclassname">range_driver.dict_utils.</code><code class="sig-name descname">select_keys</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">keys</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.dict_utils.select_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the items in dict <cite>d</cite> whose keys are listen in <cite>keys</cite></p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.dict_utils.set_class_dict">
-<code class="sig-prename descclassname">acoustic_tracking.dict_utils.</code><code class="sig-name descname">set_class_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cls</span></em>, <em class="sig-param"><span class="n">clsdict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.dict_utils.set_class_dict" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.dict_utils.set_class_dict">
+<code class="sig-prename descclassname">range_driver.dict_utils.</code><code class="sig-name descname">set_class_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cls</span></em>, <em class="sig-param"><span class="n">clsdict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.dict_utils.set_class_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set builtin class properties</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.dict_utils.set_docstr">
-<code class="sig-prename descclassname">acoustic_tracking.dict_utils.</code><code class="sig-name descname">set_docstr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cls</span></em>, <em class="sig-param"><span class="n">docstr</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.dict_utils.set_docstr" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.dict_utils.set_docstr">
+<code class="sig-prename descclassname">range_driver.dict_utils.</code><code class="sig-name descname">set_docstr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cls</span></em>, <em class="sig-param"><span class="n">docstr</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.dict_utils.set_docstr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modify the docstring of a class <cite>cls</cite></p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.dict_utils.ydump">
-<code class="sig-prename descclassname">acoustic_tracking.dict_utils.</code><code class="sig-name descname">ydump</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">sort_keys</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.dict_utils.ydump" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.dict_utils.ydump">
+<code class="sig-prename descclassname">range_driver.dict_utils.</code><code class="sig-name descname">ydump</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">sort_keys</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.dict_utils.ydump" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create YAML output string for data object. If data is an OrderedDict, original key ordering
 is preserved in internal call to yaml.dump().</p>
 <dl class="field-list simple">
@@ -301,8 +301,8 @@ is preserved in internal call to yaml.dump().</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.dict_utils.yload">
-<code class="sig-prename descclassname">acoustic_tracking.dict_utils.</code><code class="sig-name descname">yload</code><span class="sig-paren">(</span><em class="sig-param">datastr</em>, <em class="sig-param">Loader=&lt;class 'yaml.loader.SafeLoader'&gt;</em>, <em class="sig-param">MapType=&lt;class 'sklearn.utils.Bunch'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.dict_utils.yload" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.dict_utils.yload">
+<code class="sig-prename descclassname">range_driver.dict_utils.</code><code class="sig-name descname">yload</code><span class="sig-paren">(</span><em class="sig-param">datastr</em>, <em class="sig-param">Loader=&lt;class 'yaml.loader.SafeLoader'&gt;</em>, <em class="sig-param">MapType=&lt;class 'sklearn.utils.Bunch'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.dict_utils.yload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load object from YAML input string or stream</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -323,34 +323,34 @@ is preserved in internal call to yaml.dump().</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-acoustic_tracking.geo_utils">
-<span id="geospatial-utilities"></span><h2>Geospatial Utilities<a class="headerlink" href="#module-acoustic_tracking.geo_utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-range_driver.geo_utils">
+<span id="geospatial-utilities"></span><h2>Geospatial Utilities<a class="headerlink" href="#module-range_driver.geo_utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="acoustic_tracking.geo_utils.dist_m">
-<code class="sig-prename descclassname">acoustic_tracking.geo_utils.</code><code class="sig-name descname">dist_m</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">latlon0</span></em>, <em class="sig-param"><span class="n">latlon1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.geo_utils.dist_m" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.geo_utils.dist_m">
+<code class="sig-prename descclassname">range_driver.geo_utils.</code><code class="sig-name descname">dist_m</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">latlon0</span></em>, <em class="sig-param"><span class="n">latlon1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.geo_utils.dist_m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geodesic distance calculation</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-acoustic_tracking.ipython_utils">
-<span id="ipython-utilities"></span><h2>iPython Utilities<a class="headerlink" href="#module-acoustic_tracking.ipython_utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-range_driver.ipython_utils">
+<span id="ipython-utilities"></span><h2>iPython Utilities<a class="headerlink" href="#module-range_driver.ipython_utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="acoustic_tracking.ipython_utils.display_full_df">
-<code class="sig-prename descclassname">acoustic_tracking.ipython_utils.</code><code class="sig-name descname">display_full_df</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">max_rows</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_columns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.ipython_utils.display_full_df" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.ipython_utils.display_full_df">
+<code class="sig-prename descclassname">range_driver.ipython_utils.</code><code class="sig-name descname">display_full_df</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">max_rows</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_columns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.ipython_utils.display_full_df" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.ipython_utils.displaymd">
-<code class="sig-prename descclassname">acoustic_tracking.ipython_utils.</code><code class="sig-name descname">displaymd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strmd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.ipython_utils.displaymd" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.ipython_utils.displaymd">
+<code class="sig-prename descclassname">range_driver.ipython_utils.</code><code class="sig-name descname">displaymd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strmd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.ipython_utils.displaymd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display Markdown in notebook</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-acoustic_tracking.mpl_utils">
-<span id="matplotlib-utilities"></span><h2>MatPlotLib Utilities<a class="headerlink" href="#module-acoustic_tracking.mpl_utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-range_driver.mpl_utils">
+<span id="matplotlib-utilities"></span><h2>MatPlotLib Utilities<a class="headerlink" href="#module-range_driver.mpl_utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="acoustic_tracking.mpl_utils.mpl_set_notebook_params">
-<code class="sig-prename descclassname">acoustic_tracking.mpl_utils.</code><code class="sig-name descname">mpl_set_notebook_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.mpl_utils.mpl_set_notebook_params" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.mpl_utils.mpl_set_notebook_params">
+<code class="sig-prename descclassname">range_driver.mpl_utils.</code><code class="sig-name descname">mpl_set_notebook_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.mpl_utils.mpl_set_notebook_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes sensible MatPlotLib parameters for viewing plots in the Jupyter notebook interface.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -360,17 +360,17 @@ is preserved in internal call to yaml.dump().</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-acoustic_tracking.pandas_utils">
-<span id="pandas-utilities"></span><h2>Pandas Utilities<a class="headerlink" href="#module-acoustic_tracking.pandas_utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-range_driver.pandas_utils">
+<span id="pandas-utilities"></span><h2>Pandas Utilities<a class="headerlink" href="#module-range_driver.pandas_utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="acoustic_tracking.pandas_utils.dataframe_schema">
-<code class="sig-prename descclassname">acoustic_tracking.pandas_utils.</code><code class="sig-name descname">dataframe_schema</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">columns</span></em>, <em class="sig-param"><span class="n">dtypes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.pandas_utils.dataframe_schema" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.pandas_utils.dataframe_schema">
+<code class="sig-prename descclassname">range_driver.pandas_utils.</code><code class="sig-name descname">dataframe_schema</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">columns</span></em>, <em class="sig-param"><span class="n">dtypes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.pandas_utils.dataframe_schema" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create empty pd.DataFrame with columns of given datatypes</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.pandas_utils.get_next_index">
-<code class="sig-prename descclassname">acoustic_tracking.pandas_utils.</code><code class="sig-name descname">get_next_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">index_val</span></em>, <em class="sig-param"><span class="n">lock_bound</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">inc</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.pandas_utils.get_next_index" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.pandas_utils.get_next_index">
+<code class="sig-prename descclassname">range_driver.pandas_utils.</code><code class="sig-name descname">get_next_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">index_val</span></em>, <em class="sig-param"><span class="n">lock_bound</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">inc</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.pandas_utils.get_next_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the index value that follows <cite>index_val</cite>
 Args:</p>
 <blockquote>
@@ -386,20 +386,20 @@ inc        - increment default +1, use -1 to get previous index</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.pandas_utils.index_columns">
-<code class="sig-prename descclassname">acoustic_tracking.pandas_utils.</code><code class="sig-name descname">index_columns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">none_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.pandas_utils.index_columns" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.pandas_utils.index_columns">
+<code class="sig-prename descclassname">range_driver.pandas_utils.</code><code class="sig-name descname">index_columns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">none_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.pandas_utils.index_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return list of column names that form the (multi-)index or None, if index is a single unnamed
 column.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.pandas_utils.remove_microsecond">
-<code class="sig-prename descclassname">acoustic_tracking.pandas_utils.</code><code class="sig-name descname">remove_microsecond</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.pandas_utils.remove_microsecond" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.pandas_utils.remove_microsecond">
+<code class="sig-prename descclassname">range_driver.pandas_utils.</code><code class="sig-name descname">remove_microsecond</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.pandas_utils.remove_microsecond" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.pandas_utils.split_by_index">
-<code class="sig-prename descclassname">acoustic_tracking.pandas_utils.</code><code class="sig-name descname">split_by_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">split_idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.pandas_utils.split_by_index" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.pandas_utils.split_by_index">
+<code class="sig-prename descclassname">range_driver.pandas_utils.</code><code class="sig-name descname">split_by_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">split_idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.pandas_utils.split_by_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split DataFrame df at or around the given index value</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -420,25 +420,25 @@ equal to split_idx.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.pandas_utils.update_on">
-<code class="sig-prename descclassname">acoustic_tracking.pandas_utils.</code><code class="sig-name descname">update_on</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">dfu</span></em>, <em class="sig-param"><span class="n">on</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.pandas_utils.update_on" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.pandas_utils.update_on">
+<code class="sig-prename descclassname">range_driver.pandas_utils.</code><code class="sig-name descname">update_on</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">dfu</span></em>, <em class="sig-param"><span class="n">on</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.pandas_utils.update_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use DataFrame.update() function inplace, matching on any set of columns.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-acoustic_tracking.utils">
-<span id="other-utilities"></span><h2>Other Utilities<a class="headerlink" href="#module-acoustic_tracking.utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-range_driver.utils">
+<span id="other-utilities"></span><h2>Other Utilities<a class="headerlink" href="#module-range_driver.utils" title="Permalink to this headline">¶</a></h2>
 <p>Generic utility functions</p>
 <dl class="py function">
-<dt id="acoustic_tracking.utils.eval_shell">
-<code class="sig-prename descclassname">acoustic_tracking.utils.</code><code class="sig-name descname">eval_shell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cmdargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.utils.eval_shell" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.utils.eval_shell">
+<code class="sig-prename descclassname">range_driver.utils.</code><code class="sig-name descname">eval_shell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cmdargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.utils.eval_shell" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run command in shell and return string output.
 Input <cite>cmdargs</cite> is list of command and individual args.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.utils.load_file">
-<code class="sig-prename descclassname">acoustic_tracking.utils.</code><code class="sig-name descname">load_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.utils.load_file" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.utils.load_file">
+<code class="sig-prename descclassname">range_driver.utils.</code><code class="sig-name descname">load_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.utils.load_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads and returns the contents of filename.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -454,24 +454,24 @@ Input <cite>cmdargs</cite> is list of command and individual args.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.utils.reload_acoustic">
-<code class="sig-prename descclassname">acoustic_tracking.utils.</code><code class="sig-name descname">reload_acoustic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span><span class="o">=</span><span class="default_value">'acoustic'</span></em>, <em class="sig-param"><span class="n">env_name</span><span class="o">=</span><span class="default_value">'acoustic_env'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.utils.reload_acoustic" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.utils.reload_acoustic">
+<code class="sig-prename descclassname">range_driver.utils.</code><code class="sig-name descname">reload_acoustic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span><span class="o">=</span><span class="default_value">'acoustic'</span></em>, <em class="sig-param"><span class="n">env_name</span><span class="o">=</span><span class="default_value">'acoustic_env'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.utils.reload_acoustic" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.utils.reload_all">
-<code class="sig-prename descclassname">acoustic_tracking.utils.</code><code class="sig-name descname">reload_all</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.utils.reload_all" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.utils.reload_all">
+<code class="sig-prename descclassname">range_driver.utils.</code><code class="sig-name descname">reload_all</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.utils.reload_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reload all modules that have <cite>module_name</cite> in their path.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.utils.repo_file_path">
-<code class="sig-prename descclassname">acoustic_tracking.utils.</code><code class="sig-name descname">repo_file_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">fn</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">'data'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.utils.repo_file_path" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.utils.repo_file_path">
+<code class="sig-prename descclassname">range_driver.utils.</code><code class="sig-name descname">repo_file_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">fn</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">'data'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.utils.repo_file_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.utils.repo_path">
-<code class="sig-prename descclassname">acoustic_tracking.utils.</code><code class="sig-name descname">repo_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.utils.repo_path" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.utils.repo_path">
+<code class="sig-prename descclassname">range_driver.utils.</code><code class="sig-name descname">repo_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.utils.repo_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

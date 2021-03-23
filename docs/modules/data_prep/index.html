@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Preparation &mdash; Acoustic Tracking 0.0.0 documentation</title>
+  <title>Data Preparation &mdash; Range Driver 0.0.0 documentation</title>
   
 
   
@@ -54,7 +54,7 @@
 				</a>				
 				<br/><br/>
 				
-					<a href="../../index.html" class="icon"> Acoustic Tracking </a>
+					<a href="../../index.html" class="icon"> Range Driver </a>
 				 
 				
 				  				  
@@ -96,19 +96,19 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../detections.html">Detections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plotting/index.html">Plotting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-acoustic_tracking.plotting.maps">Maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-acoustic_tracking.plotting.heatmaps">Heatmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-acoustic_tracking.plotting">Other Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting.maps">Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting.heatmaps">Heatmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting">Other Plots</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reporting.html">Reporting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utilities/index.html">Utilities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.dict_utils">Dictionary Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.geo_utils">Geospatial Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.ipython_utils">iPython Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.mpl_utils">MatPlotLib Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.pandas_utils">Pandas Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.utils">Other Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.dict_utils">Dictionary Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.geo_utils">Geospatial Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.ipython_utils">iPython Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.mpl_utils">MatPlotLib Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.pandas_utils">Pandas Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.utils">Other Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -128,7 +128,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Acoustic Tracking</a>
+          <a href="../../index.html">Range Driver</a>
         
       </nav>
 
@@ -159,7 +159,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../index.html">acoustic_tracking</a> &raquo;</li>
+          <li><a href="../index.html">range_driver</a> &raquo;</li>
         
       <li>Data Preparation</li>
     
@@ -189,21 +189,21 @@
 <li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
 </ul>
 </div>
-<span class="target" id="module-acoustic_tracking.data_prep"></span><dl class="py function">
-<dt id="acoustic_tracking.data_prep.add_rt_group_info">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">add_rt_group_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">events_df</span></em>, <em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.add_rt_group_info" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-range_driver.data_prep"></span><dl class="py function">
+<dt id="range_driver.data_prep.add_rt_group_info">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">add_rt_group_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">events_df</span></em>, <em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.add_rt_group_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls get_all_group_info() for <cite>events_df</cite> and merges the info into <cite>metadata</cite>.rt_groups</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.calc_intervals">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">calc_intervals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grdf</span></em>, <em class="sig-param"><span class="n">field</span><span class="o">=</span><span class="default_value">'datetime'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.calc_intervals" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.calc_intervals">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">calc_intervals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grdf</span></em>, <em class="sig-param"><span class="n">field</span><span class="o">=</span><span class="default_value">'datetime'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.calc_intervals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate time intervals between adjacent detection events</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.calc_station_dists_m">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">calc_station_dists_m</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deploy_lat_lon</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.calc_station_dists_m" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.calc_station_dists_m">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">calc_station_dists_m</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deploy_lat_lon</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.calc_station_dists_m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate geodesic distances between stations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -219,18 +219,18 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.clean_nsog_raw_detections">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">clean_nsog_raw_detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df_detections_raw</span></em>, <em class="sig-param"><span class="n">dates</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">rt_ids</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">select_cols</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.clean_nsog_raw_detections" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.clean_nsog_raw_detections">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">clean_nsog_raw_detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df_detections_raw</span></em>, <em class="sig-param"><span class="n">dates</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">rt_ids</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">select_cols</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.clean_nsog_raw_detections" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.clean_raw_detections">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">clean_raw_detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df_detections_raw</span></em>, <em class="sig-param"><span class="n">dates</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">rt_ids</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">select_cols</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.clean_raw_detections" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.clean_raw_detections">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">clean_raw_detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df_detections_raw</span></em>, <em class="sig-param"><span class="n">dates</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">rt_ids</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">select_cols</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.clean_raw_detections" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.detection_rate_grid">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">detection_rate_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detection_df</span></em>, <em class="sig-param"><span class="n">time_bin_length</span></em>, <em class="sig-param"><span class="n">metadata</span></em>, <em class="sig-param"><span class="n">auto_dr</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.detection_rate_grid" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.detection_rate_grid">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">detection_rate_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detection_df</span></em>, <em class="sig-param"><span class="n">time_bin_length</span></em>, <em class="sig-param"><span class="n">metadata</span></em>, <em class="sig-param"><span class="n">auto_dr</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.detection_rate_grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Group detections into timestamp bins and analyze the detections on a group-level. Append
 aggregated bin data to the end of the detections DF.</p>
 <dl class="field-list simple">
@@ -257,8 +257,8 @@ the timestamp bins.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.dist_str_th">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">dist_str_th</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dist</span></em>, <em class="sig-param"><span class="n">dist_th</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.dist_str_th" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.dist_str_th">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">dist_str_th</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dist</span></em>, <em class="sig-param"><span class="n">dist_th</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.dist_str_th" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine ‘F’ar, ‘N’ear, or ‘U’nknown string for distances above or below dist_th</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>dist (float): distance in meters
@@ -270,8 +270,8 @@ dist_th (float): distance threshold</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.dr_estimate_and_cutoff">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">dr_estimate_and_cutoff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">drs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.dr_estimate_and_cutoff" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.dr_estimate_and_cutoff">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">dr_estimate_and_cutoff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">drs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.dr_estimate_and_cutoff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate unknown detection rate and determine init sequence cutoff point
 Args:</p>
 <blockquote>
@@ -286,22 +286,22 @@ cutoff_loc - raw index of first valid detection bin</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.estimate_det_max">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">estimate_det_max</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">drs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.estimate_det_max" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.estimate_det_max">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">estimate_det_max</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">drs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.estimate_det_max" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate maximum detection rate over majority of time
 ignoring higher detection rate during init sequence</p>
 <p>Use this in case the true tag interval length programming is unknown.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.get_all_group_info">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">get_all_group_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detections_df</span></em>, <em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.get_all_group_info" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.get_all_group_info">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">get_all_group_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detections_df</span></em>, <em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.get_all_group_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a dataframe with group_info() for each group in detections_df</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.group_info">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">group_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grdf</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.group_info" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.group_info">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">group_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grdf</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.group_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Information about a Receiver/Transmitter group</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>grdf - DataFrame with detections and ‘interval’ column or None
@@ -314,21 +314,21 @@ tuple element names, if grdf is None</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.make_column">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">make_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdf</span></em>, <em class="sig-param"><span class="n">column_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.make_column" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.make_column">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">make_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdf</span></em>, <em class="sig-param"><span class="n">column_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.make_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modify DataFrame <cite>tdf</cite> to add variable with name <cite>column</cite>
 <cite>tdf</cite> remains unchanged if column is already available.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.old_make_detection_rate">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">old_make_detection_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">exp_interval_s</span><span class="o">=</span><span class="default_value">300</span></em>, <em class="sig-param"><span class="n">num_time_bins</span><span class="o">=</span><span class="default_value">200</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.old_make_detection_rate" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.old_make_detection_rate">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">old_make_detection_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">exp_interval_s</span><span class="o">=</span><span class="default_value">300</span></em>, <em class="sig-param"><span class="n">num_time_bins</span><span class="o">=</span><span class="default_value">200</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.old_make_detection_rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>calculate detection rate</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.old_process_detections">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">old_process_detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gr</span></em>, <em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.old_process_detections" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.old_process_detections">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">old_process_detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gr</span></em>, <em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.old_process_detections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add interval length to dataframe</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>tdfok    - processed detections with detection rate
@@ -339,20 +339,20 @@ tdf      - full dataframe with detection interval calculations</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.old_resample_detection_rate">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">old_resample_detection_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">det_rate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.old_resample_detection_rate" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.old_resample_detection_rate">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">old_resample_detection_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">det_rate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.old_resample_detection_rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add detection rate to full dataframe</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.process_detections">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">process_detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ev_df</span></em>, <em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.process_detections" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.process_detections">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">process_detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ev_df</span></em>, <em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.process_detections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform some computations on the detection event dataframe</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.process_intervals">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">process_intervals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detection_df</span></em>, <em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.process_intervals" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.process_intervals">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">process_intervals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detection_df</span></em>, <em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.process_intervals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate detection interval lengths and split out init sequences</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -377,8 +377,8 @@ receiver/transmitter groups</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.read_nsog_data">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">read_nsog_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detections_csv</span></em>, <em class="sig-param"><span class="n">vendor_tag_specs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">merge</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bunch</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.read_nsog_data" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.read_nsog_data">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">read_nsog_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detections_csv</span></em>, <em class="sig-param"><span class="n">vendor_tag_specs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">merge</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bunch</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.read_nsog_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>All in one function to read NSOG data</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>detections_csv      - csv file name for detection data
@@ -394,8 +394,8 @@ df_detections, metadata                      - where metadata is a dict with met
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.read_otn_data">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">read_otn_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detections_csv</span></em>, <em class="sig-param"><span class="n">otn_metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">vendor_tag_specs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">merge</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">bunch</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.read_otn_data" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.read_otn_data">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">read_otn_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detections_csv</span></em>, <em class="sig-param"><span class="n">otn_metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">vendor_tag_specs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">merge</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">bunch</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.read_otn_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>All in one function to read OTN data</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>detections_csv      - csv file name for detection data
@@ -411,8 +411,8 @@ df_decetions, metadata                      - where metadata is a dict with meta
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.read_via_config">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">read_via_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.read_via_config" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.read_via_config">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">read_via_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.read_via_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invoke configured data loading &amp; processing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -430,8 +430,8 @@ pre-processing. Created via yload() of the YAML config file.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.rt_name">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">rt_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grdf</span></em>, <em class="sig-param"><span class="n">metadata</span></em>, <em class="sig-param"><span class="n">dist_str</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.rt_name" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.rt_name">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">rt_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grdf</span></em>, <em class="sig-param"><span class="n">metadata</span></em>, <em class="sig-param"><span class="n">dist_str</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.rt_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a name for given receiver/tag combination</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>grdf: dataframe with ‘Transmitter’, ‘Tag Family’, and ‘Power’ columns
@@ -444,8 +444,8 @@ dist_str (optional): function handle that returns a string representation when g
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.data_prep.unpack_column_name">
-<code class="sig-prename descclassname">acoustic_tracking.data_prep.</code><code class="sig-name descname">unpack_column_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.data_prep.unpack_column_name" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.data_prep.unpack_column_name">
+<code class="sig-prename descclassname">range_driver.data_prep.</code><code class="sig-name descname">unpack_column_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.unpack_column_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns unpacked tuple of 1. column name in DF and 2. full column name for reporting.
 If <cite>column_name</cite> is a tuple, then just upack. Otherwise, use <cite>column_name</cite> string for both
 dataframe column id and print name.</p>

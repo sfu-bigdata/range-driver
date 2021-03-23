@@ -3,7 +3,7 @@ Plotting
 
 Maps
 ####
-.. automodule:: acoustic_tracking.plotting.maps
+.. automodule:: range_driver.plotting.maps
    :members:
    :undoc-members:
    :show-inheritance:
@@ -11,14 +11,14 @@ Maps
 
 Heatmaps
 ########
-.. automodule:: acoustic_tracking.plotting.heatmaps
+.. automodule:: range_driver.plotting.heatmaps
    :members:
    :undoc-members:
    :show-inheritance:
 
 Other Plots
 ###########
-.. automodule:: acoustic_tracking.plotting
+.. automodule:: range_driver.plotting
    :members:
    :undoc-members:
    :show-inheritance:

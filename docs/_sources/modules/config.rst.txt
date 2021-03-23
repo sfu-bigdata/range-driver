@@ -1,7 +1,7 @@
 Configuration Processing
 ------------------------
 
-.. automodule:: acoustic_tracking.config
+.. automodule:: range_driver.config
    :members:
    :undoc-members:
    :show-inheritance:

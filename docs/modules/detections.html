@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Detections &mdash; Acoustic Tracking 0.0.0 documentation</title>
+  <title>Detections &mdash; Range Driver 0.0.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Plotting" href="plotting/index.html" />
-    <link rel="prev" title="acoustic_tracking.data_prep.metadata module" href="data_prep/metadata.html" /> 
+    <link rel="prev" title="range_driver.data_prep.metadata module" href="data_prep/metadata.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -54,7 +54,7 @@
 				</a>				
 				<br/><br/>
 				
-					<a href="../index.html" class="icon"> Acoustic Tracking </a>
+					<a href="../index.html" class="icon"> Range Driver </a>
 				 
 				
 				  				  
@@ -96,19 +96,19 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Detections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting/index.html">Plotting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="plotting/index.html#module-acoustic_tracking.plotting.maps">Maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plotting/index.html#module-acoustic_tracking.plotting.heatmaps">Heatmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plotting/index.html#module-acoustic_tracking.plotting">Other Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotting/index.html#module-range_driver.plotting.maps">Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotting/index.html#module-range_driver.plotting.heatmaps">Heatmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotting/index.html#module-range_driver.plotting">Other Plots</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="reporting.html">Reporting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities/index.html">Utilities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.dict_utils">Dictionary Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.geo_utils">Geospatial Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.ipython_utils">iPython Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.mpl_utils">MatPlotLib Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.pandas_utils">Pandas Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-acoustic_tracking.utils">Other Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-range_driver.dict_utils">Dictionary Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-range_driver.geo_utils">Geospatial Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-range_driver.ipython_utils">iPython Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-range_driver.mpl_utils">MatPlotLib Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-range_driver.pandas_utils">Pandas Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities/index.html#module-range_driver.utils">Other Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -128,7 +128,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Acoustic Tracking</a>
+          <a href="../index.html">Range Driver</a>
         
       </nav>
 
@@ -159,7 +159,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">acoustic_tracking</a> &raquo;</li>
+          <li><a href="index.html">range_driver</a> &raquo;</li>
         
       <li>Detections</li>
     
@@ -180,92 +180,92 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-acoustic_tracking.detections">
-<span id="detections"></span><h1>Detections<a class="headerlink" href="#module-acoustic_tracking.detections" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-range_driver.detections">
+<span id="detections"></span><h1>Detections<a class="headerlink" href="#module-range_driver.detections" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="acoustic_tracking.detections.Detections">
-<em class="property">class </em><code class="sig-prename descclassname">acoustic_tracking.detections.</code><code class="sig-name descname">Detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">do_processing</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections">
+<em class="property">class </em><code class="sig-prename descclassname">range_driver.detections.</code><code class="sig-name descname">Detections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">do_processing</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Manage detections: load, process, enhance, access</p>
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.add_calculated_columns">
-<code class="sig-name descname">add_calculated_columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.add_calculated_columns" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.add_calculated_columns">
+<code class="sig-name descname">add_calculated_columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.add_calculated_columns" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.add_custom_data">
-<code class="sig-name descname">add_custom_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.add_custom_data" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.add_custom_data">
+<code class="sig-name descname">add_custom_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.add_custom_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.add_env_data">
-<code class="sig-name descname">add_env_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.add_env_data" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.add_env_data">
+<code class="sig-name descname">add_env_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.add_env_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.add_tidal_data">
-<code class="sig-name descname">add_tidal_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.add_tidal_data" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.add_tidal_data">
+<code class="sig-name descname">add_tidal_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.add_tidal_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.bounds">
-<em class="property">property </em><code class="sig-name descname">bounds</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.bounds" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.bounds">
+<em class="property">property </em><code class="sig-name descname">bounds</code><a class="headerlink" href="#range_driver.detections.Detections.bounds" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.get_events_bins">
-<code class="sig-name descname">get_events_bins</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.get_events_bins" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.get_events_bins">
+<code class="sig-name descname">get_events_bins</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.get_events_bins" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.init_via_config">
-<code class="sig-name descname">init_via_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.init_via_config" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.init_via_config">
+<code class="sig-name descname">init_via_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.init_via_config" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.make_detection_rate">
-<code class="sig-name descname">make_detection_rate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.make_detection_rate" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.make_detection_rate">
+<code class="sig-name descname">make_detection_rate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.make_detection_rate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.node_locations">
-<em class="property">property </em><code class="sig-name descname">node_locations</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.node_locations" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.node_locations">
+<em class="property">property </em><code class="sig-name descname">node_locations</code><a class="headerlink" href="#range_driver.detections.Detections.node_locations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.prepare_group_data">
-<code class="sig-name descname">prepare_group_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.prepare_group_data" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.prepare_group_data">
+<code class="sig-name descname">prepare_group_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.prepare_group_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.prepare_rt_groups">
-<code class="sig-name descname">prepare_rt_groups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.prepare_rt_groups" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.prepare_rt_groups">
+<code class="sig-name descname">prepare_rt_groups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.prepare_rt_groups" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.receiver_info">
-<em class="property">property </em><code class="sig-name descname">receiver_info</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.receiver_info" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.receiver_info">
+<em class="property">property </em><code class="sig-name descname">receiver_info</code><a class="headerlink" href="#range_driver.detections.Detections.receiver_info" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.receiver_locations">
-<em class="property">property </em><code class="sig-name descname">receiver_locations</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.receiver_locations" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.receiver_locations">
+<em class="property">property </em><code class="sig-name descname">receiver_locations</code><a class="headerlink" href="#range_driver.detections.Detections.receiver_locations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.detections.Detections.reset" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.reset" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.show_details">
-<em class="property">property </em><code class="sig-name descname">show_details</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.show_details" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.show_details">
+<em class="property">property </em><code class="sig-name descname">show_details</code><a class="headerlink" href="#range_driver.detections.Detections.show_details" title="Permalink to this definition">¶</a></dt>
 <dd><p>Boolean to indicate whether details should be displayed</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="acoustic_tracking.detections.Detections.sources">
-<em class="property">property </em><code class="sig-name descname">sources</code><a class="headerlink" href="#acoustic_tracking.detections.Detections.sources" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.detections.Detections.sources">
+<em class="property">property </em><code class="sig-name descname">sources</code><a class="headerlink" href="#range_driver.detections.Detections.sources" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -283,7 +283,7 @@
         <a href="plotting/index.html" class="btn btn-neutral float-right" title="Plotting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="data_prep/metadata.html" class="btn btn-neutral float-left" title="acoustic_tracking.data_prep.metadata module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="data_prep/metadata.html" class="btn btn-neutral float-left" title="range_driver.data_prep.metadata module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

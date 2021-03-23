@@ -12,12 +12,12 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../acoustic_tracking'))
+sys.path.insert(0, os.path.abspath('../../range_driver'))
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'Acoustic Tracking'
+project = 'Range Driver'
 copyright = '2021, SFU'
 author = 'SFU'
 

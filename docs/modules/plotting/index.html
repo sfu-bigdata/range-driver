@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Plotting &mdash; Acoustic Tracking 0.0.0 documentation</title>
+  <title>Plotting &mdash; Range Driver 0.0.0 documentation</title>
   
 
   
@@ -54,7 +54,7 @@
 				</a>				
 				<br/><br/>
 				
-					<a href="../../index.html" class="icon"> Acoustic Tracking </a>
+					<a href="../../index.html" class="icon"> Range Driver </a>
 				 
 				
 				  				  
@@ -96,19 +96,19 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../detections.html">Detections</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Plotting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.plotting.maps">Maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.plotting.heatmaps">Heatmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-acoustic_tracking.plotting">Other Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-range_driver.plotting.maps">Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-range_driver.plotting.heatmaps">Heatmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-range_driver.plotting">Other Plots</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reporting.html">Reporting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utilities/index.html">Utilities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.dict_utils">Dictionary Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.geo_utils">Geospatial Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.ipython_utils">iPython Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.mpl_utils">MatPlotLib Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.pandas_utils">Pandas Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-acoustic_tracking.utils">Other Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.dict_utils">Dictionary Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.geo_utils">Geospatial Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.ipython_utils">iPython Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.mpl_utils">MatPlotLib Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.pandas_utils">Pandas Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.utils">Other Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -128,7 +128,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Acoustic Tracking</a>
+          <a href="../../index.html">Range Driver</a>
         
       </nav>
 
@@ -159,7 +159,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../index.html">acoustic_tracking</a> &raquo;</li>
+          <li><a href="../index.html">range_driver</a> &raquo;</li>
         
       <li>Plotting</li>
     
@@ -182,11 +182,11 @@
             
   <div class="section" id="plotting">
 <h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-acoustic_tracking.plotting.maps">
-<span id="maps"></span><h2>Maps<a class="headerlink" href="#module-acoustic_tracking.plotting.maps" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-range_driver.plotting.maps">
+<span id="maps"></span><h2>Maps<a class="headerlink" href="#module-range_driver.plotting.maps" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.maps.plot_bounds">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.maps.</code><code class="sig-name descname">plot_bounds</code><span class="sig-paren">(</span><em class="sig-param">bounds</em>, <em class="sig-param">receiver_locations=[]</em>, <em class="sig-param">receiver_info=Empty DataFrame Columns: [] Index: []</em>, <em class="sig-param">node_locations=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.maps.plot_bounds" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.maps.plot_bounds">
+<code class="sig-prename descclassname">range_driver.plotting.maps.</code><code class="sig-name descname">plot_bounds</code><span class="sig-paren">(</span><em class="sig-param">bounds</em>, <em class="sig-param">receiver_locations=[]</em>, <em class="sig-param">receiver_info=Empty DataFrame Columns: [] Index: []</em>, <em class="sig-param">node_locations=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.maps.plot_bounds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a map view widget for the given region with further info. The map widget displays
 inside IPython notebooks.</p>
 <dl class="field-list simple">
@@ -203,11 +203,11 @@ should be a latitude or longitude in degrees.</p></li>
 </dd></dl>
 
 </div>
-<div class="section" id="module-acoustic_tracking.plotting.heatmaps">
-<span id="heatmaps"></span><h2>Heatmaps<a class="headerlink" href="#module-acoustic_tracking.plotting.heatmaps" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-range_driver.plotting.heatmaps">
+<span id="heatmaps"></span><h2>Heatmaps<a class="headerlink" href="#module-range_driver.plotting.heatmaps" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.heatmaps.plot_feature_heatmap">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.heatmaps.</code><code class="sig-name descname">plot_feature_heatmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_df</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'pearson'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.heatmaps.plot_feature_heatmap" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.heatmaps.plot_feature_heatmap">
+<code class="sig-prename descclassname">range_driver.plotting.heatmaps.</code><code class="sig-name descname">plot_feature_heatmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_df</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'pearson'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.heatmaps.plot_feature_heatmap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots and displays a heat-map showing the correlation between features of interest.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -225,61 +225,61 @@ feature_df.</p></li>
 </dd></dl>
 
 </div>
-<div class="section" id="module-acoustic_tracking.plotting">
-<span id="other-plots"></span><h2>Other Plots<a class="headerlink" href="#module-acoustic_tracking.plotting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-range_driver.plotting">
+<span id="other-plots"></span><h2>Other Plots<a class="headerlink" href="#module-range_driver.plotting" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.plot_group_dr">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_group_dr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gn</span></em>, <em class="sig-param"><span class="n">tgroup</span></em>, <em class="sig-param"><span class="n">mdb</span></em>, <em class="sig-param"><span class="n">with_details</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">figsize</span><span class="o">=</span><span class="default_value">(15, 1)</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_group_dr" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.plot_group_dr">
+<code class="sig-prename descclassname">range_driver.plotting.</code><code class="sig-name descname">plot_group_dr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gn</span></em>, <em class="sig-param"><span class="n">tgroup</span></em>, <em class="sig-param"><span class="n">mdb</span></em>, <em class="sig-param"><span class="n">with_details</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">figsize</span><span class="o">=</span><span class="default_value">(15, 1)</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_group_dr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displays a line graph showing detection rates for a particular receiver/transmitter pair over
 time. Also shows the metadata associated with the receiver/transmitter pair.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.plot_per_detection_density">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_per_detection_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_per_detection_density" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.plot_per_detection_density">
+<code class="sig-prename descclassname">range_driver.plotting.</code><code class="sig-name descname">plot_per_detection_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_per_detection_density" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.plot_per_detection_rate">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_per_detection_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bins_df</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_per_detection_rate" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.plot_per_detection_rate">
+<code class="sig-prename descclassname">range_driver.plotting.</code><code class="sig-name descname">plot_per_detection_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bins_df</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_per_detection_rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a scatter plot showing the chosen column_name on the X-axis (e.g. water velocity) and
 detection rate on the Y-axis.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.plot_stack_with_dr">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_stack_with_dr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">mainax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_stack_with_dr" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.plot_stack_with_dr">
+<code class="sig-prename descclassname">range_driver.plotting.</code><code class="sig-name descname">plot_stack_with_dr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">mainax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_stack_with_dr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot detection_rate and water_velocity in two vertically stacked plots.
 These plots show how water velocity * detection rate vary according to time.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.plot_tidal_phase">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_tidal_phase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">ax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_tidal_phase" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.plot_tidal_phase">
+<code class="sig-prename descclassname">range_driver.plotting.</code><code class="sig-name descname">plot_tidal_phase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">ax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_tidal_phase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds interval lengths to the plot showing how detection density, water_velocity, and interval
 lengths all vary with tidal phase (t2).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.plot_with_detection_count">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_with_detection_count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfcount</span></em>, <em class="sig-param"><span class="n">tdfmean</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_with_detection_count" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.plot_with_detection_count">
+<code class="sig-prename descclassname">range_driver.plotting.</code><code class="sig-name descname">plot_with_detection_count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfcount</span></em>, <em class="sig-param"><span class="n">tdfmean</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_with_detection_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds detection count &amp; water velocity to the plot showing how detection density, water_velocity,
 and interval lengths all vary with tidal phase (t2).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.plot_with_detection_interval">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_with_detection_interval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_with_detection_interval" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.plot_with_detection_interval">
+<code class="sig-prename descclassname">range_driver.plotting.</code><code class="sig-name descname">plot_with_detection_interval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_with_detection_interval" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.plot_with_detection_interval_and_rate">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_with_detection_interval_and_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_with_detection_interval_and_rate" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.plot_with_detection_interval_and_rate">
+<code class="sig-prename descclassname">range_driver.plotting.</code><code class="sig-name descname">plot_with_detection_interval_and_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_with_detection_interval_and_rate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="acoustic_tracking.plotting.plot_with_dr">
-<code class="sig-prename descclassname">acoustic_tracking.plotting.</code><code class="sig-name descname">plot_with_dr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">rt_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoustic_tracking.plotting.plot_with_dr" title="Permalink to this definition">¶</a></dt>
+<dt id="range_driver.plotting.plot_with_dr">
+<code class="sig-prename descclassname">range_driver.plotting.</code><code class="sig-name descname">plot_with_dr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdfok</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">rt_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_with_dr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display a plot that shows how detection rate and <cite>column_name</cite> (a specified column) change over
 time.</p>
 </dd></dl>
