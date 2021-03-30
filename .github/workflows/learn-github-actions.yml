@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-  check-bats-version:
+  check-python-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
