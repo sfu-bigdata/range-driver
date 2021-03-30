@@ -11,6 +11,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      # Setup Environment
+      - name: Install dependencies
+        run: |
+          $CONDA/bin/conda env update --file environment.yml --name base       
+          pip install -e .
       # Builds Sphinx Docs
       - uses: ammaraskar/sphinx-action@master
         with:
