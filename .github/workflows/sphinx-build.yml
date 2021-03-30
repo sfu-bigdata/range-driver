@@ -18,11 +18,11 @@ jobs:
           environment-file: environment.yml
           python-version: 3.8
           auto-activate-base: false
-      - name: Install range_driver
-        run: pip install -e .
       - run: |
           conda info
           conda list
+      - name: Install range_driver
+        run: pip install -e .
       # Builds Sphinx Docs
       - uses: ammaraskar/sphinx-action@master
         with:
