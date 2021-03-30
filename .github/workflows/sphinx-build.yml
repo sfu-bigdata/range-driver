@@ -15,6 +15,7 @@ jobs:
       - name: Install dependencies
         run: |
           $CONDA/bin/conda env create --file environment.yml
+          $CONDA/bin/conda init $SHELL
           $CONDA/bin/conda activate range_driver
           pip install -e .
       # Builds Sphinx Docs
