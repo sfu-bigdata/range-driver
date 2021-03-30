@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -17,8 +20,8 @@ jobs:
           activate-environment: range-driver
           environment-file: environment.yml
           python-version: 3.8
-          auto-activate-base: false
-      - run: |
+          auto-activate-base: false        
+      - run:
           conda info
           conda list
       - name: Install range_driver
