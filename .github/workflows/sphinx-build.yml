@@ -31,8 +31,8 @@ jobs:
       - name: Commit Documentation Changes
         run: | 
           git clone https://github.com/sfu-bigdata/range-driver.git --branch gh-pages --single-branch gh-pages
-          cp -r docs/build/html/* gh-pages/
-          cd gh-pages
+          cp -r docs/build/html/* gh-pages/docs/
+          cd gh-pages/docs
           touch .nojekyll
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
