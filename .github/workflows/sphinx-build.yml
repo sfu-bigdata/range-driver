@@ -6,34 +6,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  sphinx-docs:
+    name: Build sphinx docs on Linux
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash -l {0}
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      # Setup Environment
       - uses: conda-incubator/setup-miniconda@v2
         with:
+          python-version: 3.8
           activate-environment: range-driver
           environment-file: environment.yml
-          python-version: 3.8
           auto-activate-base: false        
       - name: Install range_driver
-        run: pip install -e .
-      # Builds Sphinx Docs
-      - uses: ammaraskar/sphinx-action@master
-        with:
-          docs-folder: "docs/"
-          pre-build-command: "echo $(pwd); $CONDA/bin/conda activate range-driver; which python; env"
-      - uses: actions/upload-artifact@v1
-        with:
-          name: DocumentationHTML
-          path: docs/_build/html/
-      - name: Commit documentation changes
-        run: |
+        run: | 
+          pip install -e .
+      - name: Build Sphinx docs
+        run: | 
+          cd docs
+          pip install -r requirements.txt
+          make html . _build
+      - name: Commit Documentation Changes
+        run: | 
           git clone https://github.com/sfu-bigdata/range-driver.git --branch gh-pages --single-branch gh-pages
           cp -r docs/_build/html/* gh-pages/
           cd gh-pages
