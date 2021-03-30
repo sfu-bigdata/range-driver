@@ -21,15 +21,13 @@ jobs:
           environment-file: environment.yml
           python-version: 3.8
           auto-activate-base: false        
-      - run:
-          conda info
-          conda list
       - name: Install range_driver
         run: pip install -e .
       # Builds Sphinx Docs
       - uses: ammaraskar/sphinx-action@master
         with:
           docs-folder: "docs/"
+          pre-build-command: "echo $(pwd); which python; "
       - uses: actions/upload-artifact@v1
         with:
           name: DocumentationHTML
