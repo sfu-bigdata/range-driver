@@ -14,7 +14,8 @@ jobs:
       # Setup Environment
       - name: Install dependencies
         run: |
-          $CONDA/bin/conda env update --file environment.yml --name base       
+          $CONDA/bin/conda env create --file environment.yml
+          $CONDA/bin/conda activate range_driver
           pip install -e .
       # Builds Sphinx Docs
       - uses: ammaraskar/sphinx-action@master
