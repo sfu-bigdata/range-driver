@@ -71,13 +71,19 @@ def remove_microsecond(ts):
 
 def get_next_index(df, index_val, lock_bound=False, inc=+1):
     """Determine the index value that follows `index_val`
-    Args:
-        df         - dataframe or series, having df.index
-        index_val  - index value to start from
-        lock_bound - if true return same index if reaching bounds
-        inc        - increment default +1, use -1 to get previous index
-    Returns:
-        neighbouring index value
+
+    :param df: dataframe or series, having df.index.
+    :type df: pd.DataFrame or pd.Series
+
+    :param index_val:  index value to start from
+
+    :param lock_bound: if true return same index if reaching bounds
+    :type lock_bound: bool
+
+    :param inc: Increment. default +1, use -1 to get previous index
+    :type inc: int
+
+    :return: neighbouring index value
     """
     index_value_iloc = df.index.get_loc(index_val)
     next_iloc = index_value_iloc + inc

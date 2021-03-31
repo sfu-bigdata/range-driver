@@ -104,12 +104,13 @@ def estimate_det_max(drs):
 
 def dr_estimate_and_cutoff(drs):
     """Estimate unknown detection rate and determine init sequence cutoff point
-    Args:
-        drs - detection rate sequence over fixed time intervals
-    Returns:
-        dr_max     - maximum detection rate for majority of time
-        cutoff     - date of first valid detection bin
-        cutoff_loc - raw index of first valid detection bin
+
+    :param drs: Detection rate sequence over fixed time intervals
+
+    :return:
+        - **dr_max**     - maximum detection rate for majority of time
+        - **cutoff**     - date of first valid detection bin
+        - **cutoff_loc** - raw index of first valid detection bin
     """
     dr_max = estimate_det_max(drs)
     if dr_max is None:
