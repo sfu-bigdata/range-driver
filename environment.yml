@@ -30,8 +30,6 @@ dependencies:
     - streamlit
     - streamlit-folium
     - streamlit-ace
-    - sphinx
-    - sphinx-rtd-theme
   # Kadlu
   - cartopy
   - cdsapi
