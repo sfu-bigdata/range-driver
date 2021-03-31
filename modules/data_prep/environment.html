@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Environmental Data &mdash; Range Driver 0.0.0 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -28,12 +36,6 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet"/> 
-  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="range_driver.data_prep.tidal module" href="tidal.html" />
@@ -48,28 +50,30 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-							
-				<a href="https://meridian.cs.dal.ca/documentation/">
-				<img src="../../_static/logos/MERIDIAN_Col_Logo.png" class="logo" alt="Logo"/>
-				</a>				
-				<br/><br/>
-				
-					<a href="../../index.html" class="icon"> Range Driver </a>
-				 
-				
-				  				  
-				  
-			    		 
-			<br/><br/>
-			
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Range Driver
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-			
+
+          
         </div>
 
         
@@ -95,22 +99,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../detections.html">Detections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../plotting/index.html">Plotting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting.maps">Maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting.heatmaps">Heatmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../plotting/index.html#module-range_driver.plotting">Other Plots</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../plotting/index.html">Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reporting.html">Reporting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../utilities/index.html">Utilities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.dict_utils">Dictionary Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.geo_utils">Geospatial Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.ipython_utils">iPython Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.mpl_utils">MatPlotLib Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.pandas_utils">Pandas Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html#module-range_driver.utils">Other Utilities</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../utilities/index.html">Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -153,11 +144,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">range_driver</a> &raquo;</li>
         
@@ -168,7 +161,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../_sources/modules/data_prep/environment.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -187,7 +180,7 @@
 <p>Functions to help integrate environmental data processing. Includes kadlu integration.</p>
 <dl class="py function">
 <dt id="range_driver.data_prep.environment.add_custom_env_data">
-<code class="sig-prename descclassname">range_driver.data_prep.environment.</code><code class="sig-name descname">add_custom_env_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">axes_to_interpolate</span></em>, <em class="sig-param"><span class="n">variable_file_map</span></em>, <em class="sig-param"><span class="n">detection_df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.environment.add_custom_env_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.environment.</span></code><code class="sig-name descname"><span class="pre">add_custom_env_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes_to_interpolate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_file_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detection_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.environment.add_custom_env_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the specified custom environmental data. The loaded data is interpolated across space
 (2D or 3D) and time before being merged into a new version of detection_df.</p>
 <dl class="field-list simple">
@@ -214,7 +207,7 @@ values are the paths to the files containing the data.</p></li>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.environment.add_kadlu_env_data">
-<code class="sig-prename descclassname">range_driver.data_prep.environment.</code><code class="sig-name descname">add_kadlu_env_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bounds</span></em>, <em class="sig-param"><span class="n">sources</span></em>, <em class="sig-param"><span class="n">detection_df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.environment.add_kadlu_env_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.environment.</span></code><code class="sig-name descname"><span class="pre">add_kadlu_env_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detection_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.environment.add_kadlu_env_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fetches the requested environmental data for the given region &amp; time. The data is interpolated
 across space (2D or 3D) and time before being merged into a new version of detection_df.</p>
 <dl class="field-list simple">
@@ -240,7 +233,7 @@ environment data has been added.</p></li>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.environment.interpolate">
-<code class="sig-prename descclassname">range_driver.data_prep.environment.</code><code class="sig-name descname">interpolate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_to_interpolate</span></em>, <em class="sig-param"><span class="n">axes_to_interpolate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.environment.interpolate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.environment.</span></code><code class="sig-name descname"><span class="pre">interpolate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_interpolate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes_to_interpolate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.environment.interpolate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -250,30 +243,27 @@ environment data has been added.</p></li>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="tidal.html" class="btn btn-neutral float-right" title="range_driver.data_prep.tidal module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="Data Preparation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="tidal.html" class="btn btn-neutral float-right" title="range_driver.data_prep.tidal module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Data Preparation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, SFU<br/><img style="padding-top: 10px;" width="100" src="_static/logos/CCby.png" alt="Creative Commons CC-BY 4.0 logo" height="70" width="200"/>
+        &#169; Copyright 2021, SFU.
 
     </p>
   </div>
-  The Marine Environmental Research Infrastructure for Data Integration and Application Network is funded by the Canada Foundation for Innovation through their Cyberinfrastructure Initiative, Challenge 1.
-  <br/><br/>
-  With financial contributions from the provinces of British Columbia, Nova Scotia & Québec, Dalhousie University, Simon Fraser University, the University of Victoria, the University of British Columbia, the St. Lawrence Global Observatory, ExactEarth, and JASCO.
-	<br/><br/>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs and customized by MERIDIAN</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
@@ -284,10 +274,9 @@ environment data has been added.</p></li>
   </div>
   
 
-
   <script type="text/javascript">
       jQuery(function () {
-          SphinxMerRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
 
