@@ -1,4 +1,4 @@
-acoustic\_tracking.data\_prep.metadata module
+range\_driver.data\_prep.metadata module
 ---------------------------------------------
 
 .. automodule:: range_driver.data_prep.metadata

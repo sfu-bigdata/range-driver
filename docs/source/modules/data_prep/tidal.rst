@@ -1,4 +1,4 @@
-acoustic\_tracking.data\_prep.tidal module
+range\_driver.data\_prep.tidal module
 ------------------------------------------
 
 .. automodule:: range_driver.data_prep.tidal

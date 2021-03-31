@@ -3,27 +3,18 @@
 Install
 =============
 
-The range-driver package remains in development phase. During this time, the easiest way to install the package is
-through it's `GitHub repository <https://github.com/sfu-bigdata/range-driver/>`_. From the command line follow these
-steps:
+The Acoustic Tracking package remains in development phase. During this time, the easiest way to install the package is throug it's GitLab repository. 
 
-#. Clone the repository to your local machine.
+ 1. Clone the repository
 
-#. From within the ``range_driver`` directory, install dependencies using Anaconda.
+ 2. From within the range_driver directory, install dependencies using Anaconda. ::
 
-   .. code-block :: bash
+	conda env create -f environment.yml python=3.6
 
-	conda env create -f environment.yml
+ 3. Activate the conda environment. ::
 
-#. Activate the conda environment.
+	conda activate acoustic_env
 
-   .. code-block :: bash
-
-	conda activate range-driver
-
-#. From within the ``range-driver`` repository, install range-driver.
-
-   .. code-block :: bash
+ 4. From within the range_driver repository, install Acoustic Tracking. ::
 
 	pip install -e .
-
