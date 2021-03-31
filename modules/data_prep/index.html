@@ -87,6 +87,8 @@
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API Reference</span></p>
 <ul class="current">
@@ -265,15 +267,18 @@ dist_th (float): distance threshold</p>
 <dl class="py function">
 <dt id="range_driver.data_prep.dr_estimate_and_cutoff">
 <code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">dr_estimate_and_cutoff</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.dr_estimate_and_cutoff" title="Permalink to this definition">¶</a></dt>
-<dd><p>Estimate unknown detection rate and determine init sequence cutoff point
-Args:</p>
-<blockquote>
-<div><p>drs - detection rate sequence over fixed time intervals</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>dr_max     - maximum detection rate for majority of time
-cutoff     - date of first valid detection bin
-cutoff_loc - raw index of first valid detection bin</p>
+<dd><p>Estimate unknown detection rate and determine init sequence cutoff point</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>drs</strong> – Detection rate sequence over fixed time intervals</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>dr_max</strong>     - maximum detection rate for majority of time</p></li>
+<li><p><strong>cutoff</strong>     - date of first valid detection bin</p></li>
+<li><p><strong>cutoff_loc</strong> - raw index of first valid detection bin</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>

@@ -86,6 +86,8 @@
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API Reference</span></p>
 <ul class="current">
@@ -367,16 +369,18 @@ is preserved in internal call to yaml.dump().</p>
 <dl class="py function">
 <dt id="range_driver.pandas_utils.get_next_index">
 <code class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></code><code class="sig-name descname"><span class="pre">get_next_index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock_bound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.pandas_utils.get_next_index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determine the index value that follows <cite>index_val</cite>
-Args:</p>
-<blockquote>
-<div><p>df         - dataframe or series, having df.index
-index_val  - index value to start from
-lock_bound - if true return same index if reaching bounds
-inc        - increment default +1, use -1 to get previous index</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>neighbouring index value</p>
+<dd><p>Determine the index value that follows <cite>index_val</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em><em> or </em><em>pd.Series</em>) – dataframe or series, having df.index.</p></li>
+<li><p><strong>index_val</strong> – index value to start from</p></li>
+<li><p><strong>lock_bound</strong> (<em>bool</em>) – if true return same index if reaching bounds</p></li>
+<li><p><strong>inc</strong> (<em>int</em>) – Increment. default +1, use -1 to get previous index</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>neighbouring index value</p>
 </dd>
 </dl>
 </dd></dl>
