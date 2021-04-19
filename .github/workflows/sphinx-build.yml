@@ -24,11 +24,14 @@ jobs:
       - name: Install range_driver
         run: | 
           pip install -e .
-      - name: Load tutorial notebooks & data
+      - name: Download data
+        uses: wei/wget@v1
+        with:
+          args: -O data.zip "https://vault.sfu.ca/index.php/s/GFlTJ9maTYjuMlP/download"
+      - name: Organize tutorial notebooks & data
         run: |
           git clone https://github.com/sfu-bigdata/range-driver-tutorials.git
           mv range-driver-tutorials/tutorials/* docs/source/tutorials/
-          wget -O data.zip "https://vault.sfu.ca/index.php/s/GFlTJ9maTYjuMlP/download"
           unzip data.zip
 
       - name: Build Sphinx docs
