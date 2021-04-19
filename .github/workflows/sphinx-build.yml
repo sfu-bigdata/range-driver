@@ -33,6 +33,7 @@ jobs:
           git clone https://github.com/sfu-bigdata/range-driver-tutorials.git
           mv range-driver-tutorials/tutorials/* docs/source/tutorials/
           unzip data.zip
+          mv data/kadlu_data kadlu_data
 
       - name: Build Sphinx docs
         run: | 
