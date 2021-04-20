@@ -41,7 +41,8 @@ jobs:
           unzip data.zip
           mkdir kadlu_data
           mv data/kadlu_data*/* kadlu_data/
-          python3 -m "import kadlu; kadlu.era5_cfg(key='FAKE_TOKEN', url='FAKE_URL')"
+          printf "import kadlu\nkadlu.era5_cfg(key='FAKE_TOKEN', url='FAKE_URL')\n" > kadlu_cfg.py
+          python3 kadlu_cfg.py
 
       - name: Build Sphinx docs
         run: | 
