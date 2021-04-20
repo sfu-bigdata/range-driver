@@ -14,6 +14,12 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../../range_driver'))
 
+import range_driver as rd
+
+# The short X.Y version.
+version = '.'.join(rd.__version__.split('.', 2)[:2])
+# The full version, including alpha/beta/rc tags.
+release = rd.__version__
 
 # -- Project information -----------------------------------------------------
 
@@ -21,16 +27,16 @@ project = 'Range Driver'
 copyright = '2021, SFU'
 author = 'SFU'
 
-# The full version, including alpha/beta/rc tags
-release = '0.0.0'
-
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc', 'nbsphinx']
+extensions = [
+    'sphinx.ext.autodoc',
+    'nbsphinx',
+    'sphinx.ext.linkcode',  # link to github, see linkcode_resolve() below
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -40,6 +46,32 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+# name of main branch on git repo
+default_branch = 'public'
+
+# Resolve function for the linkcode extension.
+def linkcode_resolve(domain, info):
+    def find_source():
+        # try to find the file and line number, based on code from numpy:
+        # https://github.com/numpy/numpy/blob/master/doc/source/conf.py#L390
+        obj = sys.modules[info['module']]
+        for part in info['fullname'].split('.'):
+            obj = getattr(obj, part)
+        import inspect
+        import os
+        fn = inspect.getsourcefile(obj)
+        fn = os.path.relpath(fn, start=os.path.dirname(rd.__file__))
+        source, lineno = inspect.getsourcelines(obj)
+        return fn, lineno, lineno + len(source) - 1
+
+    if domain != 'py' or not info['module']:
+        return None
+    try:
+        filename = 'range_driver/%s#L%d-L%d' % find_source()
+    except Exception:
+        filename = info['module'].replace('.', '/') + '.py'
+    tag = default_branch if 'dev' in release else ('v' + release)
+    return "https://github.com/sfu-bigdata/range-driver/blob/%s/%s" % (tag, filename)
 
 # -- Options for HTML output -------------------------------------------------
 

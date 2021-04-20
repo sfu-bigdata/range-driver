@@ -18,3 +18,5 @@ from .plotting import *
 from .reporting import *
 from .config import *
 from .detections import Detections, read_ods
+
+__version__ = "0.0.dev1"
