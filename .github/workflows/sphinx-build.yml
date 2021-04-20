@@ -33,7 +33,9 @@ jobs:
           git clone https://github.com/sfu-bigdata/range-driver-tutorials.git
           mv range-driver-tutorials/tutorials/* docs/source/tutorials/
           unzip data.zip
-          mv data/kadlu_data kadlu_data
+          mkdir kadlu_data
+          mv data/kadlu_data*/* kadlu_data/*
+          python3 -m "kadlu.era5_cfg(key='FAKE_TOKEN', url='FAKE_URL')"
 
       - name: Build Sphinx docs
         run: | 
