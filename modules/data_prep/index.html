@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Data Preparation &mdash; Range Driver 0.0.0 documentation</title>
+  <title>Data Preparation &mdash; Range Driver 0.0.dev1 documentation</title>
   
 
   
@@ -32,6 +32,8 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -61,6 +63,10 @@
 
           
             
+            
+              <div class="version">
+                0.0
+              </div>
             
           
 
@@ -175,7 +181,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="data-preparation">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="data-preparation">
 <h1>Data Preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
@@ -186,19 +216,19 @@
 </div>
 <span class="target" id="module-range_driver.data_prep"></span><dl class="py function">
 <dt id="range_driver.data_prep.add_rt_group_info">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">add_rt_group_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">events_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.add_rt_group_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">add_rt_group_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">events_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L308-L322"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.add_rt_group_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls get_all_group_info() for <cite>events_df</cite> and merges the info into <cite>metadata</cite>.rt_groups</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.calc_intervals">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">calc_intervals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'datetime'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.calc_intervals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">calc_intervals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'datetime'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L276-L278"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.calc_intervals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate time intervals between adjacent detection events</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.calc_station_dists_m">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">calc_station_dists_m</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deploy_lat_lon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.calc_station_dists_m" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">calc_station_dists_m</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deploy_lat_lon</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L60-L82"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.calc_station_dists_m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate geodesic distances between stations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -215,17 +245,17 @@
 
 <dl class="py function">
 <dt id="range_driver.data_prep.clean_nsog_raw_detections">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">clean_nsog_raw_detections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_detections_raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rt_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.clean_nsog_raw_detections" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">clean_nsog_raw_detections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_detections_raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rt_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L524-L563"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.clean_nsog_raw_detections" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.clean_raw_detections">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">clean_raw_detections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_detections_raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rt_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.clean_raw_detections" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">clean_raw_detections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_detections_raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rt_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L434-L454"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.clean_raw_detections" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.detection_rate_grid">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">detection_rate_grid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detection_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_bin_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_dr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.detection_rate_grid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">detection_rate_grid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detection_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_bin_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_dr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L182-L269"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.detection_rate_grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Group detections into timestamp bins and analyze the detections on a group-level. Append
 aggregated bin data to the end of the detections DF.</p>
 <dl class="field-list simple">
@@ -253,7 +283,7 @@ the timestamp bins.</p></li>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.dist_str_th">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">dist_str_th</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_th</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.dist_str_th" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">dist_str_th</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_th</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L41-L56"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.dist_str_th" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine ‘F’ar, ‘N’ear, or ‘U’nknown string for distances above or below dist_th</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>dist (float): distance in meters
@@ -266,7 +296,7 @@ dist_th (float): distance threshold</p>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.dr_estimate_and_cutoff">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">dr_estimate_and_cutoff</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.dr_estimate_and_cutoff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">dr_estimate_and_cutoff</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L105-L122"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.dr_estimate_and_cutoff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate unknown detection rate and determine init sequence cutoff point</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -285,7 +315,7 @@ dist_th (float): distance threshold</p>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.estimate_det_max">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">estimate_det_max</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.estimate_det_max" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">estimate_det_max</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L84-L103"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.estimate_det_max" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate maximum detection rate over majority of time
 ignoring higher detection rate during init sequence</p>
 <p>Use this in case the true tag interval length programming is unknown.</p>
@@ -293,13 +323,13 @@ ignoring higher detection rate during init sequence</p>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.get_all_group_info">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">get_all_group_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detections_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.get_all_group_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">get_all_group_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detections_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L300-L305"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.get_all_group_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a dataframe with group_info() for each group in detections_df</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.group_info">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">group_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.group_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">group_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L283-L298"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.group_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Information about a Receiver/Transmitter group</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>grdf - DataFrame with detections and ‘interval’ column or None
@@ -313,20 +343,20 @@ tuple element names, if grdf is None</p>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.make_column">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">make_column</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.make_column" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">make_column</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L359-L371"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.make_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modify DataFrame <cite>tdf</cite> to add variable with name <cite>column</cite>
 <cite>tdf</cite> remains unchanged if column is already available.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.old_make_detection_rate">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">old_make_detection_rate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_interval_s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_time_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.old_make_detection_rate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">old_make_detection_rate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_interval_s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_time_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L327-L337"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.old_make_detection_rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>calculate detection rate</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.old_process_detections">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">old_process_detections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.old_process_detections" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">old_process_detections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L581-L614"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.old_process_detections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add interval length to dataframe</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>tdfok    - processed detections with detection rate
@@ -338,19 +368,19 @@ tdf      - full dataframe with detection interval calculations</p>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.old_resample_detection_rate">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">old_resample_detection_rate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">det_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.old_resample_detection_rate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">old_resample_detection_rate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">det_rate</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L339-L343"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.old_resample_detection_rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add detection rate to full dataframe</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.process_detections">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">process_detections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ev_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.process_detections" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">process_detections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ev_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L566-L579"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.process_detections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform some computations on the detection event dataframe</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.process_intervals">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">process_intervals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detection_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.process_intervals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">process_intervals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detection_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L126-L179"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.process_intervals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate detection interval lengths and split out init sequences</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -376,7 +406,7 @@ receiver/transmitter groups</p></li>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.read_nsog_data">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">read_nsog_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detections_csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vendor_tag_specs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bunch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.read_nsog_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">read_nsog_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detections_csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vendor_tag_specs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bunch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L457-L521"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.read_nsog_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>All in one function to read NSOG data</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>detections_csv      - csv file name for detection data
@@ -393,7 +423,7 @@ df_detections, metadata                      - where metadata is a dict with met
 
 <dl class="py function">
 <dt id="range_driver.data_prep.read_otn_data">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">read_otn_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detections_csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otn_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vendor_tag_specs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bunch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.read_otn_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">read_otn_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detections_csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otn_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vendor_tag_specs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bunch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L377-L432"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.read_otn_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>All in one function to read OTN data</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>detections_csv      - csv file name for detection data
@@ -410,7 +440,7 @@ df_decetions, metadata                      - where metadata is a dict with meta
 
 <dl class="py function">
 <dt id="range_driver.data_prep.read_via_config">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">read_via_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.read_via_config" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">read_via_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L619-L642"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.read_via_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invoke configured data loading &amp; processing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -429,7 +459,7 @@ pre-processing. Created via yload() of the YAML config file.</p>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.rt_name">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">rt_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.rt_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">rt_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L18-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.rt_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a name for given receiver/tag combination</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>grdf: dataframe with ‘Transmitter’, ‘Tag Family’, and ‘Power’ columns
@@ -443,7 +473,7 @@ dist_str (optional): function handle that returns a string representation when g
 
 <dl class="py function">
 <dt id="range_driver.data_prep.unpack_column_name">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">unpack_column_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.unpack_column_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.</span></code><code class="sig-name descname"><span class="pre">unpack_column_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/__init__.py#L348-L357"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.unpack_column_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns unpacked tuple of 1. column name in DF and 2. full column name for reporting.
 If <cite>column_name</cite> is a tuple, then just upack. Otherwise, use <cite>column_name</cite> string for both
 dataframe column id and print name.</p>

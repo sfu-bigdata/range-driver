@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>range_driver.data_prep.tidal module &mdash; Range Driver 0.0.0 documentation</title>
+  <title>range_driver.data_prep.tidal module &mdash; Range Driver 0.0.dev1 documentation</title>
   
 
   
@@ -32,6 +32,8 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -61,6 +63,10 @@
 
           
             
+            
+              <div class="version">
+                0.0
+              </div>
             
           
 
@@ -177,12 +183,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-range_driver.data_prep.tidal">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-range_driver.data_prep.tidal">
 <span id="range-driver-data-prep-tidal-module"></span><h1>range_driver.data_prep.tidal module<a class="headerlink" href="#module-range_driver.data_prep.tidal" title="Permalink to this headline">¶</a></h1>
 <p>tidal table processing</p>
 <dl class="py function">
 <dt id="range_driver.data_prep.tidal.flatten_tidal_table">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.tidal.</span></code><code class="sig-name descname"><span class="pre">flatten_tidal_table</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%d</span> <span class="pre">%B</span> <span class="pre">%Y</span> <span class="pre">%H%M'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.tidal.flatten_tidal_table" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.tidal.</span></code><code class="sig-name descname"><span class="pre">flatten_tidal_table</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%d</span> <span class="pre">%B</span> <span class="pre">%Y</span> <span class="pre">%H%M'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/tidal.py#L10-L40"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.tidal.flatten_tidal_table" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a multi-column tidal table (up to 4 extrema per day) into a flat
 datetime indexed DataFrame.
 <cite>df</cite> is expected to have time1, height1, time2, height2, …, height4 columns</p>
@@ -190,7 +220,7 @@ datetime indexed DataFrame.
 
 <dl class="py function">
 <dt id="range_driver.data_prep.tidal.ipf_cos">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.tidal.</span></code><code class="sig-name descname"><span class="pre">ipf_cos</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.tidal.ipf_cos" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.tidal.</span></code><code class="sig-name descname"><span class="pre">ipf_cos</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/tidal.py#L43-L51"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.tidal.ipf_cos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolation function based on cosine smoothly progressing in t = [0,1]
 First derivative at interval end points is 0 (flat).</p>
 <dl class="simple">
@@ -202,7 +232,7 @@ First derivative at interval end points is 0 (flat).</p>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.tidal.tidal_phase">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.tidal.</span></code><code class="sig-name descname"><span class="pre">tidal_phase</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dflat</span></em>, <em class="sig-param"><span class="pre">new_times=None</span></em>, <em class="sig-param"><span class="pre">interpolation_func=&lt;function</span> <span class="pre">ipf_cos&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.tidal.tidal_phase" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.tidal.</span></code><code class="sig-name descname"><span class="pre">tidal_phase</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dflat</span></em>, <em class="sig-param"><span class="pre">new_times=None</span></em>, <em class="sig-param"><span class="pre">interpolation_func=&lt;function</span> <span class="pre">ipf_cos&gt;</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/tidal.py#L54-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.tidal.tidal_phase" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Calcualte tidal phase and tidal height changes</dt><dd><p><cite>dflat</cite> DataFrame is expected to have datetime index and columns
 ‘height’, ‘highlow’ where dflat[‘highlow’] == ‘h’ indicates high tide</p>

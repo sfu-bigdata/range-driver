@@ -1,0 +1,1233 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Northern Strait of Georgia — January 2018 &mdash; Range Driver 0.0.dev1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="range_driver" href="../../modules/index.html" />
+    <link rel="prev" title="Tutorials" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Range Driver
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Northern Strait of Georgia</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Data-Set-Up">Data Set Up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Imports">Imports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Load-configuration-from-YAML-files">Load configuration from YAML files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Read-Detections,-Metadata,-and-Environmental-Variables">Read Detections, Metadata, and Environmental Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Detail-Reports">Detail Reports</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Data-Sources">Data Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Maps-visualization">Maps visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Heatmap-Visualization-of-Features">Heatmap Visualization of Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Range Driver</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Northern Strait of Georgia — January 2018</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/tutorials/NSOG_Jan2018/NSOG_Jan2018_dr_factor_study_brief.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Northern-Strait-of-Georgia-—-January-2018">
+<h1>Northern Strait of Georgia — January 2018<a class="headerlink" href="#Northern-Strait-of-Georgia-—-January-2018" title="Permalink to this headline">¶</a></h1>
+<p>This notebook walks through an example analysis of acoustic tracking performance using range test data from the Northern Strait of Georgia near Comox BC in January 2018.</p>
+<div class="line-block">
+<div class="line">In this notebook we will: * Load configuration settings from yaml files * Create a <code class="docutils literal notranslate"><span class="pre">Detections</span></code> object by loading detection event data &amp; receiver/transmitter deployment metadata, processing those detections, and adding in other environmental variables.</div>
+<div class="line">* Generate visual reports to assist in analysing what factors drive a transmitter tag’s range.</div>
+</div>
+<div class="section" id="Data-Set-Up">
+<h2>Data Set Up<a class="headerlink" href="#Data-Set-Up" title="Permalink to this headline">¶</a></h2>
+<p>First off, we need to download the data files that we will be using in this notebook. Download the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder from <a class="reference external" href="https://vault.sfu.ca/index.php/s/RQLttH4gyK5QcvM">this</a> SFU Vault link. Once the full folder has been downloaded place it in the same folder where this notebook is located. With this, your <code class="docutils literal notranslate"><span class="pre">range-driver-tutorials/tutorials/NSOG_Jan2018</span></code> folder should contain 2 folders (<code class="docutils literal notranslate"><span class="pre">configs</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">data</span></code>) &amp; 1 file (this notebook).</p>
+</div>
+<div class="section" id="Imports">
+<h2>Imports<a class="headerlink" href="#Imports" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">range_driver</span> <span class="k">as</span> <span class="nn">rd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">rd</span><span class="o">.</span><span class="n">mpl_set_notebook_params</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/share/miniconda3/envs/range-driver/lib/python3.8/site-packages/kadlu/geospatial/data_sources/data_util.py:44: UserWarning: storage location not configured. storage location will be set to /home/runner/kadlu_data/
+  warnings.warn(f&#39;{msg} storage location will be set to {storage_location}&#39;)
+/usr/share/miniconda3/envs/range-driver/lib/python3.8/site-packages/kadlu/geospatial/data_sources/data_util.py:44: UserWarning: storage location not configured. storage location will be set to /home/runner/kadlu_data/
+  warnings.warn(f&#39;{msg} storage location will be set to {storage_location}&#39;)
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Load-configuration-from-YAML-files">
+<h2>Load configuration from YAML files<a class="headerlink" href="#Load-configuration-from-YAML-files" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">baseconfig</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">yload</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s2">&quot;configs/base_config.yaml&quot;</span><span class="p">))</span>
+<span class="n">viewconfig</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">yload</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s2">&quot;configs/view_config.yaml&quot;</span><span class="p">))</span>
+<span class="n">rd</span><span class="o">.</span><span class="n">deep_update</span><span class="p">(</span><span class="n">baseconfig</span><span class="p">,</span> <span class="n">viewconfig</span><span class="p">)</span>
+
+<span class="n">rawconfig</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">yload</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s2">&quot;configs/nsog_jan2018_config.yaml&quot;</span><span class="p">))</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">merge_dicts</span><span class="p">(</span><span class="n">baseconfig</span><span class="p">,</span> <span class="n">rawconfig</span><span class="p">)</span>
+
+<span class="n">rd</span><span class="o">.</span><span class="n">prepare_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Read-Detections,-Metadata,-and-Environmental-Variables">
+<h2>Read Detections, Metadata, and Environmental Variables<a class="headerlink" href="#Read-Detections,-Metadata,-and-Environmental-Variables" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dets</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">Detections</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">do_processing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Detail-Reports">
+<h2>Detail Reports<a class="headerlink" href="#Detail-Reports" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rd</span><span class="o">.</span><span class="n">report_group_info</span><span class="p">(</span><span class="n">dets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="Detection-rate-plots-for-data-screening">
+<h3>Detection rate plots for data screening<a class="headerlink" href="#Detection-rate-plots-for-data-screening" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="NSOG011P-VR3-144-1-144/tag-38034-U-L">
+<h3>NSOG011P-VR3-144-1-144/tag-38034-U-L<a class="headerlink" href="#NSOG011P-VR3-144-1-144/tag-38034-U-L" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NSOG011P-VR3-144-1-144</th>
+      <th>A69-1601-38034</th>
+      <td>2018-01-01 21:33:04</td>
+      <td>2018-01-31 20:30:42</td>
+      <td>229</td>
+      <td>3419.0</td>
+      <td>597833.0</td>
+      <td>NSOG011P-VR3-144-1-144/tag-38034-U-L</td>
+      <td>NaN</td>
+      <td>V16-5x</td>
+      <td>38034</td>
+      <td>L</td>
+      <td>1700</td>
+      <td>1900</td>
+      <td>1800.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_3.png" src="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_3.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="NSOG012P-VR3-145-1-145/tag-38034-U-L">
+<h3>NSOG012P-VR3-145-1-145/tag-38034-U-L<a class="headerlink" href="#NSOG012P-VR3-145-1-145/tag-38034-U-L" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NSOG012P-VR3-145-1-145</th>
+      <th>A69-1601-38034</th>
+      <td>2018-01-01 00:54:10</td>
+      <td>2018-01-31 23:46:41</td>
+      <td>454</td>
+      <td>3411.0</td>
+      <td>89220.0</td>
+      <td>NSOG012P-VR3-145-1-145/tag-38034-U-L</td>
+      <td>NaN</td>
+      <td>V16-5x</td>
+      <td>38034</td>
+      <td>L</td>
+      <td>1700</td>
+      <td>1900</td>
+      <td>1800.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_6.png" src="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_6.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="NSOG013P-VR3-336-1-336/tag-38034-U-L">
+<h3>NSOG013P-VR3-336-1-336/tag-38034-U-L<a class="headerlink" href="#NSOG013P-VR3-336-1-336/tag-38034-U-L" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NSOG013P-VR3-336-1-336</th>
+      <th>A69-1601-38034</th>
+      <td>2018-01-01 02:03:19</td>
+      <td>2018-01-22 06:07:24</td>
+      <td>198</td>
+      <td>3414.0</td>
+      <td>147471.0</td>
+      <td>NSOG013P-VR3-336-1-336/tag-38034-U-L</td>
+      <td>NaN</td>
+      <td>V16-5x</td>
+      <td>38034</td>
+      <td>L</td>
+      <td>1700</td>
+      <td>1900</td>
+      <td>1800.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_9.png" src="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_9.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="NSOG010P-VR3-147-1-147/tag-38035-U-H">
+<h3>NSOG010P-VR3-147-1-147/tag-38035-U-H<a class="headerlink" href="#NSOG010P-VR3-147-1-147/tag-38035-U-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NSOG010P-VR3-147-1-147</th>
+      <th>A69-1601-38035</th>
+      <td>2018-01-25 17:14:27</td>
+      <td>2018-01-28 05:53:02</td>
+      <td>3</td>
+      <td>14726.0</td>
+      <td>203589.0</td>
+      <td>NSOG010P-VR3-147-1-147/tag-38035-U-H</td>
+      <td>NaN</td>
+      <td>V16-5x</td>
+      <td>38035</td>
+      <td>H</td>
+      <td>1700</td>
+      <td>1900</td>
+      <td>1800.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_12.png" src="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_12.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="NSOG011P-VR3-144-1-144/tag-38035-U-H">
+<h3>NSOG011P-VR3-144-1-144/tag-38035-U-H<a class="headerlink" href="#NSOG011P-VR3-144-1-144/tag-38035-U-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NSOG011P-VR3-144-1-144</th>
+      <th>A69-1601-38035</th>
+      <td>2018-01-01 00:03:56</td>
+      <td>2018-01-31 22:58:55</td>
+      <td>361</td>
+      <td>3409.0</td>
+      <td>158797.0</td>
+      <td>NSOG011P-VR3-144-1-144/tag-38035-U-H</td>
+      <td>NaN</td>
+      <td>V16-5x</td>
+      <td>38035</td>
+      <td>H</td>
+      <td>1700</td>
+      <td>1900</td>
+      <td>1800.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_15.png" src="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_15.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="NSOG012P-VR3-145-1-145/tag-38035-U-H">
+<h3>NSOG012P-VR3-145-1-145/tag-38035-U-H<a class="headerlink" href="#NSOG012P-VR3-145-1-145/tag-38035-U-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NSOG012P-VR3-145-1-145</th>
+      <th>A69-1601-38035</th>
+      <td>2018-01-01 00:22:41</td>
+      <td>2018-01-31 21:18:51</td>
+      <td>568</td>
+      <td>3408.0</td>
+      <td>54966.0</td>
+      <td>NSOG012P-VR3-145-1-145/tag-38035-U-H</td>
+      <td>NaN</td>
+      <td>V16-5x</td>
+      <td>38035</td>
+      <td>H</td>
+      <td>1700</td>
+      <td>1900</td>
+      <td>1800.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_18.png" src="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_18.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="NSOG013P-VR3-336-1-336/tag-38035-U-H">
+<h3>NSOG013P-VR3-336-1-336/tag-38035-U-H<a class="headerlink" href="#NSOG013P-VR3-336-1-336/tag-38035-U-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NSOG013P-VR3-336-1-336</th>
+      <th>A69-1601-38035</th>
+      <td>2018-01-01 01:32:31</td>
+      <td>2018-01-22 08:34:11</td>
+      <td>338</td>
+      <td>3408.0</td>
+      <td>25172.0</td>
+      <td>NSOG013P-VR3-336-1-336/tag-38035-U-H</td>
+      <td>NaN</td>
+      <td>V16-5x</td>
+      <td>38035</td>
+      <td>H</td>
+      <td>1700</td>
+      <td>1900</td>
+      <td>1800.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_21.png" src="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_9_21.png" />
+</div>
+</div>
+<div class="section" id="Data-Sources">
+<h3>Data Sources<a class="headerlink" href="#Data-Sources" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">kadlu_source_map</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Configured data sources:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">ydump</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sources</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+    CHS   (Canadian Hydrography Service)
+          bathymetry:       bathymetric data in Canada&#39;s waterways. metres, variable resolution
+
+    ERA5  (Global environmental dataset from Copernicus Climate Data Store)
+          wavedir:          mean wave direction, degrees
+          waveheight:       combined height of wind, waves, and swell. metres
+          waveperiod:       mean wave period, seconds
+          wind_uv:          wind speed computed as sqrt(u^2 + v^2) / 2, where u, v are direction vectors
+          wind_u:           wind speed coordinate U-vector, m/s
+          wind_v:           wind speed coordinate V-vector, m/s
+
+    GEBCO (General Bathymetric Chart of the Oceans)
+          bathymetry:       global bathymetric and topographic data. metres below sea level
+
+    HYCOM (Hybrid Coordinate Ocean Model)
+          salinity:         g/kg salt in water
+          temp:             degrees celsius
+          water_uv:         ocean current computed as sqrt(u^2 + v^2) / 2, where u, v are direction vectors
+          water_u:          ocean current coordinate U-vector, m/s
+          water_v:          ocean current coordinate V-vector, m/s
+
+    WWIII (WaveWatch Ocean Model Gen 3)
+          wavedir:          primary wave direction, degrees
+          waveheight:       combined height of wind and waves, metres
+          waveperiod:       primary mean wave period, seconds
+          wind_uv:          wind speed computed as sqrt(u^2 + v^2) / 2, where u, v are direction vectors
+          wind_u:           wind speed coordinate U-vector, m/s
+          wind_v:           wind speed coordinate V-vector, m/s
+
+Configured data sources:
+
+null
+...
+
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Maps-visualization">
+<h2>Maps visualization<a class="headerlink" href="#Maps-visualization" title="Permalink to this headline">¶</a></h2>
+<p>Map view including region of interest bound, environmental data source nodes, receiver and tag locations.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rd</span><span class="o">.</span><span class="n">report_map_view</span><span class="p">(</span><span class="n">dets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "54dcfa3df8bb4f879b135180fa8c0923"}</script></div>
+</div>
+</div>
+<div class="section" id="Heatmap-Visualization-of-Features">
+<h2>Heatmap Visualization of Features<a class="headerlink" href="#Heatmap-Visualization-of-Features" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rd</span><span class="o">.</span><span class="n">report_heatmap</span><span class="p">(</span><span class="n">dets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_15_0.png" src="../../_images/tutorials_NSOG_Jan2018_NSOG_Jan2018_dr_factor_study_brief_15_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"f095f168d0694dd0afacc84046367cdc": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "728baa6121f64baaa84837df5b19906a": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "move"}}, "130102d4ea214deca502ffdcd6c981c3": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletTileLayerView", "attribution": "Map data (c) <a href=\"https://openstreetmap.org\">OpenStreetMap</a> contributors", "base": true, "bottom": true, "detect_retina": false, "loading": false, "max_native_zoom": 18, "max_zoom": 19, "min_native_zoom": 0, "min_zoom": 1, "name": "", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "tile_size": 256, "tms": false, "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", "visible": true}}, "9e7cd384826240d6b2b26a8de5338874": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4443633111fc458595e1f4ee7ead996f": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "54dcfa3df8bb4f879b135180fa8c0923": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [49.7731, -124.6858], "close_popup_on_click": true, "controls": ["IPY_MODEL_68c80fadfedb4e258f965013f96ad6a9", "IPY_MODEL_21ae41f5c33a4f1ab3a1ca9781aa0a4f"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_f095f168d0694dd0afacc84046367cdc", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_728baa6121f64baaa84837df5b19906a", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_130102d4ea214deca502ffdcd6c981c3", "IPY_MODEL_f31c78068aeb4622a5534ada5928b36d", "IPY_MODEL_f40f0624d1c048c982fb18bd4b1500d3", "IPY_MODEL_5af7e0c653b24611aa03018da6aa480b"], "layout": "IPY_MODEL_9e7cd384826240d6b2b26a8de5338874", "left": 9007199254740991.0, "max_zoom": 18.0, "min_zoom": 1.0, "modisdate": "yesterday", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap", "zoom_start"], "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_4443633111fc458595e1f4ee7ead996f", "tap": true, "tap_tolerance": 15, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 8.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0, "zoom_start": 12.0}}, "68c80fadfedb4e258f965013f96ad6a9": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "21ae41f5c33a4f1ab3a1ca9781aa0a4f": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "f31c78068aeb4622a5534ada5928b36d": {"model_name": "LeafletRectangleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletRectangleModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletRectangleView", "base": false, "bottom": false, "bounds": [[50.2231, -124.1858], [49.323100000000004, -125.1858]], "color": "#2e4053", "dash_array": null, "draggable": false, "fill": true, "fill_color": "#2e4053", "fill_opacity": 0.1, "line_cap": "round", "line_join": "round", "locations": [], "name": "", "no_clip": true, "opacity": 0.5, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "transform": false, "uniform_scaling": false, "weight": 3}}, "e18bf65cda584276a8898f703bf0f6f7": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "darkblue", "name": "microphone", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "1b49db7814f64ccdba2448a7c1345c44": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c276fd571bbc43d98e5e2ae9d15af197": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e90eb3dde5d5442fb11c21dfbe6a9e66": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1b49db7814f64ccdba2448a7c1345c44", "placeholder": "\u200b", "style": "IPY_MODEL_c276fd571bbc43d98e5e2ae9d15af197", "value": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>Receiver.bottom_depth</th>\n      <th>Receiver.depth</th>\n      <th>Receiver</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>300.0</td>\n      <td>100.0</td>\n      <td>NSOG011P-VR3-144-1-144</td>\n    </tr>\n  </tbody>\n</table>"}}, "2f7e3d0c8c414bb390b85d2b2c07741c": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_e18bf65cda584276a8898f703bf0f6f7", "keyboard": true, "location": [49.725486700000005, -124.666005], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_e90eb3dde5d5442fb11c21dfbe6a9e66", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "49ee8ba771864f35bbadb76824cc778c": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "darkblue", "name": "microphone", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "4177fa7345224a1697fffd8523c7d95e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "237a7698f114490f9e2209e33b645be7": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "0992b4fb110942b1a93ce10290258e50": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_4177fa7345224a1697fffd8523c7d95e", "placeholder": "\u200b", "style": "IPY_MODEL_237a7698f114490f9e2209e33b645be7", "value": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>Receiver.bottom_depth</th>\n      <th>Receiver.depth</th>\n      <th>Receiver</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>310.0</td>\n      <td>110.0</td>\n      <td>NSOG012P-VR3-145-1-145</td>\n    </tr>\n  </tbody>\n</table>"}}, "b2370b19d2de40eba1d96acdae9d869d": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_49ee8ba771864f35bbadb76824cc778c", "keyboard": true, "location": [49.7242583, -124.67595], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_0992b4fb110942b1a93ce10290258e50", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "e38c2dbe486c482794431d016beb096e": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "darkblue", "name": "microphone", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "3520ab57f3cc41e6a3065b787fb465cd": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "281b08f1e6ed438fbc6d543c6b0fc345": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "c7dd9617efc14b9ab08b069f6d5ae2e4": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_3520ab57f3cc41e6a3065b787fb465cd", "placeholder": "\u200b", "style": "IPY_MODEL_281b08f1e6ed438fbc6d543c6b0fc345", "value": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>Receiver.bottom_depth</th>\n      <th>Receiver.depth</th>\n      <th>Receiver</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>320.0</td>\n      <td>120.0</td>\n      <td>NSOG013P-VR3-336-1-336</td>\n    </tr>\n  </tbody>\n</table>"}}, "6607dd2c02784c8396d97a05a4dd8965": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_e38c2dbe486c482794431d016beb096e", "keyboard": true, "location": [49.7231033, -124.68579], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_c7dd9617efc14b9ab08b069f6d5ae2e4", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "d943b4fb3f02436b9b72f65643a2f261": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "darkblue", "name": "microphone", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "2e1a6bc563a84a6b9059208fd38690d4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a0ccd30ad9774cb5af351a1fbfef3680": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "37ce43851c234a028e1e93b914b7e04d": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2e1a6bc563a84a6b9059208fd38690d4", "placeholder": "\u200b", "style": "IPY_MODEL_a0ccd30ad9774cb5af351a1fbfef3680", "value": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>Receiver.bottom_depth</th>\n      <th>Receiver.depth</th>\n      <th>Receiver</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>320.0</td>\n      <td>170.0</td>\n      <td>NSOG010P-VR3-147-1-147</td>\n    </tr>\n  </tbody>\n</table>"}}, "4159beb490e04a82982d986a0f007195": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_d943b4fb3f02436b9b72f65643a2f261", "keyboard": true, "location": [49.7267967, -124.65571], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_37ce43851c234a028e1e93b914b7e04d", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "f40f0624d1c048c982fb18bd4b1500d3": {"model_name": "LeafletMarkerClusterModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerClusterModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerClusterView", "base": false, "bottom": false, "markers": ["IPY_MODEL_2f7e3d0c8c414bb390b85d2b2c07741c", "IPY_MODEL_b2370b19d2de40eba1d96acdae9d869d", "IPY_MODEL_6607dd2c02784c8396d97a05a4dd8965", "IPY_MODEL_4159beb490e04a82982d986a0f007195"], "name": "", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50}}, "5af7e0c653b24611aa03018da6aa480b": {"model_name": "LeafletMarkerClusterModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerClusterModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerClusterView", "base": false, "bottom": false, "markers": [], "name": "", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50}}}, "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../modules/index.html" class="btn btn-neutral float-right" title="range_driver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SFU.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

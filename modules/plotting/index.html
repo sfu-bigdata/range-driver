@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Plotting &mdash; Range Driver 0.0.0 documentation</title>
+  <title>Plotting &mdash; Range Driver 0.0.dev1 documentation</title>
   
 
   
@@ -32,6 +32,8 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -61,6 +63,10 @@
 
           
             
+            
+              <div class="version">
+                0.0
+              </div>
             
           
 
@@ -175,13 +181,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="plotting">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="plotting">
 <h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-range_driver.plotting.maps">
 <span id="maps"></span><h2>Maps<a class="headerlink" href="#module-range_driver.plotting.maps" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="range_driver.plotting.maps.plot_bounds">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.maps.</span></code><code class="sig-name descname"><span class="pre">plot_bounds</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">bounds</span></em>, <em class="sig-param"><span class="pre">receiver_locations=[]</span></em>, <em class="sig-param"><span class="pre">receiver_info=Empty</span> <span class="pre">DataFrame</span> <span class="pre">Columns:</span> <span class="pre">[]</span> <span class="pre">Index:</span> <span class="pre">[]</span></em>, <em class="sig-param"><span class="pre">node_locations=[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.maps.plot_bounds" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.maps.</span></code><code class="sig-name descname"><span class="pre">plot_bounds</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">bounds</span></em>, <em class="sig-param"><span class="pre">receiver_locations=[]</span></em>, <em class="sig-param"><span class="pre">receiver_info=Empty</span> <span class="pre">DataFrame</span> <span class="pre">Columns:</span> <span class="pre">[]</span> <span class="pre">Index:</span> <span class="pre">[]</span></em>, <em class="sig-param"><span class="pre">node_locations=[]</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/maps.py#L7-L88"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.maps.plot_bounds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a map view widget for the given region with further info. The map widget displays
 inside IPython notebooks.</p>
 <dl class="field-list simple">
@@ -202,7 +232,7 @@ should be a latitude or longitude in degrees.</p></li>
 <span id="heatmaps"></span><h2>Heatmaps<a class="headerlink" href="#module-range_driver.plotting.heatmaps" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="range_driver.plotting.heatmaps.plot_feature_heatmap">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.heatmaps.</span></code><code class="sig-name descname"><span class="pre">plot_feature_heatmap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pearson'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.heatmaps.plot_feature_heatmap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.heatmaps.</span></code><code class="sig-name descname"><span class="pre">plot_feature_heatmap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pearson'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/heatmaps.py#L7-L38"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.heatmaps.plot_feature_heatmap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots and displays a heat-map showing the correlation between features of interest.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -224,57 +254,57 @@ feature_df.</p></li>
 <span id="other-plots"></span><h2>Other Plots<a class="headerlink" href="#module-range_driver.plotting" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="range_driver.plotting.plot_group_dr">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_group_dr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgroup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mdb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(15,</span> <span class="pre">1)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_group_dr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_group_dr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgroup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mdb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(15,</span> <span class="pre">1)</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/__init__.py#L147-L166"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.plot_group_dr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displays a line graph showing detection rates for a particular receiver/transmitter pair over
 time. Also shows the metadata associated with the receiver/transmitter pair.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.plotting.plot_per_detection_density">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_per_detection_density</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_per_detection_density" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_per_detection_density</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/__init__.py#L120-L144"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.plot_per_detection_density" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.plotting.plot_per_detection_rate">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_per_detection_rate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_per_detection_rate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_per_detection_rate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/__init__.py#L105-L117"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.plot_per_detection_rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a scatter plot showing the chosen column_name on the X-axis (e.g. water velocity) and
 detection rate on the Y-axis.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.plotting.plot_stack_with_dr">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_stack_with_dr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mainax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_stack_with_dr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_stack_with_dr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mainax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/__init__.py#L83-L102"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.plot_stack_with_dr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot detection_rate and water_velocity in two vertically stacked plots.
 These plots show how water velocity * detection rate vary according to time.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.plotting.plot_tidal_phase">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_tidal_phase</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_tidal_phase" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_tidal_phase</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/__init__.py#L27-L36"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.plot_tidal_phase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds interval lengths to the plot showing how detection density, water_velocity, and interval
 lengths all vary with tidal phase (t2).</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.plotting.plot_with_detection_count">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_with_detection_count</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfcount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tdfmean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_with_detection_count" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_with_detection_count</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfcount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tdfmean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/__init__.py#L39-L53"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.plot_with_detection_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds detection count &amp; water velocity to the plot showing how detection density, water_velocity,
 and interval lengths all vary with tidal phase (t2).</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.plotting.plot_with_detection_interval">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_with_detection_interval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_with_detection_interval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_with_detection_interval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/__init__.py#L56-L71"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.plot_with_detection_interval" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.plotting.plot_with_detection_interval_and_rate">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_with_detection_interval_and_rate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_with_detection_interval_and_rate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_with_detection_interval_and_rate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/__init__.py#L74-L80"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.plot_with_detection_interval_and_rate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.plotting.plot_with_dr">
-<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_with_dr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rt_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.plotting.plot_with_dr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.plotting.</span></code><code class="sig-name descname"><span class="pre">plot_with_dr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tdfok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rt_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/plotting/__init__.py#L14-L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.plotting.plot_with_dr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display a plot that shows how detection rate and <cite>column_name</cite> (a specified column) change over
 time.</p>
 </dd></dl>

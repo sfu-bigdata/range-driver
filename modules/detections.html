@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Detections &mdash; Range Driver 0.0.0 documentation</title>
+  <title>Detections &mdash; Range Driver 0.0.dev1 documentation</title>
   
 
   
@@ -32,6 +32,8 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -61,6 +63,10 @@
 
           
             
+            
+              <div class="version">
+                0.0
+              </div>
             
           
 
@@ -170,92 +176,116 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-range_driver.detections">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-range_driver.detections">
 <span id="detections"></span><h1>Detections<a class="headerlink" href="#module-range_driver.detections" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="range_driver.detections.Detections">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">range_driver.detections.</span></code><code class="sig-name descname"><span class="pre">Detections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_processing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">range_driver.detections.</span></code><code class="sig-name descname"><span class="pre">Detections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_processing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L6-L122"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Manage detections: load, process, enhance, access</p>
 <dl class="py method">
 <dt id="range_driver.detections.Detections.add_calculated_columns">
-<code class="sig-name descname"><span class="pre">add_calculated_columns</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.add_calculated_columns" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_calculated_columns</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L104-L107"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.add_calculated_columns" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.add_custom_data">
-<code class="sig-name descname"><span class="pre">add_custom_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.add_custom_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_custom_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L84-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.add_custom_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.add_env_data">
-<code class="sig-name descname"><span class="pre">add_env_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.add_env_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_env_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L76-L82"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.add_env_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.add_tidal_data">
-<code class="sig-name descname"><span class="pre">add_tidal_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.add_tidal_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_tidal_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L94-L102"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.add_tidal_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.bounds">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bounds</span></code><a class="headerlink" href="#range_driver.detections.Detections.bounds" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bounds</span></code><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.bounds" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.get_events_bins">
-<code class="sig-name descname"><span class="pre">get_events_bins</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.get_events_bins" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_events_bins</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L113-L116"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.get_events_bins" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.init_via_config">
-<code class="sig-name descname"><span class="pre">init_via_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.init_via_config" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">init_via_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L33-L36"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.init_via_config" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.make_detection_rate">
-<code class="sig-name descname"><span class="pre">make_detection_rate</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.make_detection_rate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">make_detection_rate</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L38-L44"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.make_detection_rate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.node_locations">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">node_locations</span></code><a class="headerlink" href="#range_driver.detections.Detections.node_locations" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">node_locations</span></code><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.node_locations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.prepare_group_data">
-<code class="sig-name descname"><span class="pre">prepare_group_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.prepare_group_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">prepare_group_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L109-L111"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.prepare_group_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.prepare_rt_groups">
-<code class="sig-name descname"><span class="pre">prepare_rt_groups</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.prepare_rt_groups" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">prepare_rt_groups</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L118-L122"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.prepare_rt_groups" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.receiver_info">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">receiver_info</span></code><a class="headerlink" href="#range_driver.detections.Detections.receiver_info" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">receiver_info</span></code><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.receiver_info" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.receiver_locations">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">receiver_locations</span></code><a class="headerlink" href="#range_driver.detections.Detections.receiver_locations" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">receiver_locations</span></code><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.receiver_locations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.reset">
-<code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.detections.Detections.reset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py#L21-L31"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.reset" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.show_details">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">show_details</span></code><a class="headerlink" href="#range_driver.detections.Detections.show_details" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">show_details</span></code><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.show_details" title="Permalink to this definition">¶</a></dt>
 <dd><p>Boolean to indicate whether details should be displayed</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="range_driver.detections.Detections.sources">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sources</span></code><a class="headerlink" href="#range_driver.detections.Detections.sources" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sources</span></code><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/detections.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.detections.Detections.sources" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

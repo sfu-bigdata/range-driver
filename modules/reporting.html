@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Reporting &mdash; Range Driver 0.0.0 documentation</title>
+  <title>Reporting &mdash; Range Driver 0.0.dev1 documentation</title>
   
 
   
@@ -32,6 +32,8 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -61,6 +63,10 @@
 
           
             
+            
+              <div class="version">
+                0.0
+              </div>
             
           
 
@@ -170,36 +176,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-range_driver.reporting">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-range_driver.reporting">
 <span id="reporting"></span><h1>Reporting<a class="headerlink" href="#module-range_driver.reporting" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="range_driver.reporting.kadlu_source_map">
-<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">kadlu_source_map</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.reporting.kadlu_source_map" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">kadlu_source_map</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/reporting.py#L10-L11"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.reporting.kadlu_source_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.reporting.report_all_group_plots">
-<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_all_group_plots</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.reporting.report_all_group_plots" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_all_group_plots</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/reporting.py#L147-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.reporting.report_all_group_plots" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.reporting.report_group_info">
-<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_group_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.reporting.report_group_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_group_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/reporting.py#L63-L72"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.reporting.report_group_info" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.reporting.report_heatmap">
-<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_heatmap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.reporting.report_heatmap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_heatmap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/reporting.py#L170-L182"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.reporting.report_heatmap" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.reporting.report_map_view">
-<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_map_view</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.reporting.report_map_view" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_map_view</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/reporting.py#L167-L168"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.reporting.report_map_view" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.reporting.report_station_info">
-<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_station_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.reporting.report_station_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_station_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdb</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/reporting.py#L14-L60"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.reporting.report_station_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displays a report of station information. This report shows the metadata associated with each
 transmitter type, a summary of detections by receiver/transmitter pairs, and some documentation
 on how to interpret the report.</p>
@@ -215,18 +245,18 @@ on how to interpret the report.</p>
 
 <dl class="py function">
 <dt id="range_driver.reporting.report_tidal">
-<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_tidal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.reporting.report_tidal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">report_tidal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/reporting.py#L185-L193"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.reporting.report_tidal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.reporting.show_group_plots">
-<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">show_group_plots</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.reporting.show_group_plots" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">show_group_plots</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/reporting.py#L115-L145"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.reporting.show_group_plots" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a collection of plots that give a summary for one receiver/transmitter group</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="range_driver.reporting.show_tidal_plots">
-<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">show_tidal_plots</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dflat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_tidal_interp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tidal_times_output_csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tidal_interpolation_output_csv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.reporting.show_tidal_plots" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.reporting.</span></code><code class="sig-name descname"><span class="pre">show_tidal_plots</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dflat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_tidal_interp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tidal_times_output_csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tidal_interpolation_output_csv</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/reporting.py#L75-L112"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.reporting.show_tidal_plots" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displays a graph showing tidal height, velocity of tidal change, and tidal phase compared to
 time.</p>
 </dd></dl>

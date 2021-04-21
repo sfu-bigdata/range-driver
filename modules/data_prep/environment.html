@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Environmental Data &mdash; Range Driver 0.0.0 documentation</title>
+  <title>Environmental Data &mdash; Range Driver 0.0.dev1 documentation</title>
   
 
   
@@ -32,6 +32,8 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -61,6 +63,10 @@
 
           
             
+            
+              <div class="version">
+                0.0
+              </div>
             
           
 
@@ -177,12 +183,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-range_driver.data_prep.environment">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-range_driver.data_prep.environment">
 <span id="environmental-data"></span><h1>Environmental Data<a class="headerlink" href="#module-range_driver.data_prep.environment" title="Permalink to this headline">¶</a></h1>
 <p>Functions to help integrate environmental data processing. Includes kadlu integration.</p>
 <dl class="py function">
 <dt id="range_driver.data_prep.environment.add_custom_env_data">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.environment.</span></code><code class="sig-name descname"><span class="pre">add_custom_env_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes_to_interpolate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_file_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detection_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.environment.add_custom_env_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.environment.</span></code><code class="sig-name descname"><span class="pre">add_custom_env_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes_to_interpolate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_file_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detection_df</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/environment.py#L50-L93"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.environment.add_custom_env_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the specified custom environmental data. The loaded data is interpolated across space
 (2D or 3D) and time before being merged into a new version of detection_df.</p>
 <dl class="field-list simple">
@@ -209,7 +239,7 @@ values are the paths to the files containing the data.</p></li>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.environment.add_kadlu_env_data">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.environment.</span></code><code class="sig-name descname"><span class="pre">add_kadlu_env_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detection_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.environment.add_kadlu_env_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.environment.</span></code><code class="sig-name descname"><span class="pre">add_kadlu_env_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detection_df</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/environment.py#L12-L47"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.environment.add_kadlu_env_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fetches the requested environmental data for the given region &amp; time. The data is interpolated
 across space (2D or 3D) and time before being merged into a new version of detection_df.</p>
 <dl class="field-list simple">
@@ -235,7 +265,7 @@ environment data has been added.</p></li>
 
 <dl class="py function">
 <dt id="range_driver.data_prep.environment.interpolate">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.environment.</span></code><code class="sig-name descname"><span class="pre">interpolate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_interpolate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes_to_interpolate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#range_driver.data_prep.environment.interpolate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.environment.</span></code><code class="sig-name descname"><span class="pre">interpolate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_interpolate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes_to_interpolate</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/environment.py#L96-L129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.environment.interpolate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
