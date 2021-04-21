@@ -24,26 +24,17 @@ jobs:
       - name: Install range_driver
         run: | 
           pip install -e .
-      - uses: actions/cache@v2
-        id: data-cache
-        with:
-          path: data.zip
-          key: data-cache
       - name: Download data
-        if: steps.data-cache.outputs.cache-hit != 'true'
         uses: wei/wget@v1
         with:
           args: -O data.zip "https://vault.sfu.ca/index.php/s/GFlTJ9maTYjuMlP/download"
-      - name: Organize tutorial notebooks & data
+      - name: Organize data
+        run: |
+          unzip data.zip
+      - name: Organize tutorial notebooks
         run: |
           git clone https://github.com/sfu-bigdata/range-driver-tutorials.git
           mv range-driver-tutorials/tutorials/* docs/source/tutorials/
-          unzip data.zip
-          mkdir kadlu_data
-          mv data/kadlu_data*/* kadlu_data/
-          printf "import kadlu\nkadlu.era5_cfg(key='FAKE_TOKEN', url='FAKE_URL')\n" > kadlu_cfg.py
-          python3 kadlu_cfg.py
-
       - name: Build Sphinx docs
         run: | 
           cd docs
