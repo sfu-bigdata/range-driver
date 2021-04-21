@@ -74,7 +74,12 @@ class Detections:
         return list(zip(receiver_locations_df['Receiver.lat'], receiver_locations_df['Receiver.lon']))
 
     def add_env_data(self):
-        self.df_detections_env, self.kadlu_result = add_kadlu_env_data(self.bounds, self.sources, self.detection_df)
+        if self.sources:
+            self.df_detections_env, self.kadlu_result = add_kadlu_env_data(self.bounds,
+                                                                           self.sources,
+                                                                           self.detection_df)
+        else:
+            self.df_detections_env = self.detection_df
 
     def add_custom_data(self):
         # Specify axes to interpolate (the axes which specify the points to interpolate)
