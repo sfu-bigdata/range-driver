@@ -45,6 +45,7 @@ jobs:
         run: |
           git clone https://github.com/sfu-bigdata/range-driver-tutorials.git
           mv range-driver-tutorials/tutorials/NSOG_Jan2018 docs/source/tutorials/
+          mv range-driver-tutorials/tutorials/MahoneBay2016 docs/source/tutorials/
       - name: Build Sphinx docs
         run: | 
           cd docs
