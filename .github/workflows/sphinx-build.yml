@@ -32,9 +32,10 @@ jobs:
           auto-activate-base: false
           use-only-tar-bz2: true
       - name: Install range_driver
-        run: | 
+        run: |
           pip install -e .
       - name: Download data
+        if: ${{ !env.ACT }}
         uses: wei/wget@v1
         with:
           args: -O data.zip "https://vault.sfu.ca/index.php/s/GFlTJ9maTYjuMlP/download"
@@ -43,6 +44,7 @@ jobs:
           unzip data.zip
       - name: Organize tutorial notebooks
         run: |
+          python3 action_setup.py
           git clone https://github.com/sfu-bigdata/range-driver-tutorials.git
           mv range-driver-tutorials/tutorials/NSOG_Jan2018 docs/source/tutorials/
           mv range-driver-tutorials/tutorials/MahoneBay2016 docs/source/tutorials/
