@@ -1,0 +1,2461 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Range test analysis &mdash; Range Driver 0.0.dev1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="range_driver" href="../../modules/index.html" />
+    <link rel="prev" title="Northern Strait of Georgia — January 2018" href="../NSOG_Jan2018/NSOG_Jan2018_dr_factor_study_brief.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Range Driver
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../NSOG_Jan2018/NSOG_Jan2018_dr_factor_study_brief.html">Northern Strait of Georgia</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Range test analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Obtain-configuration-from-YAML-files">Obtain configuration from YAML files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Read-Detections,-Metadata,-and-Environmental-Variables">Read Detections, Metadata, and Environmental Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Detail-Reports">Detail Reports</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Data-Sources">Data Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Maps-visualization">Maps visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Discussion">Discussion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Range Driver</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Range test analysis</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/tutorials/MahoneBay2016/dr_factor_study_brief.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Range-test-analysis">
+<h1>Range test analysis<a class="headerlink" href="#Range-test-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Analysis of acoustic tracking performance using range test data obtained in Mahone Bay near Halifax, NS, by OTN field experiments during March-April 2016.</p>
+<p>Components of this notebook:</p>
+<ul class="simple">
+<li><p>load detection events and deployment metadata about receivers and transmitters</p></li>
+<li><p>analyse detections for each receiver/transmitter combination separately</p></li>
+<li><p>calculate interval lengths between detections and detection rates within fixed time windows</p></li>
+<li><p>calculate further metadata descriptions, e.g. distance between stations, R/T names involving distinctions such as near/far distance or high/low power</p></li>
+<li><p>process tidal data for the time period considering high/low tide times and the observed heights, calculate tidal phase and height change for each detection timestamp via cosine interpolation of heights</p></li>
+<li><p>obtain further environmental variables from external data sources</p></li>
+<li><p>produce different visualizations to study correlation of env. variables and operating conditions with detection rate</p></li>
+</ul>
+<p><strong>Data:</strong> For most sources for environmental variables data has been collected for 3 hour intervals.</p>
+<p>See <a class="reference external" href="../docs/install.md">installation instructions</a> on how to run this notebook.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">range_driver</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">rd</span><span class="o">.</span><span class="n">mpl_set_notebook_params</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Obtain-configuration-from-YAML-files">
+<h2>Obtain configuration from YAML files<a class="headerlink" href="#Obtain-configuration-from-YAML-files" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">baseconfig</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">yload</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s2">&quot;configs/base_config.yaml&quot;</span><span class="p">))</span>
+<span class="n">viewconfig</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">yload</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s2">&quot;configs/view_config.yaml&quot;</span><span class="p">))</span>
+<span class="n">rd</span><span class="o">.</span><span class="n">deep_update</span><span class="p">(</span><span class="n">baseconfig</span><span class="p">,</span> <span class="n">viewconfig</span><span class="p">)</span>
+
+<span class="n">rawconfig</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">yload</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s2">&quot;configs/mahone_config.yaml&quot;</span><span class="p">))</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">merge_dicts</span><span class="p">(</span><span class="n">baseconfig</span><span class="p">,</span> <span class="n">rawconfig</span><span class="p">)</span>
+
+<span class="n">rd</span><span class="o">.</span><span class="n">prepare_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+<span class="c1"># Set the kadlu storage location to point to cached data</span>
+<span class="kn">import</span> <span class="nn">kadlu</span>
+<span class="n">kadlu</span><span class="o">.</span><span class="n">storage_cfg</span><span class="p">(</span><span class="n">setdir</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">rd</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">repo_path</span><span class="p">()</span><span class="si">}</span><span class="s1">/data/MahoneBay2016/kadlu_data/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+/home/runner/work/range-driver/range-driver/data/MahoneBay2016/kadlu_data/
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Read-Detections,-Metadata,-and-Environmental-Variables">
+<h2>Read Detections, Metadata, and Environmental Variables<a class="headerlink" href="#Read-Detections,-Metadata,-and-Environmental-Variables" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dets</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">Detections</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Detail-Reports">
+<h2>Detail Reports<a class="headerlink" href="#Detail-Reports" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rd</span><span class="o">.</span><span class="n">report_group_info</span><span class="p">(</span><span class="n">dets</span><span class="p">)</span>
+<span class="n">rd</span><span class="o">.</span><span class="n">report_tidal</span><span class="p">(</span><span class="n">dets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="Detection-rate-plots-for-data-screening">
+<h3>Detection rate plots for data screening<a class="headerlink" href="#Detection-rate-plots-for-data-screening" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VMT-1188739/tag-31335-F-H">
+<h3>VMT-1188739/tag-31335-F-H<a class="headerlink" href="#VMT-1188739/tag-31335-F-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VMT-1188739</th>
+      <th>A69-1601-31335</th>
+      <td>2016-03-09 15:59:51</td>
+      <td>2016-04-04 20:51:26</td>
+      <td>2308</td>
+      <td>263.0</td>
+      <td>39764.0</td>
+      <td>VMT-1188739/tag-31335-F-H</td>
+      <td>822.11224</td>
+      <td>V16-5x</td>
+      <td>31335</td>
+      <td>H</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_3.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_3.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR2W-100928/tag-31335-F-H">
+<h3>VR2W-100928/tag-31335-F-H<a class="headerlink" href="#VR2W-100928/tag-31335-F-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR2W-100928</th>
+      <th>A69-1601-31335</th>
+      <td>2016-03-17 14:48:17</td>
+      <td>2016-04-04 17:46:12</td>
+      <td>4167</td>
+      <td>263.0</td>
+      <td>8026.0</td>
+      <td>VR2W-100928/tag-31335-F-H</td>
+      <td>822.11224</td>
+      <td>V16-5x</td>
+      <td>31335</td>
+      <td>H</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_6.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_6.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR2W-128559/tag-31335-F-H">
+<h3>VR2W-128559/tag-31335-F-H<a class="headerlink" href="#VR2W-128559/tag-31335-F-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR2W-128559</th>
+      <th>A69-1601-31335</th>
+      <td>2016-03-17 14:48:08</td>
+      <td>2016-04-04 17:45:36</td>
+      <td>3710</td>
+      <td>263.0</td>
+      <td>9684.0</td>
+      <td>VR2W-128559/tag-31335-F-H</td>
+      <td>822.11224</td>
+      <td>V16-5x</td>
+      <td>31335</td>
+      <td>H</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_9.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_9.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR4-UWM-250473/tag-31335-F-H">
+<h3>VR4-UWM-250473/tag-31335-F-H<a class="headerlink" href="#VR4-UWM-250473/tag-31335-F-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR4-UWM-250473</th>
+      <th>A69-1601-31335</th>
+      <td>2016-03-17 14:48:21</td>
+      <td>2016-04-04 17:51:30</td>
+      <td>2866</td>
+      <td>263.0</td>
+      <td>7320.0</td>
+      <td>VR4-UWM-250473/tag-31335-F-H</td>
+      <td>822.11224</td>
+      <td>V16-5x</td>
+      <td>31335</td>
+      <td>H</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_12.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_12.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VMT-1188739/tag-31339-F-H">
+<h3>VMT-1188739/tag-31339-F-H<a class="headerlink" href="#VMT-1188739/tag-31339-F-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VMT-1188739</th>
+      <th>A69-1601-31339</th>
+      <td>2016-03-17 19:02:43</td>
+      <td>2016-04-04 16:48:31</td>
+      <td>80</td>
+      <td>276.0</td>
+      <td>789759.0</td>
+      <td>VMT-1188739/tag-31339-F-H</td>
+      <td>822.11224</td>
+      <td>V13-1x</td>
+      <td>31339</td>
+      <td>H</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_15.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_15.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR2W-100928/tag-31339-F-H">
+<h3>VR2W-100928/tag-31339-F-H<a class="headerlink" href="#VR2W-100928/tag-31339-F-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR2W-100928</th>
+      <th>A69-1601-31339</th>
+      <td>2016-03-17 14:49:52</td>
+      <td>2016-04-04 17:45:12</td>
+      <td>1214</td>
+      <td>32.0</td>
+      <td>370290.0</td>
+      <td>VR2W-100928/tag-31339-F-H</td>
+      <td>822.11224</td>
+      <td>V13-1x</td>
+      <td>31339</td>
+      <td>H</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_18.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_18.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR2W-128559/tag-31339-F-H">
+<h3>VR2W-128559/tag-31339-F-H<a class="headerlink" href="#VR2W-128559/tag-31339-F-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR2W-128559</th>
+      <th>A69-1601-31339</th>
+      <td>2016-03-17 14:53:55</td>
+      <td>2016-04-04 17:39:49</td>
+      <td>555</td>
+      <td>263.0</td>
+      <td>521763.0</td>
+      <td>VR2W-128559/tag-31339-F-H</td>
+      <td>822.11224</td>
+      <td>V13-1x</td>
+      <td>31339</td>
+      <td>H</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_21.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_21.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR4-UWM-250473/tag-31339-F-H">
+<h3>VR4-UWM-250473/tag-31339-F-H<a class="headerlink" href="#VR4-UWM-250473/tag-31339-F-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR4-UWM-250473</th>
+      <th>A69-1601-31339</th>
+      <td>2016-03-17 14:57:49</td>
+      <td>2016-04-04 17:40:12</td>
+      <td>585</td>
+      <td>263.0</td>
+      <td>439208.0</td>
+      <td>VR4-UWM-250473/tag-31339-F-H</td>
+      <td>822.11224</td>
+      <td>V13-1x</td>
+      <td>31339</td>
+      <td>H</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_24.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_24.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VMT-1188739/tag-31340-N-H">
+<h3>VMT-1188739/tag-31340-N-H<a class="headerlink" href="#VMT-1188739/tag-31340-N-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VMT-1188739</th>
+      <th>A69-1601-31340</th>
+      <td>2016-03-09 19:24:44</td>
+      <td>2016-04-04 20:51:44</td>
+      <td>4379</td>
+      <td>263.0</td>
+      <td>29890.0</td>
+      <td>VMT-1188739/tag-31340-N-H</td>
+      <td>520.35822</td>
+      <td>V13-1x</td>
+      <td>31340</td>
+      <td>H</td>
+      <td>260</td>
+      <td>340</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_27.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_27.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR2W-100928/tag-31340-N-H">
+<h3>VR2W-100928/tag-31340-N-H<a class="headerlink" href="#VR2W-100928/tag-31340-N-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR2W-100928</th>
+      <th>A69-1601-31340</th>
+      <td>2016-03-09 18:02:47</td>
+      <td>2016-04-04 17:52:01</td>
+      <td>6754</td>
+      <td>263.0</td>
+      <td>8438.0</td>
+      <td>VR2W-100928/tag-31340-N-H</td>
+      <td>520.35822</td>
+      <td>V13-1x</td>
+      <td>31340</td>
+      <td>H</td>
+      <td>260</td>
+      <td>340</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_30.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_30.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR2W-128559/tag-31340-N-H">
+<h3>VR2W-128559/tag-31340-N-H<a class="headerlink" href="#VR2W-128559/tag-31340-N-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR2W-128559</th>
+      <th>A69-1601-31340</th>
+      <td>2016-03-09 18:02:49</td>
+      <td>2016-04-04 17:51:25</td>
+      <td>6488</td>
+      <td>263.0</td>
+      <td>9438.0</td>
+      <td>VR2W-128559/tag-31340-N-H</td>
+      <td>520.35822</td>
+      <td>V13-1x</td>
+      <td>31340</td>
+      <td>H</td>
+      <td>260</td>
+      <td>340</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_33.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_33.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR4-UWM-250473/tag-31340-N-H">
+<h3>VR4-UWM-250473/tag-31340-N-H<a class="headerlink" href="#VR4-UWM-250473/tag-31340-N-H" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR4-UWM-250473</th>
+      <th>A69-1601-31340</th>
+      <td>2016-03-09 18:02:48</td>
+      <td>2016-04-04 17:51:48</td>
+      <td>4275</td>
+      <td>263.0</td>
+      <td>14553.0</td>
+      <td>VR4-UWM-250473/tag-31340-N-H</td>
+      <td>520.35822</td>
+      <td>V13-1x</td>
+      <td>31340</td>
+      <td>H</td>
+      <td>260</td>
+      <td>340</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_36.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_36.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VMT-1188739/tag-31341-N-L">
+<h3>VMT-1188739/tag-31341-N-L<a class="headerlink" href="#VMT-1188739/tag-31341-N-L" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VMT-1188739</th>
+      <th>A69-1601-31341</th>
+      <td>2016-03-09 16:25:31</td>
+      <td>2016-04-03 02:03:14</td>
+      <td>75</td>
+      <td>264.0</td>
+      <td>323765.0</td>
+      <td>VMT-1188739/tag-31341-N-L</td>
+      <td>520.35822</td>
+      <td>V9-2x</td>
+      <td>31341</td>
+      <td>L</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_39.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_39.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR2W-100928/tag-31341-N-L">
+<h3>VR2W-100928/tag-31341-N-L<a class="headerlink" href="#VR2W-100928/tag-31341-N-L" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR2W-100928</th>
+      <th>A69-1601-31341</th>
+      <td>2016-03-09 13:25:33</td>
+      <td>2016-04-04 17:04:53</td>
+      <td>5098</td>
+      <td>264.0</td>
+      <td>20264.0</td>
+      <td>VR2W-100928/tag-31341-N-L</td>
+      <td>520.35822</td>
+      <td>V9-2x</td>
+      <td>31341</td>
+      <td>L</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_42.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_42.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR2W-128559/tag-31341-N-L">
+<h3>VR2W-128559/tag-31341-N-L<a class="headerlink" href="#VR2W-128559/tag-31341-N-L" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR2W-128559</th>
+      <th>A69-1601-31341</th>
+      <td>2016-03-09 13:25:35</td>
+      <td>2016-04-04 17:45:50</td>
+      <td>3978</td>
+      <td>263.0</td>
+      <td>43082.0</td>
+      <td>VR2W-128559/tag-31341-N-L</td>
+      <td>520.35822</td>
+      <td>V9-2x</td>
+      <td>31341</td>
+      <td>L</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_45.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_45.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR4-UWM-250473/tag-31341-N-L">
+<h3>VR4-UWM-250473/tag-31341-N-L<a class="headerlink" href="#VR4-UWM-250473/tag-31341-N-L" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR4-UWM-250473</th>
+      <th>A69-1601-31341</th>
+      <td>2016-03-09 13:25:33</td>
+      <td>2016-04-04 17:41:01</td>
+      <td>2286</td>
+      <td>264.0</td>
+      <td>43120.0</td>
+      <td>VR4-UWM-250473/tag-31341-N-L</td>
+      <td>520.35822</td>
+      <td>V9-2x</td>
+      <td>31341</td>
+      <td>L</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_48.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_48.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR2W-100928/tag-31342-U-L">
+<h3>VR2W-100928/tag-31342-U-L<a class="headerlink" href="#VR2W-100928/tag-31342-U-L" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR2W-100928</th>
+      <th>A69-1601-31342</th>
+      <td>2016-03-17 17:48:02</td>
+      <td>2016-04-02 16:24:50</td>
+      <td>43</td>
+      <td>273.0</td>
+      <td>423850.0</td>
+      <td>VR2W-100928/tag-31342-U-L</td>
+      <td>NaN</td>
+      <td>V9-2x</td>
+      <td>31342</td>
+      <td>L</td>
+      <td>260</td>
+      <td>340</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_51.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_51.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR2W-128559/tag-31342-U-L">
+<h3>VR2W-128559/tag-31342-U-L<a class="headerlink" href="#VR2W-128559/tag-31342-U-L" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR2W-128559</th>
+      <th>A69-1601-31342</th>
+      <td>2016-03-17 16:22:33</td>
+      <td>2016-04-02 16:24:17</td>
+      <td>5</td>
+      <td>1138.0</td>
+      <td>1369251.0</td>
+      <td>VR2W-128559/tag-31342-U-L</td>
+      <td>NaN</td>
+      <td>V9-2x</td>
+      <td>31342</td>
+      <td>L</td>
+      <td>260</td>
+      <td>340</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_54.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_54.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="VR4-UWM-250473/tag-31342-U-L">
+<h3>VR4-UWM-250473/tag-31342-U-L<a class="headerlink" href="#VR4-UWM-250473/tag-31342-U-L" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tstart</th>
+      <th>tend</th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+      <th>Transmitter.Tag Family</th>
+      <th>Transmitter.ID</th>
+      <th>Transmitter.Power</th>
+      <th>Transmitter.Min delay</th>
+      <th>Transmitter.Max delay</th>
+      <th>Transmitter.Avg delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VR4-UWM-250473</th>
+      <th>A69-1601-31342</th>
+      <td>2016-03-17 16:23:02</td>
+      <td>2016-04-03 15:36:19</td>
+      <td>40</td>
+      <td>276.0</td>
+      <td>412585.0</td>
+      <td>VR4-UWM-250473/tag-31342-U-L</td>
+      <td>NaN</td>
+      <td>V9-2x</td>
+      <td>31342</td>
+      <td>L</td>
+      <td>260</td>
+      <td>340</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_57.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_9_57.png" />
+</div>
+</div>
+<div class="section" id="Data-Sources">
+<h3>Data Sources<a class="headerlink" href="#Data-Sources" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">kadlu_source_map</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Configured data sources:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">ydump</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sources</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+    CHS   (Canadian Hydrography Service)
+          bathymetry:       bathymetric data in Canada&#39;s waterways. metres, variable resolution
+
+    ERA5  (Global environmental dataset from Copernicus Climate Data Store)
+          wavedir:          mean wave direction, degrees
+          waveheight:       combined height of wind, waves, and swell. metres
+          waveperiod:       mean wave period, seconds
+          wind_uv:          wind speed computed as sqrt(u^2 + v^2) / 2, where u, v are direction vectors
+          wind_u:           wind speed coordinate U-vector, m/s
+          wind_v:           wind speed coordinate V-vector, m/s
+
+    GEBCO (General Bathymetric Chart of the Oceans)
+          bathymetry:       global bathymetric and topographic data. metres below sea level
+
+    HYCOM (Hybrid Coordinate Ocean Model)
+          salinity:         g/kg salt in water
+          temp:             degrees celsius
+          water_uv:         ocean current computed as sqrt(u^2 + v^2) / 2, where u, v are direction vectors
+          water_u:          ocean current coordinate U-vector, m/s
+          water_v:          ocean current coordinate V-vector, m/s
+
+    WWIII (WaveWatch Ocean Model Gen 3)
+          wavedir:          primary wave direction, degrees
+          waveheight:       combined height of wind and waves, metres
+          waveperiod:       primary mean wave period, seconds
+          wind_uv:          wind speed computed as sqrt(u^2 + v^2) / 2, where u, v are direction vectors
+          wind_u:           wind speed coordinate U-vector, m/s
+          wind_v:           wind speed coordinate V-vector, m/s
+
+Configured data sources:
+
+load_wavedir: era5
+load_waveheight: era5
+load_waveperiod: era5
+load_wind_uv: era5
+load_wind_u: era5
+load_wind_v: era5
+
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Maps-visualization">
+<h2>Maps visualization<a class="headerlink" href="#Maps-visualization" title="Permalink to this headline">¶</a></h2>
+<p>Map view including region of interest bound, environmental data source nodes, receiver and tag locations.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rd</span><span class="o">.</span><span class="n">report_map_view</span><span class="p">(</span><span class="n">dets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "9a1768d244274f7080a1e0087b322dc9"}</script></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># --------------------- Detail plots ------------------------</span>
+<span class="n">columns</span><span class="p">,</span> <span class="n">colnames</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">get_column_info</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+<span class="n">rd</span><span class="o">.</span><span class="n">displaymd</span><span class="p">(</span><span class="s2">&quot;## Plots of detection density and interval lengths &lt;br/&gt; against tidal phase (t2) and </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">colnames</span><span class="p">[</span><span class="n">column</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="Plots-of-detection-density-and-interval-lengths--against-tidal-phase-(t2)-and-water-velocity">
+<h3>Plots of detection density and interval lengths  against tidal phase (t2) and water velocity<a class="headerlink" href="#Plots-of-detection-density-and-interval-lengths--against-tidal-phase-(t2)-and-water-velocity" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rd</span><span class="o">.</span><span class="n">report_all_group_plots</span><span class="p">(</span><span class="n">dets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_0.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_0.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_1.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_2.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_2.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_3.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_3.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_4.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_4.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_5.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_5.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_6.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_6.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_7.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_7.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_8.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_8.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_9.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_9.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_10.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_10.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_11.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_11.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_12.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_12.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_13.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_13.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_14.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_14.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_15.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_15.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_16.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_16.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_17.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_17.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_18.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_18.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_19.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_19.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_20.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_20.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_21.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_21.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_22.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_22.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_23.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_23.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_24.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_24.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_25.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_25.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_26.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_26.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_27.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_27.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_28.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_28.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_29.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_29.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_30.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_30.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_31.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_31.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_32.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_32.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_33.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_33.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_34.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_34.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_35.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_35.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_36.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_36.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_37.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_15_37.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rd</span><span class="o">.</span><span class="n">report_heatmap</span><span class="p">(</span><span class="n">dets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_16_0.png" src="../../_images/tutorials_MahoneBay2016_dr_factor_study_brief_16_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Discussion">
+<h1>Discussion<a class="headerlink" href="#Discussion" title="Permalink to this headline">¶</a></h1>
+<p>In the above visual summary, the <strong>H-N</strong> combinations, i.e. high-power, near distance, are the ones where water velocity shows the least effect on variations in detection rate. This confirms expectations and shows promise for the proposed study method. Next steps include:</p>
+<ul class="simple">
+<li><p>Continue to work with detection rate (DR) as calculated in a fixed grid of time windows</p></li>
+<li><p>Compare variations of DR with respect to other environmental variables</p></li>
+<li><p>Import other environmental variables automatically via data source APIs (ERDDAP, kadlu.fetch)</p></li>
+<li><p>Compare different scenarios of factor importance depending on environmental setting of the study</p></li>
+</ul>
+</div>
+<div class="section" id="Acknowledgements">
+<h1>Acknowledgements<a class="headerlink" href="#Acknowledgements" title="Permalink to this headline">¶</a></h1>
+<p>The above analysis was performed using <a class="reference external" href="http://members.devel.oceantrack.org/erddap/tabledap/otnunit_aat_detections.html">data from OTN</a> (provided by Jonathan Pye of OTN), in combination with HYCOM environmental data and tidal data provided by Casey Hilliard (Meridian/Dal), with a synthesized dataset prepared by Matthew Berkowitz (SFU), with project definition and guidance provided by Oliver Kirsebom (Dal) and Ines Hessler (Dal) as part of the <a class="reference external" href="https://meridian.cs.dal.ca">Meridian Network</a>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"29a77fb29f9848109a64b918df2cbf23": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "73e5cc0346d648068b58dead6352be6a": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "move"}}, "5da55e0b892048e5adce4e5109000569": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletTileLayerView", "attribution": "Map data (c) <a href=\"https://openstreetmap.org\">OpenStreetMap</a> contributors", "base": true, "bottom": true, "detect_retina": false, "loading": false, "max_native_zoom": 18, "max_zoom": 19, "min_native_zoom": 0, "min_zoom": 1, "name": "", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "tile_size": 256, "tms": false, "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", "visible": true}}, "8a3631d3df4245558f516dcbf3ccff02": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3a1441d332cb4959a918c9b82811aadd": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "9a1768d244274f7080a1e0087b322dc9": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [44.1541333, -64.17682], "close_popup_on_click": true, "controls": ["IPY_MODEL_e40738e5f805475fba6d8c1227c94f40", "IPY_MODEL_d5c5526e58f04513a4543bd7bbd1fe50"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_29a77fb29f9848109a64b918df2cbf23", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_73e5cc0346d648068b58dead6352be6a", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_5da55e0b892048e5adce4e5109000569", "IPY_MODEL_819478fa75d3441faca5e27721baf61b", "IPY_MODEL_0595ed6b9d214b0b8516347d360a7c84", "IPY_MODEL_32bee7d8b7f54e1bb6eaa068941057b3"], "layout": "IPY_MODEL_8a3631d3df4245558f516dcbf3ccff02", "left": 9007199254740991.0, "max_zoom": 18.0, "min_zoom": 1.0, "modisdate": "yesterday", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap", "zoom_start"], "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_3a1441d332cb4959a918c9b82811aadd", "tap": true, "tap_tolerance": 15, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 8.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0, "zoom_start": 12.0}}, "e40738e5f805475fba6d8c1227c94f40": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "d5c5526e58f04513a4543bd7bbd1fe50": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "819478fa75d3441faca5e27721baf61b": {"model_name": "LeafletRectangleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletRectangleModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletRectangleView", "base": false, "bottom": false, "bounds": [[44.7541333, -63.176820000000006], [43.5541333, -65.17682]], "color": "#2e4053", "dash_array": null, "draggable": false, "fill": true, "fill_color": "#2e4053", "fill_opacity": 0.1, "line_cap": "round", "line_join": "round", "locations": [], "name": "", "no_clip": true, "opacity": 0.5, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "transform": false, "uniform_scaling": false, "weight": 3}}, "24ef4e32193649d7ad5df6440ffa76db": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "darkblue", "name": "microphone", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "65987a0fae8245a5b86d2a838a178e84": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f4aee59ca4b94d80b13a0d9a998a2a6b": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d57834152073458982f15d325a9fe809": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_65987a0fae8245a5b86d2a838a178e84", "placeholder": "\u200b", "style": "IPY_MODEL_f4aee59ca4b94d80b13a0d9a998a2a6b", "value": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>Receiver.bottom_depth</th>\n      <th>Receiver.depth</th>\n      <th>Receiver.ID</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>203</td>\n      <td>183</td>\n      <td>250473</td>\n    </tr>\n    <tr>\n      <td>203</td>\n      <td>198</td>\n      <td>128559</td>\n    </tr>\n    <tr>\n      <td>203</td>\n      <td>193</td>\n      <td>100928</td>\n    </tr>\n    <tr>\n      <td>203</td>\n      <td>188</td>\n      <td>1188739</td>\n    </tr>\n  </tbody>\n</table>"}}, "03593e8d58874d529e603a12dcf101cf": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_24ef4e32193649d7ad5df6440ffa76db", "keyboard": true, "location": [44.5541333, -64.17682], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_d57834152073458982f15d325a9fe809", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "00571591f74449e1aa684155597df852": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "darkblue", "name": "microphone", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "d6e1dd6a4f9144c2bfd5364b3b0f798a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ee1bdac595144f5e8d70e0eb99360b38": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "17e4e38e80a24bab96c61afacb9aab0a": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_d6e1dd6a4f9144c2bfd5364b3b0f798a", "placeholder": "\u200b", "style": "IPY_MODEL_ee1bdac595144f5e8d70e0eb99360b38", "value": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>Receiver.bottom_depth</th>\n      <th>Receiver.depth</th>\n      <th>Receiver.ID</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>190</td>\n      <td>165</td>\n      <td>31341</td>\n    </tr>\n    <tr>\n      <td>190</td>\n      <td>163</td>\n      <td>31340</td>\n    </tr>\n    <tr>\n      <td>190</td>\n      <td>161</td>\n      <td>111</td>\n    </tr>\n  </tbody>\n</table>"}}, "7fb9a1c9ec6d4fc1b4acd708d99cec31": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_00571591f74449e1aa684155597df852", "keyboard": true, "location": [44.55876, -64.17783], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_17e4e38e80a24bab96c61afacb9aab0a", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "9ccfa002164c432c887e7b1c2e8c5a65": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "darkblue", "name": "microphone", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "783d6f3128e64a5d9eb55fa811d4a0b1": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fa8cf0a9d04c4b338be9aea31fec4347": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "2a5b1495df9641d7b7b1f65c18b49a28": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_783d6f3128e64a5d9eb55fa811d4a0b1", "placeholder": "\u200b", "style": "IPY_MODEL_fa8cf0a9d04c4b338be9aea31fec4347", "value": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>Receiver.bottom_depth</th>\n      <th>Receiver.depth</th>\n      <th>Receiver.ID</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>180</td>\n      <td>155</td>\n      <td>3134</td>\n    </tr>\n    <tr>\n      <td>180</td>\n      <td>153</td>\n      <td>31339</td>\n    </tr>\n    <tr>\n      <td>180</td>\n      <td>151</td>\n      <td>31335</td>\n    </tr>\n    <tr>\n      <td>180</td>\n      <td>150</td>\n      <td>0</td>\n    </tr>\n  </tbody>\n</table>"}}, "9d0da84a820349e0b196347aff6ea0a2": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_9ccfa002164c432c887e7b1c2e8c5a65", "keyboard": true, "location": [44.56026, -64.18262], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_2a5b1495df9641d7b7b1f65c18b49a28", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "0595ed6b9d214b0b8516347d360a7c84": {"model_name": "LeafletMarkerClusterModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerClusterModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerClusterView", "base": false, "bottom": false, "markers": ["IPY_MODEL_03593e8d58874d529e603a12dcf101cf", "IPY_MODEL_7fb9a1c9ec6d4fc1b4acd708d99cec31", "IPY_MODEL_9d0da84a820349e0b196347aff6ea0a2"], "name": "", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50}}, "5d87b7a4be594ff1befd1fc2f60a9ab9": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "d1e35044e11244f988d44a1cc1266ab5": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_5d87b7a4be594ff1befd1fc2f60a9ab9", "keyboard": true, "location": [44.0, -65.0], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "6ebeabaa1f1943c4b67ad9eded4b935c": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "0af7006773444dd49dec387b0429253e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_6ebeabaa1f1943c4b67ad9eded4b935c", "keyboard": true, "location": [44.5, -63.75], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "99a1d7e9fe1f47488d5f14663a788072": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "f17b8d5b24b341229fd14d4d9f5e2423": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_99a1d7e9fe1f47488d5f14663a788072", "keyboard": true, "location": [44.5, -63.5], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "645b6f3a02fa41d59f0702dce095be10": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "fbee69b829ea450a872e6a32201e3ecc": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_645b6f3a02fa41d59f0702dce095be10", "keyboard": true, "location": [44.5, -63.25], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "f320050c73794c04bfdccc1799ff6705": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "e0e7f4133c054688912e5958376c842d": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_f320050c73794c04bfdccc1799ff6705", "keyboard": true, "location": [44.25, -64.5], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "27594a91c6994cf894916e2d189e84c8": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "08ffae59b1204c73a87d5c5839cf5446": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_27594a91c6994cf894916e2d189e84c8", "keyboard": true, "location": [44.25, -64.75], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "d6f7777179bc4c60ade0eadb3856bdeb": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "ce11ba6739f0411a81e992d187e09a79": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_d6f7777179bc4c60ade0eadb3856bdeb", "keyboard": true, "location": [44.25, -64.25], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "c0e4fb2774bb4b4fab9d1cc4813fdacf": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "aec768b5f78641a19824c75c0ad5b28b": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_c0e4fb2774bb4b4fab9d1cc4813fdacf", "keyboard": true, "location": [44.25, -64.0], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "dbd5cd4d730346378927b8d4d0fb7ab9": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "67c33594c8734fe281daf681c4091c26": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_dbd5cd4d730346378927b8d4d0fb7ab9", "keyboard": true, "location": [44.75, -65.0], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "3e5a6fa52bbb45bf9f612ca3baf1a094": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "f494d1c052ef4d73a23747b3b228f499": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_3e5a6fa52bbb45bf9f612ca3baf1a094", "keyboard": true, "location": [43.75, -64.75], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "efbb4deb661a480dae59ea1cca34be3c": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "5ea3f9335ca448fc9ae0bedba3e0eb2e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_efbb4deb661a480dae59ea1cca34be3c", "keyboard": true, "location": [43.75, -64.0], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "8b28236c33564102b830f576f75c6f6d": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "e0ac49b61125436bb6612b1211c62e82": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_8b28236c33564102b830f576f75c6f6d", "keyboard": true, "location": [43.75, -64.25], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "76ca81db2d274403aa7f004685e14159": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "baa4d1574f9e4577ac2302539b2cc906": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_76ca81db2d274403aa7f004685e14159", "keyboard": true, "location": [43.75, -64.5], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "09d5569c67114b96b96f4ac358264a8e": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "b35f02fc060e4e80b6cbc0c421a07377": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_09d5569c67114b96b96f4ac358264a8e", "keyboard": true, "location": [44.0, -63.5], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "7cea5d51a371473899f7e75c89afb35e": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "4874e934ae4b4189a52ea3acb83f968b": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_7cea5d51a371473899f7e75c89afb35e", "keyboard": true, "location": [44.0, -63.25], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "216037c009e74467a69febfdb4dd61f9": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "59ac71872cb140d8a9c17c71f390238b": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_216037c009e74467a69febfdb4dd61f9", "keyboard": true, "location": [44.0, -63.75], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "bffc3683500b412bbd76129c5692cb12": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "20b3f70713fb41f4bc1bbb466302209d": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_bffc3683500b412bbd76129c5692cb12", "keyboard": true, "location": [44.5, -64.75], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "0faee78fa8044fe886054793d6b880aa": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "b4a06529a8e84691b7ee1a7ded1c1a7d": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_0faee78fa8044fe886054793d6b880aa", "keyboard": true, "location": [44.5, -64.5], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "7bf530b013594b53982b08b5e6bef11b": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "fc74e84e560b462c85f957bc835716d1": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_7bf530b013594b53982b08b5e6bef11b", "keyboard": true, "location": [44.5, -64.25], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "f6c724808e764edfab59784175c82483": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "99bd6759e0ba432bbc5539fa591e406a": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_f6c724808e764edfab59784175c82483", "keyboard": true, "location": [44.5, -64.0], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "b80a5da30d67406ab752ea0bd5bbd5d7": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "87964b7301e54053b2fd00703f558b8e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_b80a5da30d67406ab752ea0bd5bbd5d7", "keyboard": true, "location": [43.75, -65.0], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "1a2b91f303e4447c9679660f4a96cb1f": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "e28a3b32401b469282ce6d2a209251e8": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_1a2b91f303e4447c9679660f4a96cb1f", "keyboard": true, "location": [44.25, -65.0], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "7fdc32affac14baebdb303e500ddb52a": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "72c3af5cdfae46e5a93e65c633fab50d": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_7fdc32affac14baebdb303e500ddb52a", "keyboard": true, "location": [44.75, -63.75], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "ea671b772d414330b9b653f16a02414a": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "742b1290d77547baac29a2dbad0d29b4": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_ea671b772d414330b9b653f16a02414a", "keyboard": true, "location": [44.75, -63.5], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "7826d3ebef7342aab0ef0e37770d086f": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "7c132080f7a3459db73a977260caefeb": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_7826d3ebef7342aab0ef0e37770d086f", "keyboard": true, "location": [44.75, -63.25], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "60d201b8167b4803a52b25bdaa423849": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "5b0064c10b6649aeaaf76b89e4acb847": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_60d201b8167b4803a52b25bdaa423849", "keyboard": true, "location": [44.0, -64.75], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "7110da7f721c4b64ab29eaf8836fc780": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "6952f317687242819a87403e381f0fe2": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_7110da7f721c4b64ab29eaf8836fc780", "keyboard": true, "location": [44.0, -64.5], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "0a53f340f2bc489084aa2ada057c1af0": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "2cb410b135e34eee9e2906e1f702b101": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_0a53f340f2bc489084aa2ada057c1af0", "keyboard": true, "location": [44.0, -64.25], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "fb5aa6de00d0416b9a6689e9cc2abd45": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "176a3386ae7d4322a8ac893866155574": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_fb5aa6de00d0416b9a6689e9cc2abd45", "keyboard": true, "location": [44.0, -64.0], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "99f55c283d684ce3b492813db9a7e609": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "e14f86946caa414a8a0c1e3cd3f293c7": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_99f55c283d684ce3b492813db9a7e609", "keyboard": true, "location": [44.5, -65.0], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "a4b292614bfe47bb92c46da9fe8de8c6": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "62341cbf921b4c23a5a7584605d19065": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_a4b292614bfe47bb92c46da9fe8de8c6", "keyboard": true, "location": [43.75, -63.75], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "81932b8e88b24c7cbe30a8d0b337c199": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "1ae4d0e32c684e6aa998948b01c91dc2": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_81932b8e88b24c7cbe30a8d0b337c199", "keyboard": true, "location": [43.75, -63.5], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "170da6f2c9df43c9916f4e0d5e949458": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "8278ea13317f4059a88ecdd64a5c2ba5": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_170da6f2c9df43c9916f4e0d5e949458", "keyboard": true, "location": [43.75, -63.25], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "1466ac77ae2b4a2e84a791649733aadb": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "ca2e1ce7ef0441878aa8964f952f5363": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_1466ac77ae2b4a2e84a791649733aadb", "keyboard": true, "location": [44.25, -63.75], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "1d618049f0d746c780aaf972ba565126": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "cfe427acc71d4d07b93d4bc3292e6f9c": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_1d618049f0d746c780aaf972ba565126", "keyboard": true, "location": [44.25, -63.5], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "148bd932077b4a7582aa2ae46d37f263": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "8709107148594cc2b681a53cd50987f7": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_148bd932077b4a7582aa2ae46d37f263", "keyboard": true, "location": [44.25, -63.25], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "5e135b23c58b498db6ff5842c0bc37b3": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "ef043e533e314c3389099d1a6f014aa9": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_5e135b23c58b498db6ff5842c0bc37b3", "keyboard": true, "location": [44.75, -64.75], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "c71612b2e21d41318918b3c833e4bfaa": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "50296381004e4ecd9c908f19d91e41f5": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_c71612b2e21d41318918b3c833e4bfaa", "keyboard": true, "location": [44.75, -64.5], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "7e7e9ca504ce46d9b7715732fea54c47": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "c92e4f7e1f0a4b19ad94a6a16b74d09e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_7e7e9ca504ce46d9b7715732fea54c47", "keyboard": true, "location": [44.75, -64.25], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "ca5e2d315f5744e984a8d35bf286703b": {"model_name": "LeafletAwesomeIconModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletAwesomeIconModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletAwesomeIconView", "base": false, "bottom": false, "icon_color": "white", "marker_color": "lightred", "name": "info", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "spin": false}}, "2a430a681cbb4748891840658e362fbe": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": "IPY_MODEL_ca5e2d315f5744e984a8d35bf286703b", "keyboard": true, "location": [44.75, -64.0], "name": "", "opacity": 0.8, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "", "visible": true, "z_index_offset": 0}}, "32bee7d8b7f54e1bb6eaa068941057b3": {"model_name": "LeafletMarkerClusterModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.13.5", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.13.5", "_model_name": "LeafletMarkerClusterModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.13.5", "_view_name": "LeafletMarkerClusterView", "base": false, "bottom": false, "markers": ["IPY_MODEL_d1e35044e11244f988d44a1cc1266ab5", "IPY_MODEL_0af7006773444dd49dec387b0429253e", "IPY_MODEL_f17b8d5b24b341229fd14d4d9f5e2423", "IPY_MODEL_fbee69b829ea450a872e6a32201e3ecc", "IPY_MODEL_e0e7f4133c054688912e5958376c842d", "IPY_MODEL_08ffae59b1204c73a87d5c5839cf5446", "IPY_MODEL_ce11ba6739f0411a81e992d187e09a79", "IPY_MODEL_aec768b5f78641a19824c75c0ad5b28b", "IPY_MODEL_67c33594c8734fe281daf681c4091c26", "IPY_MODEL_f494d1c052ef4d73a23747b3b228f499", "IPY_MODEL_5ea3f9335ca448fc9ae0bedba3e0eb2e", "IPY_MODEL_e0ac49b61125436bb6612b1211c62e82", "IPY_MODEL_baa4d1574f9e4577ac2302539b2cc906", "IPY_MODEL_b35f02fc060e4e80b6cbc0c421a07377", "IPY_MODEL_4874e934ae4b4189a52ea3acb83f968b", "IPY_MODEL_59ac71872cb140d8a9c17c71f390238b", "IPY_MODEL_20b3f70713fb41f4bc1bbb466302209d", "IPY_MODEL_b4a06529a8e84691b7ee1a7ded1c1a7d", "IPY_MODEL_fc74e84e560b462c85f957bc835716d1", "IPY_MODEL_99bd6759e0ba432bbc5539fa591e406a", "IPY_MODEL_87964b7301e54053b2fd00703f558b8e", "IPY_MODEL_e28a3b32401b469282ce6d2a209251e8", "IPY_MODEL_72c3af5cdfae46e5a93e65c633fab50d", "IPY_MODEL_742b1290d77547baac29a2dbad0d29b4", "IPY_MODEL_7c132080f7a3459db73a977260caefeb", "IPY_MODEL_5b0064c10b6649aeaaf76b89e4acb847", "IPY_MODEL_6952f317687242819a87403e381f0fe2", "IPY_MODEL_2cb410b135e34eee9e2906e1f702b101", "IPY_MODEL_176a3386ae7d4322a8ac893866155574", "IPY_MODEL_e14f86946caa414a8a0c1e3cd3f293c7", "IPY_MODEL_62341cbf921b4c23a5a7584605d19065", "IPY_MODEL_1ae4d0e32c684e6aa998948b01c91dc2", "IPY_MODEL_8278ea13317f4059a88ecdd64a5c2ba5", "IPY_MODEL_ca2e1ce7ef0441878aa8964f952f5363", "IPY_MODEL_cfe427acc71d4d07b93d4bc3292e6f9c", "IPY_MODEL_8709107148594cc2b681a53cd50987f7", "IPY_MODEL_ef043e533e314c3389099d1a6f014aa9", "IPY_MODEL_50296381004e4ecd9c908f19d91e41f5", "IPY_MODEL_c92e4f7e1f0a4b19ad94a6a16b74d09e", "IPY_MODEL_2a430a681cbb4748891840658e362fbe"], "name": "", "options": [], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50}}}, "version_major": 2, "version_minor": 0}
+</script></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../modules/index.html" class="btn btn-neutral float-right" title="range_driver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../NSOG_Jan2018/NSOG_Jan2018_dr_factor_study_brief.html" class="btn btn-neutral float-left" title="Northern Strait of Georgia — January 2018" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SFU.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

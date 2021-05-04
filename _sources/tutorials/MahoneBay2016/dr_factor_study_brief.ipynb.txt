@@ -1,0 +1,236 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Range test analysis"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Analysis of acoustic tracking performance using range test data obtained in Mahone Bay near Halifax, NS, by OTN field experiments during March-April 2016.\n",
+    "\n",
+    "Components of this notebook:\n",
+    "\n",
+    " * load detection events and deployment metadata about receivers and transmitters\n",
+    " * analyse detections for each receiver/transmitter combination separately\n",
+    " * calculate interval lengths between detections and detection rates within fixed time windows\n",
+    " * calculate further metadata descriptions, e.g. distance between stations, R/T names involving distinctions such as near/far distance or high/low power\n",
+    " * process tidal data for the time period considering high/low tide times and the observed heights, calculate tidal phase and height change for each detection timestamp via cosine interpolation of heights\n",
+    " * obtain further environmental variables from external data sources\n",
+    " * produce different visualizations to study correlation of env. variables and operating conditions with detection rate\n",
+    "\n",
+    "**Data:** For most sources for environmental variables data has been collected for 3 hour intervals."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "See [installation instructions](../docs/install.md) on how to run this notebook."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import range_driver as rd\n",
+    "    \n",
+    "import pandas as pd\n",
+    "%matplotlib inline\n",
+    "rd.mpl_set_notebook_params()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Obtain configuration from YAML files"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "baseconfig = rd.yload(rd.load_file(\"configs/base_config.yaml\"))\n",
+    "viewconfig = rd.yload(rd.load_file(\"configs/view_config.yaml\"))\n",
+    "rd.deep_update(baseconfig, viewconfig)\n",
+    "\n",
+    "rawconfig = rd.yload(rd.load_file(\"configs/mahone_config.yaml\"))\n",
+    "config = rd.merge_dicts(baseconfig, rawconfig)\n",
+    "\n",
+    "rd.prepare_config(config)\n",
+    "\n",
+    "# Set the kadlu storage location to point to cached data\n",
+    "import kadlu\n",
+    "kadlu.storage_cfg(setdir=f'{rd.utils.repo_path()}/data/MahoneBay2016/kadlu_data/')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Read Detections, Metadata, and Environmental Variables"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "dets = rd.Detections(config)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Detail Reports"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "rd.report_group_info(dets)\n",
+    "rd.report_tidal(dets)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Data Sources"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-11-17T18:47:09.169759Z",
+     "start_time": "2020-11-17T18:47:09.165447Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "print(rd.kadlu_source_map())\n",
+    "print(\"Configured data sources:\\n\")\n",
+    "print(rd.ydump(config.data.sources))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Maps visualization\n",
+    "Map view including region of interest bound, environmental data source nodes, receiver and tag locations."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "rd.report_map_view(dets)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# --------------------- Detail plots ------------------------\n",
+    "columns, colnames, column = rd.get_column_info(config)\n",
+    "rd.displaymd(\"## Plots of detection density and interval lengths <br/> against tidal phase (t2) and {}\".format(colnames[column]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "rd.report_all_group_plots(dets)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "rd.report_heatmap(dets)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Discussion\n",
+    "\n",
+    "In the above visual summary, the **H-N** combinations, i.e. high-power, near distance, are the ones where water velocity shows the least effect on variations in detection rate. This confirms expectations and shows promise for the proposed study method. Next steps include:\n",
+    "\n",
+    "- Continue to work with detection rate (DR) as calculated in a fixed grid of time windows\n",
+    "- Compare variations of DR with respect to other environmental variables\n",
+    "- Import other environmental variables automatically via data source APIs (ERDDAP, kadlu.fetch)\n",
+    "- Compare different scenarios of factor importance depending on environmental setting of the study \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Acknowledgements\n",
+    "\n",
+    "The above analysis was performed using [data from OTN](http://members.devel.oceantrack.org/erddap/tabledap/otnunit_aat_detections.html) (provided by Jonathan Pye of OTN), in combination with HYCOM environmental data and tidal data provided by Casey Hilliard (Meridian/Dal), with a synthesized dataset prepared by Matthew Berkowitz (SFU), with project definition and guidance provided by Oliver Kirsebom (Dal) and Ines Hessler (Dal) as part of the [Meridian Network](https://meridian.cs.dal.ca)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "authors": [
+   {
+    "name": "Steven Bergner (SFU)"
+   }
+  ],
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  },
+  "title": "Acoustic tracking performance analysis"
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
