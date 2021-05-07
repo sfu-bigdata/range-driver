@@ -48,6 +48,18 @@ jobs:
           git clone https://github.com/sfu-bigdata/range-driver-tutorials.git
           mv range-driver-tutorials/tutorials/NSOG_Jan2018 docs/source/tutorials/
           mv range-driver-tutorials/tutorials/MahoneBay2016 docs/source/tutorials/
+      - name: Run tutorial notebooks
+        run: |
+          cd docs/source/tutorials/MahoneBay2016
+          printf "import kadlu\nimport range_driver as rd\nkadlu.storage_cfg(f'{rd.utils.repo_path()}/data/MahoneBay2016/kadlu_data')\n" > setup_mahone.py
+          python3 setup_mahone.py
+          rm setup_mahone.py
+          jupyter nbconvert --to notebook --execute dr_factor_study_brief.ipynb
+          cd ../../../docs/source/tutorials/NSOG_Jan2018/
+          printf "import kadlu\nimport range_driver as rd\nkadlu.storage_cfg(f'{rd.utils.repo_path()}/data/NSOG_Jan2018/kadlu_data')\n" > setup_nsog.py
+          python3 setup_nsog.py
+          rm setup_nsog.py
+          jupyter nbconvert --to notebook --execute NSOG_Jan2018_dr_factor_study_brief.ipynb
       - name: Build Sphinx docs
         run: | 
           cd docs
