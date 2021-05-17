@@ -70,8 +70,6 @@
    },
    "outputs": [],
    "source": [
-    "# Import packages\n",
-    "# from acoustic_tracking import *\n",
     "import range_driver as rd\n",
     "import copy\n",
     "import pandas as pd\n",
@@ -87,8 +85,10 @@
     "# Setup matplotlib inline plotting\n",
     "%matplotlib inline\n",
     "rd.mpl_set_notebook_params()\n",
+    "show_details = False\n",
     "\n",
-    "show_details = False"
+    "# Set the kadlu storage location to point to cached data\n",
+    "kadlu.storage_cfg(setdir=f'{rd.utils.repo_path()}/data/MahoneBay2016/kadlu_data/')"
    ]
   },
   {
@@ -631,7 +631,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.7.7"
+   "version": "3.8.8"
   },
   "title": "Acoustic tracking performance analysis",
   "toc": {

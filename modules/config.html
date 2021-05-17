@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -203,26 +206,26 @@
 <div class="section" id="module-range_driver.config">
 <span id="configuration-processing"></span><h1>Configuration Processing<a class="headerlink" href="#module-range_driver.config" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="range_driver.config.get_column_info">
-<code class="sig-prename descclassname"><span class="pre">range_driver.config.</span></code><code class="sig-name descname"><span class="pre">get_column_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/config.py#L37-L46"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.config.get_column_info" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.config.get_column_info">
+<span class="sig-prename descclassname"><span class="pre">range_driver.config.</span></span><span class="sig-name descname"><span class="pre">get_column_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/config.py#L37-L46"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.config.get_column_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retreives the column information from the configuration object, including which columns have
 been indicated for further analysis.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.config.make_params">
-<code class="sig-prename descclassname"><span class="pre">range_driver.config.</span></code><code class="sig-name descname"><span class="pre">make_params</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/config.py#L27-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.config.make_params" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.config.make_params">
+<span class="sig-prename descclassname"><span class="pre">range_driver.config.</span></span><span class="sig-name descname"><span class="pre">make_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/config.py#L27-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.config.make_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a params object from our configuration, for use during plotting and reporting.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.config.prepare_bounds">
-<code class="sig-prename descclassname"><span class="pre">range_driver.config.</span></code><code class="sig-name descname"><span class="pre">prepare_bounds</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/config.py#L10-L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.config.prepare_bounds" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.config.prepare_bounds">
+<span class="sig-prename descclassname"><span class="pre">range_driver.config.</span></span><span class="sig-name descname"><span class="pre">prepare_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/config.py#L10-L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.config.prepare_bounds" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.config.prepare_config">
-<code class="sig-prename descclassname"><span class="pre">range_driver.config.</span></code><code class="sig-name descname"><span class="pre">prepare_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">config</span></em>, <em class="sig-param"><span class="pre">config_prepare_hooks={'bounds':</span> <span class="pre">&lt;function</span> <span class="pre">prepare_bounds&gt;</span></em>, <em class="sig-param"><span class="pre">'data:tidal':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;</span></em>, <em class="sig-param"><span class="pre">'file_map':</span> <span class="pre">&lt;function</span> <span class="pre">prepend_data_dir&gt;</span></em>, <em class="sig-param"><span class="pre">'reader:nsog':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;</span></em>, <em class="sig-param"><span class="pre">'reader:otn':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;}</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/config.py#L80-L103"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.config.prepare_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.config.prepare_config">
+<span class="sig-prename descclassname"><span class="pre">range_driver.config.</span></span><span class="sig-name descname"><span class="pre">prepare_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">config</span></em>, <em class="sig-param"><span class="pre">config_prepare_hooks={'bounds':</span> <span class="pre">&lt;function</span> <span class="pre">prepare_bounds&gt;</span></em>, <em class="sig-param"><span class="pre">'data:tidal':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;</span></em>, <em class="sig-param"><span class="pre">'file_map':</span> <span class="pre">&lt;function</span> <span class="pre">prepend_data_dir&gt;</span></em>, <em class="sig-param"><span class="pre">'reader:nsog':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;</span></em>, <em class="sig-param"><span class="pre">'reader:otn':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;}</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/config.py#L80-L103"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.config.prepare_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply transformations to config dicts to make them easier to use.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -243,8 +246,8 @@ config dictionary.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.config.prepend_data_dir">
-<code class="sig-prename descclassname"><span class="pre">range_driver.config.</span></code><code class="sig-name descname"><span class="pre">prepend_data_dir</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data_dir'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/config.py#L52-L63"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.config.prepend_data_dir" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.config.prepend_data_dir">
+<span class="sig-prename descclassname"><span class="pre">range_driver.config.</span></span><span class="sig-name descname"><span class="pre">prepend_data_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data_dir'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/config.py#L52-L63"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.config.prepend_data_dir" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

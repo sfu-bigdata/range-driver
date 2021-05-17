@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -213,15 +216,15 @@
 <span id="dictionary-utilities"></span><h2>Dictionary Utilities<a class="headerlink" href="#module-range_driver.dict_utils" title="Permalink to this headline">¶</a></h2>
 <p>Convenience functions for dictionary access and YAML</p>
 <dl class="py exception">
-<dt id="range_driver.dict_utils.YAMLProcessingError">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></code><code class="sig-name descname"><span class="pre">YAMLProcessingError</span></code><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L99-L101"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.YAMLProcessingError" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.dict_utils.YAMLProcessingError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></span><span class="sig-name descname"><span class="pre">YAMLProcessingError</span></span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L99-L101"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.YAMLProcessingError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Indicate downstream processing error of loaded YAML structure</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.dict_utils.deep_update">
-<code class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></code><code class="sig-name descname"><span class="pre">deep_update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L23-L42"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.deep_update" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.dict_utils.deep_update">
+<span class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></span><span class="sig-name descname"><span class="pre">deep_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L23-L42"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.deep_update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recursively updates <cite>d1</cite> with <cite>d2</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -242,8 +245,8 @@ overwritten by the d2 value. Works recursively to update nested dictionaries.</p
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.dict_utils.make_Bunch">
-<code class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></code><code class="sig-name descname"><span class="pre">make_Bunch</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">docstr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L79-L94"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.make_Bunch" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.dict_utils.make_Bunch">
+<span class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></span><span class="sig-name descname"><span class="pre">make_Bunch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">docstr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L79-L94"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.make_Bunch" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Construct a Bunch collection with alternative doc string</dt><dd><p>All arguments after <cite>docstr</cite> are passed to the Bunch dict constructor.
 The main appeal of a bunch d over a dict, is that keys can be accessed 
@@ -258,8 +261,8 @@ help(B)</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.dict_utils.merge_dicts">
-<code class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></code><code class="sig-name descname"><span class="pre">merge_dicts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L57-L76"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.merge_dicts" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.dict_utils.merge_dicts">
+<span class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></span><span class="sig-name descname"><span class="pre">merge_dicts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L57-L76"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.merge_dicts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs a deep_update() of d1 using d2.
 Recursively updates <cite>d1</cite> with <cite>d2</cite>, while also making a deep copy of d1.</p>
 <dl class="field-list simple">
@@ -282,32 +285,32 @@ dictionaries.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.dict_utils.nested_value">
-<code class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></code><code class="sig-name descname"><span class="pre">nested_value</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L45-L49"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.nested_value" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.dict_utils.nested_value">
+<span class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></span><span class="sig-name descname"><span class="pre">nested_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L45-L49"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.nested_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access an element in nested dictioary <cite>d</cite> with path given by list of <cite>keys</cite></p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.dict_utils.select_keys">
-<code class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></code><code class="sig-name descname"><span class="pre">select_keys</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L52-L54"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.select_keys" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.dict_utils.select_keys">
+<span class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></span><span class="sig-name descname"><span class="pre">select_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L52-L54"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.select_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the items in dict <cite>d</cite> whose keys are listen in <cite>keys</cite></p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.dict_utils.set_class_dict">
-<code class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></code><code class="sig-name descname"><span class="pre">set_class_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clsdict</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L12-L14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.set_class_dict" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.dict_utils.set_class_dict">
+<span class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></span><span class="sig-name descname"><span class="pre">set_class_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clsdict</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L12-L14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.set_class_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set builtin class properties</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.dict_utils.set_docstr">
-<code class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></code><code class="sig-name descname"><span class="pre">set_docstr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docstr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L16-L18"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.set_docstr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.dict_utils.set_docstr">
+<span class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></span><span class="sig-name descname"><span class="pre">set_docstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docstr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L16-L18"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.set_docstr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modify the docstring of a class <cite>cls</cite></p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.dict_utils.ydump">
-<code class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></code><code class="sig-name descname"><span class="pre">ydump</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L155-L174"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.ydump" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.dict_utils.ydump">
+<span class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></span><span class="sig-name descname"><span class="pre">ydump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L155-L174"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.ydump" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create YAML output string for data object. If data is an OrderedDict, original key ordering
 is preserved in internal call to yaml.dump().</p>
 <dl class="field-list simple">
@@ -329,8 +332,8 @@ is preserved in internal call to yaml.dump().</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.dict_utils.yload">
-<code class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></code><code class="sig-name descname"><span class="pre">yload</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datastr</span></em>, <em class="sig-param"><span class="pre">Loader=&lt;class</span> <span class="pre">'yaml.loader.SafeLoader'&gt;</span></em>, <em class="sig-param"><span class="pre">MapType=&lt;class</span> <span class="pre">'sklearn.utils.Bunch'&gt;</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L133-L152"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.yload" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.dict_utils.yload">
+<span class="sig-prename descclassname"><span class="pre">range_driver.dict_utils.</span></span><span class="sig-name descname"><span class="pre">yload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datastr</span></em>, <em class="sig-param"><span class="pre">Loader=&lt;class</span> <span class="pre">'yaml.loader.SafeLoader'&gt;</span></em>, <em class="sig-param"><span class="pre">MapType=&lt;class</span> <span class="pre">'sklearn.utils.Bunch'&gt;</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/dict_utils.py#L133-L152"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.dict_utils.yload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load object from YAML input string or stream</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -354,8 +357,8 @@ is preserved in internal call to yaml.dump().</p>
 <div class="section" id="module-range_driver.geo_utils">
 <span id="geospatial-utilities"></span><h2>Geospatial Utilities<a class="headerlink" href="#module-range_driver.geo_utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="range_driver.geo_utils.dist_m">
-<code class="sig-prename descclassname"><span class="pre">range_driver.geo_utils.</span></code><code class="sig-name descname"><span class="pre">dist_m</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latlon0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latlon1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/geo_utils.py#L6-L8"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.geo_utils.dist_m" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.geo_utils.dist_m">
+<span class="sig-prename descclassname"><span class="pre">range_driver.geo_utils.</span></span><span class="sig-name descname"><span class="pre">dist_m</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latlon0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latlon1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/geo_utils.py#L6-L8"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.geo_utils.dist_m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geodesic distance calculation</p>
 </dd></dl>
 
@@ -363,13 +366,13 @@ is preserved in internal call to yaml.dump().</p>
 <div class="section" id="module-range_driver.ipython_utils">
 <span id="ipython-utilities"></span><h2>iPython Utilities<a class="headerlink" href="#module-range_driver.ipython_utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="range_driver.ipython_utils.display_full_df">
-<code class="sig-prename descclassname"><span class="pre">range_driver.ipython_utils.</span></code><code class="sig-name descname"><span class="pre">display_full_df</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/ipython_utils.py#L8-L12"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.ipython_utils.display_full_df" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.ipython_utils.display_full_df">
+<span class="sig-prename descclassname"><span class="pre">range_driver.ipython_utils.</span></span><span class="sig-name descname"><span class="pre">display_full_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/ipython_utils.py#L8-L12"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.ipython_utils.display_full_df" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.ipython_utils.displaymd">
-<code class="sig-prename descclassname"><span class="pre">range_driver.ipython_utils.</span></code><code class="sig-name descname"><span class="pre">displaymd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strmd</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/ipython_utils.py#L4-L6"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.ipython_utils.displaymd" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.ipython_utils.displaymd">
+<span class="sig-prename descclassname"><span class="pre">range_driver.ipython_utils.</span></span><span class="sig-name descname"><span class="pre">displaymd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strmd</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/ipython_utils.py#L4-L6"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.ipython_utils.displaymd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display Markdown in notebook</p>
 </dd></dl>
 
@@ -377,8 +380,8 @@ is preserved in internal call to yaml.dump().</p>
 <div class="section" id="module-range_driver.mpl_utils">
 <span id="matplotlib-utilities"></span><h2>MatPlotLib Utilities<a class="headerlink" href="#module-range_driver.mpl_utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="range_driver.mpl_utils.mpl_set_notebook_params">
-<code class="sig-prename descclassname"><span class="pre">range_driver.mpl_utils.</span></code><code class="sig-name descname"><span class="pre">mpl_set_notebook_params</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/mpl_utils.py#L4-L14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.mpl_utils.mpl_set_notebook_params" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.mpl_utils.mpl_set_notebook_params">
+<span class="sig-prename descclassname"><span class="pre">range_driver.mpl_utils.</span></span><span class="sig-name descname"><span class="pre">mpl_set_notebook_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/mpl_utils.py#L4-L14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.mpl_utils.mpl_set_notebook_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes sensible MatPlotLib parameters for viewing plots in the Jupyter notebook interface.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -391,14 +394,14 @@ is preserved in internal call to yaml.dump().</p>
 <div class="section" id="module-range_driver.pandas_utils">
 <span id="pandas-utilities"></span><h2>Pandas Utilities<a class="headerlink" href="#module-range_driver.pandas_utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="range_driver.pandas_utils.dataframe_schema">
-<code class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></code><code class="sig-name descname"><span class="pre">dataframe_schema</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtypes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L62-L65"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.dataframe_schema" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.pandas_utils.dataframe_schema">
+<span class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></span><span class="sig-name descname"><span class="pre">dataframe_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtypes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L62-L65"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.dataframe_schema" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create empty pd.DataFrame with columns of given datatypes</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.pandas_utils.get_next_index">
-<code class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></code><code class="sig-name descname"><span class="pre">get_next_index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock_bound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L72-L98"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.get_next_index" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.pandas_utils.get_next_index">
+<span class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></span><span class="sig-name descname"><span class="pre">get_next_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock_bound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L72-L98"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.get_next_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the index value that follows <cite>index_val</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -416,20 +419,20 @@ is preserved in internal call to yaml.dump().</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.pandas_utils.index_columns">
-<code class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></code><code class="sig-name descname"><span class="pre">index_columns</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">none_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L5-L15"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.index_columns" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.pandas_utils.index_columns">
+<span class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></span><span class="sig-name descname"><span class="pre">index_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">none_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L5-L15"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.index_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return list of column names that form the (multi-)index or None, if index is a single unnamed
 column.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.pandas_utils.remove_microsecond">
-<code class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></code><code class="sig-name descname"><span class="pre">remove_microsecond</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ts</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L68-L69"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.remove_microsecond" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.pandas_utils.remove_microsecond">
+<span class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></span><span class="sig-name descname"><span class="pre">remove_microsecond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ts</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L68-L69"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.remove_microsecond" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.pandas_utils.split_by_index">
-<code class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></code><code class="sig-name descname"><span class="pre">split_by_index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_idx</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L18-L36"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.split_by_index" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.pandas_utils.split_by_index">
+<span class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></span><span class="sig-name descname"><span class="pre">split_by_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_idx</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L18-L36"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.split_by_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split DataFrame df at or around the given index value</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -450,8 +453,8 @@ equal to split_idx.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.pandas_utils.update_on">
-<code class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></code><code class="sig-name descname"><span class="pre">update_on</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L39-L59"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.update_on" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.pandas_utils.update_on">
+<span class="sig-prename descclassname"><span class="pre">range_driver.pandas_utils.</span></span><span class="sig-name descname"><span class="pre">update_on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/pandas_utils.py#L39-L59"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.pandas_utils.update_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use DataFrame.update() function inplace, matching on any set of columns.</p>
 </dd></dl>
 
@@ -460,15 +463,15 @@ equal to split_idx.</p></li>
 <span id="other-utilities"></span><h2>Other Utilities<a class="headerlink" href="#module-range_driver.utils" title="Permalink to this headline">¶</a></h2>
 <p>Generic utility functions</p>
 <dl class="py function">
-<dt id="range_driver.utils.eval_shell">
-<code class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></code><code class="sig-name descname"><span class="pre">eval_shell</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmdargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L12-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.eval_shell" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.utils.eval_shell">
+<span class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></span><span class="sig-name descname"><span class="pre">eval_shell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmdargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L12-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.eval_shell" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run command in shell and return string output.
 Input <cite>cmdargs</cite> is list of command and individual args.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.utils.load_file">
-<code class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></code><code class="sig-name descname"><span class="pre">load_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L34-L45"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.load_file" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.utils.load_file">
+<span class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></span><span class="sig-name descname"><span class="pre">load_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L34-L45"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.load_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads and returns the contents of filename.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -484,24 +487,24 @@ Input <cite>cmdargs</cite> is list of command and individual args.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.utils.reload_acoustic">
-<code class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></code><code class="sig-name descname"><span class="pre">reload_acoustic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'acoustic'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'acoustic_env'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L75-L81"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.reload_acoustic" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.utils.reload_acoustic">
+<span class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></span><span class="sig-name descname"><span class="pre">reload_acoustic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'acoustic'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'acoustic_env'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L75-L81"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.reload_acoustic" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.utils.reload_all">
-<code class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></code><code class="sig-name descname"><span class="pre">reload_all</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L58-L73"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.reload_all" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.utils.reload_all">
+<span class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></span><span class="sig-name descname"><span class="pre">reload_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L58-L73"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.reload_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reload all modules that have <cite>module_name</cite> in their path.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.utils.repo_file_path">
-<code class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></code><code class="sig-name descname"><span class="pre">repo_file_path</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L31-L32"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.repo_file_path" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.utils.repo_file_path">
+<span class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></span><span class="sig-name descname"><span class="pre">repo_file_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L31-L32"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.repo_file_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.utils.repo_path">
-<code class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></code><code class="sig-name descname"><span class="pre">repo_path</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L25-L29"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.repo_path" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.utils.repo_path">
+<span class="sig-prename descclassname"><span class="pre">range_driver.utils.</span></span><span class="sig-name descname"><span class="pre">repo_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/utils.py#L25-L29"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.utils.repo_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

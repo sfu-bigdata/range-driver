@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -212,27 +215,27 @@
 <p>Functions to handle different kinds of metadata, e.g. details about receiver and tag deployment, etc.</p>
 <p>TODO: Integrate with resonate metadata processing</p>
 <dl class="py function">
-<dt id="range_driver.data_prep.metadata.clean_vendor_tag_specs">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></code><code class="sig-name descname"><span class="pre">clean_vendor_tag_specs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag_specs_df</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L62-L79"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.clean_vendor_tag_specs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.data_prep.metadata.clean_vendor_tag_specs">
+<span class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></span><span class="sig-name descname"><span class="pre">clean_vendor_tag_specs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag_specs_df</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L62-L79"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.clean_vendor_tag_specs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process metadata extracted via row copy &amp; paste from vendor CSV files</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.data_prep.metadata.get_device_from_catalog">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></code><code class="sig-name descname"><span class="pre">get_device_from_catalog</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">catalog_str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L93-L99"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.get_device_from_catalog" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.data_prep.metadata.get_device_from_catalog">
+<span class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></span><span class="sig-name descname"><span class="pre">get_device_from_catalog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">catalog_str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L93-L99"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.get_device_from_catalog" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 2nd last part of ‘-‘ separated string as an int. Works on str and DataFrames of
 strings</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.data_prep.metadata.get_device_id">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></code><code class="sig-name descname"><span class="pre">get_device_id</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L85-L90"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.get_device_id" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.data_prep.metadata.get_device_id">
+<span class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></span><span class="sig-name descname"><span class="pre">get_device_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L85-L90"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.get_device_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return last part of ‘-‘-separated string as int. Works on str and DataFrames of strings.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.data_prep.metadata.otn_transmitter_patch_1">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></code><code class="sig-name descname"><span class="pre">otn_transmitter_patch_1</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdb</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L124-L135"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.otn_transmitter_patch_1" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.data_prep.metadata.otn_transmitter_patch_1">
+<span class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></span><span class="sig-name descname"><span class="pre">otn_transmitter_patch_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdb</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L124-L135"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.otn_transmitter_patch_1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies a patch specific to the OTN Mahone Bay range test</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -245,23 +248,23 @@ strings</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.data_prep.metadata.read_otn_metadata">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></code><code class="sig-name descname"><span class="pre">read_otn_metadata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet_skips</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'Data</span> <span class="pre">Dictionary':</span> <span class="pre">4,</span> <span class="pre">'Deployment':</span> <span class="pre">0}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L17-L56"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.read_otn_metadata" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.data_prep.metadata.read_otn_metadata">
+<span class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></span><span class="sig-name descname"><span class="pre">read_otn_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet_skips</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'Data</span> <span class="pre">Dictionary':</span> <span class="pre">4,</span> <span class="pre">'Deployment':</span> <span class="pre">0}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L17-L56"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.read_otn_metadata" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.data_prep.metadata.rt_dist">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></code><code class="sig-name descname"><span class="pre">rt_dist</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metabunch</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L115-L121"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.rt_dist" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.data_prep.metadata.rt_dist">
+<span class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></span><span class="sig-name descname"><span class="pre">rt_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metabunch</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L115-L121"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.rt_dist" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.data_prep.metadata.rt_info">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></code><code class="sig-name descname"><span class="pre">rt_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metabunch</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L102-L112"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.rt_info" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.data_prep.metadata.rt_info">
+<span class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></span><span class="sig-name descname"><span class="pre">rt_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metabunch</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L102-L112"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.rt_info" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="range_driver.data_prep.metadata.set_all_values">
-<code class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></code><code class="sig-name descname"><span class="pre">set_all_values</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggfun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'max'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L138-L141"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.set_all_values" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="range_driver.data_prep.metadata.set_all_values">
+<span class="sig-prename descclassname"><span class="pre">range_driver.data_prep.metadata.</span></span><span class="sig-name descname"><span class="pre">set_all_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggfun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'max'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sfu-bigdata/range-driver/blob/public/range_driver/data_prep/metadata.py#L138-L141"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#range_driver.data_prep.metadata.set_all_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set all values of DataFrame <cite>df</cite> in given <cite>columns</cite> to aggregated value.</p>
 </dd></dl>
 

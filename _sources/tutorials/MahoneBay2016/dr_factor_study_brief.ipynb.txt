@@ -40,7 +40,7 @@
    "outputs": [],
    "source": [
     "import range_driver as rd\n",
-    "    \n",
+    "import kadlu\n",
     "import pandas as pd\n",
     "%matplotlib inline\n",
     "rd.mpl_set_notebook_params()"
@@ -69,7 +69,6 @@
     "rd.prepare_config(config)\n",
     "\n",
     "# Set the kadlu storage location to point to cached data\n",
-    "import kadlu\n",
     "kadlu.storage_cfg(setdir=f'{rd.utils.repo_path()}/data/MahoneBay2016/kadlu_data/')"
    ]
   },
