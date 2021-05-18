@@ -1,0 +1,3078 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Detection data is merged with environmental variables &mdash; Range Driver 0.0.dev1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Range Driver
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Tutorials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Range Driver</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Detection data is merged with environmental variables</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/tutorials/MahoneBay2016/tidal_analysis_rt.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># HTML output for this notebook can be produced using</span>
+<span class="c1"># jupyter nbconvert --to html --no-input tidal_analysis_rt.ipynb</span>
+<span class="c1"># or</span>
+<span class="c1"># jupyter nbconvert --to pdf --no-input tidal_analysis_rt.ipynb</span>
+<span class="c1"># edit title and authors in notebook metadata (e.g. jupyter lab / notebook tools / advanced)</span>
+</pre></div>
+</div>
+</div>
+<p>Analysis of acoustic tracking performance using range test data obtained in Mahone Bay near Halifax, NS, by OTN field experiments during March-April 2016.</p>
+<p>Range test performance is determined with two methods:</p>
+<ol class="arabic simple">
+<li><p>by calculating interval lenghts between adjacent detection events,</p></li>
+<li><p>by counting the number of detection events within some fixed time interval and normalizing against the expected number of detections.</p></li>
+</ol>
+<p>Components of this notebook:</p>
+<ul class="simple">
+<li><p>process tidal data for the time period considering high/low tide times and the observed heights</p></li>
+<li><p>determine tidal phase timing</p></li>
+<li><p>perform cosine interpolation of heights</p></li>
+<li><p>correlate detection performance against tidal phase</p></li>
+</ul>
+<p><strong>Data:</strong> Beyond tidal data, environmental variables have been collected for 3 hour intervals. Water velocity is used from those variables to determine its potential effect on detection performance.</p>
+<p>Summary plots are presented separately for each receiver / transmitter combination at the end of this notebook.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">rcParams</span>
+<span class="kn">from</span> <span class="nn">pandas_ods_reader</span> <span class="kn">import</span> <span class="n">read_ods</span>
+<span class="c1"># mpl.use(&#39;module://ipympl.backend_nbagg&#39;)</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="k">def</span> <span class="nf">printmd</span><span class="p">(</span><span class="n">strmd</span><span class="p">):</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">strmd</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">file_path</span><span class="p">(</span><span class="o">*</span><span class="n">fn</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="o">*</span><span class="n">fn</span><span class="p">)</span>
+
+<span class="c1">#%matplotlib widget</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;legend.framealpha&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span><span class="o">=</span> <span class="mi">300</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_detections_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">(</span><span class="s2">&quot;Range_Test_VUE_Export_detections_use.csv&quot;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_detections_merged</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_detections_merged</span><span class="p">[</span><span class="s2">&quot;Date and Time&quot;</span><span class="p">],</span>
+                                                  <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%y %H:%M:%S&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Detection-data-is-merged-with-environmental-variables">
+<h1>Detection data is merged with environmental variables<a class="headerlink" href="#Detection-data-is-merged-with-environmental-variables" title="Permalink to this headline">¶</a></h1>
+<p>The current example merges HYCOM environmental data via <strong>pre-processing that is not included in this notebook</strong>.</p>
+<p>Automated data fetching is one of the TODO items in this project.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># TODO: source environmental data from pyERDAP or kadlu.fetch</span>
+
+<span class="n">df_detections_merged</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Date and Time</th>
+      <th>Receiver</th>
+      <th>Transmitter</th>
+      <th>salinity_bottom</th>
+      <th>water_temp_bottom</th>
+      <th>water_u_bottom</th>
+      <th>water_v_bottom</th>
+      <th>salinity</th>
+      <th>water_temp</th>
+      <th>water_u</th>
+      <th>water_v</th>
+      <th>datetime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2016-03-09</td>
+      <td>3:59:51 PM</td>
+      <td>3/09/16 15:59:51</td>
+      <td>VMT-1188739</td>
+      <td>A69-1601-31335</td>
+      <td>31.678001</td>
+      <td>2.415999</td>
+      <td>-0.012</td>
+      <td>-0.006</td>
+      <td>31.674</td>
+      <td>2.455999</td>
+      <td>0.006</td>
+      <td>0.04</td>
+      <td>2016-03-09 15:59:51</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016-03-09</td>
+      <td>3:59:59 PM</td>
+      <td>3/09/16 15:59:59</td>
+      <td>VMT-1188739</td>
+      <td>A69-1601-31335</td>
+      <td>31.678001</td>
+      <td>2.415999</td>
+      <td>-0.012</td>
+      <td>-0.006</td>
+      <td>31.674</td>
+      <td>2.455999</td>
+      <td>0.006</td>
+      <td>0.04</td>
+      <td>2016-03-09 15:59:59</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2016-03-09</td>
+      <td>4:00:07 PM</td>
+      <td>3/09/16 16:00:07</td>
+      <td>VMT-1188739</td>
+      <td>A69-1601-31335</td>
+      <td>31.678001</td>
+      <td>2.415999</td>
+      <td>-0.012</td>
+      <td>-0.006</td>
+      <td>31.674</td>
+      <td>2.455999</td>
+      <td>0.006</td>
+      <td>0.04</td>
+      <td>2016-03-09 16:00:07</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2016-03-09</td>
+      <td>4:00:15 PM</td>
+      <td>3/09/16 16:00:15</td>
+      <td>VMT-1188739</td>
+      <td>A69-1601-31335</td>
+      <td>31.678001</td>
+      <td>2.415999</td>
+      <td>-0.012</td>
+      <td>-0.006</td>
+      <td>31.674</td>
+      <td>2.455999</td>
+      <td>0.006</td>
+      <td>0.04</td>
+      <td>2016-03-09 16:00:15</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016-03-09</td>
+      <td>4:00:23 PM</td>
+      <td>3/09/16 16:00:23</td>
+      <td>VMT-1188739</td>
+      <td>A69-1601-31335</td>
+      <td>31.678001</td>
+      <td>2.415999</td>
+      <td>-0.012</td>
+      <td>-0.006</td>
+      <td>31.674</td>
+      <td>2.455999</td>
+      <td>0.006</td>
+      <td>0.04</td>
+      <td>2016-03-09 16:00:23</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="section" id="Determine-tidal-heights-via-interpolation-of-tidal-time-tables">
+<h2>Determine tidal heights via interpolation of tidal time tables<a class="headerlink" href="#Determine-tidal-heights-via-interpolation-of-tidal-time-tables" title="Permalink to this headline">¶</a></h2>
+<p>In addition to ocean and weather model data, historic tidal tables are available and used here to provide additional information about environmental cycles that could be factors of influence on the acoustic data.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#dftt = pd.read_excel(file_path(&quot;Extracted_tidal_times_for_Halifax_2016.xlsx&quot;), 0)</span>
+<span class="c1">#print(&quot;Times are in UTC @ Halifax, Heights are in Centimetres @ Halifax&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_tidal_times</span> <span class="o">=</span> <span class="n">read_ods</span><span class="p">(</span><span class="n">file_path</span><span class="p">(</span><span class="s2">&quot;Extracted_tidal_times_for_Halifax_2016_2sheets.ods&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">flatten_tidal_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">format_str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> %B %Y %H%M&quot;</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">dflat</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">cn</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">tc</span> <span class="o">=</span> <span class="s2">&quot;time</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cn</span><span class="p">)</span>
+        <span class="n">hc</span> <span class="o">=</span> <span class="s2">&quot;height</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cn</span><span class="p">)</span>
+        <span class="n">timehhmm</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">tc</span><span class="p">]</span>
+        <span class="n">heights</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">hc</span><span class="p">]</span>
+        <span class="k">if</span> <span class="kc">False</span><span class="p">:</span> <span class="c1"># don&#39;t interpolate, just drop NaN&#39;s</span>
+            <span class="n">heights</span> <span class="o">=</span> <span class="n">heights</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="s2">&quot;linear&quot;</span><span class="p">)</span>
+            <span class="n">timehhmm</span> <span class="o">=</span> <span class="n">timehhmm</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="s2">&quot;pad&quot;</span><span class="p">)</span>
+        <span class="n">is_miss</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">hc</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+        <span class="n">dff</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+                            <span class="n">df</span><span class="o">.</span><span class="n">Day</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">Month</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="n">timehhmm</span><span class="p">,</span>
+                            <span class="nb">format</span><span class="o">=</span><span class="n">format_str</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">),</span>
+                         <span class="n">heights</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">)],</span>
+                        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">dflat</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dflat</span> <span class="o">=</span> <span class="n">dff</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dflat</span> <span class="o">=</span> <span class="n">dflat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dff</span><span class="p">)</span>
+
+    <span class="n">dflat</span> <span class="o">=</span> <span class="n">dflat</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+    <span class="n">dflat</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;low&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;lh&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dflat</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">display</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">option_context</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">dflat</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dflat</span>
+
+<span class="n">dflat</span> <span class="o">=</span> <span class="n">flatten_tidal_table</span><span class="p">(</span><span class="n">df_tidal_times</span><span class="p">,</span> <span class="mi">2016</span><span class="p">)</span>
+<span class="n">dflat</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;output_tidal_times_for_Halifax_2016_flat.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">printmd</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">## Tidal data for Halifax</span>
+<span class="s2">Linear interpolation</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="n">dflat</span><span class="p">[</span><span class="s2">&quot;height&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;height (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="Tidal-data-for-Halifax">
+<h3>Tidal data for Halifax<a class="headerlink" href="#Tidal-data-for-Halifax" title="Permalink to this headline">¶</a></h3>
+<p>Linear interpolation</p>
+</div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_11_1.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_11_1.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dflat</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dflat</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">dflat</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dflat</span><span class="p">[</span><span class="s2">&quot;time_start&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dflat</span><span class="o">.</span><span class="n">index</span>
+<span class="n">dflat</span><span class="p">[</span><span class="s2">&quot;height_start&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dflat</span><span class="o">.</span><span class="n">height</span>
+<span class="n">dflat</span><span class="p">[</span><span class="s2">&quot;height_change&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dflat</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#new_times = pd.date_range(&quot;2016-03-07 00:18&quot;, &quot;2016-04-05 18:23&quot;, freq=&quot;300s&quot;)</span>
+<span class="n">new_times</span> <span class="o">=</span> <span class="n">df_detections_merged</span><span class="o">.</span><span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">new_index</span> <span class="o">=</span> <span class="n">dflat</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">new_times</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dflat</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">dfi</span> <span class="o">=</span> <span class="n">dflat</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">new_index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;low&#39;</span><span class="p">,</span><span class="s1">&#39;duration&#39;</span><span class="p">,</span><span class="s1">&#39;time_start&#39;</span><span class="p">,</span> <span class="s1">&#39;height_start&#39;</span><span class="p">,</span> <span class="s1">&#39;height_change&#39;</span><span class="p">]:</span>
+    <span class="n">dfi</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="s2">&quot;pad&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dfi</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dfi</span><span class="o">.</span><span class="n">index</span> <span class="o">-</span> <span class="n">dfi</span><span class="o">.</span><span class="n">time_start</span><span class="p">)</span> <span class="o">/</span> <span class="n">dfi</span><span class="o">.</span><span class="n">duration</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dfi</span><span class="p">[</span><span class="s2">&quot;t2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfi</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">dfi</span><span class="p">[</span><span class="s2">&quot;low&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;h&quot;</span><span class="p">)</span>
+<span class="n">dfi</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">dfi</span><span class="o">.</span><span class="n">height_start</span> <span class="o">+</span> <span class="p">(</span><span class="n">dfi</span><span class="o">.</span><span class="n">height_change</span> <span class="o">*</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">dfi</span><span class="o">.</span><span class="n">t</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span>
+<span class="c1">#dfi</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#len(dfi), len(-dfi.height.diff(-1)[:-1] / ((dfi.index[1:] - dfi.index[:-1]) / pd.Timedelta(&quot;1h&quot;)))</span>
+<span class="c1">#dfi[&quot;dheight_cm_per_hr&quot;] = dheight_cm_per_hr</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dfi</span><span class="p">[</span><span class="s2">&quot;dheight_cm_per_hr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dfi</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="p">((</span><span class="n">dfi</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">dfi</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s2">&quot;1h&quot;</span><span class="p">))</span>
+<span class="c1">#dfi</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;output_tidal_times_for_Halifax_2016_5min.csv&quot;</span>
+<span class="n">dfi</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">printmd</span><span class="p">(</span><span class="s2">&quot;Wrote data to `</span><span class="si">{}</span><span class="s2">`&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>Wrote data to <code class="docutils literal notranslate"><span class="pre">output_tidal_times_for_Halifax_2016_5min.csv</span></code></p>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#dfi</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#end_datetime = &quot;2016-03-15 01:18&quot;</span>
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">rc_context</span><span class="p">({</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="s1">&#39;lines.linewidth&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}):</span>
+    <span class="n">end_datetime</span> <span class="o">=</span> <span class="n">dfi</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">printmd</span><span class="p">(</span><span class="s2">&quot;Display data until </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_datetime</span><span class="p">))</span>
+    <span class="n">dfi</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="n">end_datetime</span><span class="p">]</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+    <span class="n">dfi</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="n">end_datetime</span><span class="p">]</span><span class="o">.</span><span class="n">dheight_cm_per_hr</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+    <span class="p">(</span><span class="n">dfi</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="n">end_datetime</span><span class="p">]</span><span class="o">.</span><span class="n">t</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Tidal data for Halifax with Cosine interpolation&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>Display data until 2016-04-05 18:23:00</p>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_22_1.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_22_1.png" />
+</div>
+</div>
+<p>The variable <span class="math notranslate nohighlight">\(t\)</span> above indicate tidal phase within each of high-to-low and low-to-high portion. Its range is in <span class="math notranslate nohighlight">\([0,1]\)</span>, but has been magnified by a factor of <span class="math notranslate nohighlight">\(10\)</span> in the plot to show more clearly in comparison to the other variables.</p>
+<p>Below, a new variable <span class="math notranslate nohighlight">\(t2\)</span> is introduced that ranges from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(2\)</span>, from high tide to the next high tide, with <span class="math notranslate nohighlight">\(1\)</span> corresponding to low tide.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dfmm</span> <span class="o">=</span> <span class="n">df_detections_merged</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfi</span><span class="p">[[</span><span class="s2">&quot;t2&quot;</span><span class="p">,</span><span class="s2">&quot;height&quot;</span><span class="p">,</span><span class="s2">&quot;dheight_cm_per_hr&quot;</span><span class="p">]],</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;datetime&quot;</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dj</span> <span class="o">=</span> <span class="n">dfmm</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="k">del</span> <span class="n">dj</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">],</span> <span class="n">dj</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">],</span> <span class="n">dj</span><span class="p">[</span><span class="s2">&quot;Date and Time&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Detection-data-is-grouped-by-distinct-“Receiver”,-“Transmitter”-pairs">
+<h2>Detection data is grouped by distinct “Receiver”, “Transmitter” pairs<a class="headerlink" href="#Detection-data-is-grouped-by-distinct-“Receiver”,-“Transmitter”-pairs" title="Permalink to this headline">¶</a></h2>
+<p>Later, each of these groups is analysed separately. A name is produced for each pairing that reflects their configuration, such as power level, tag family, distance - as determined by parsing the metadata.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">djg</span> <span class="o">=</span> <span class="n">dj</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Receiver&quot;</span><span class="p">,</span><span class="s2">&quot;Transmitter&quot;</span><span class="p">])</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="n">djg</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">djg</span><span class="o">.</span><span class="n">groups</span><span class="p">]</span>
+<span class="c1"># list(map(len, groups))</span>
+
+<span class="c1"># groups is a list of DataFrames that have the respective detections.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Receiver-/-Transmitter-metadata">
+<h2>Receiver / Transmitter metadata<a class="headerlink" href="#Receiver-/-Transmitter-metadata" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">geopy.distance</span> <span class="kn">import</span> <span class="n">geodesic</span>
+<span class="k">def</span> <span class="nf">dist_m</span><span class="p">(</span><span class="n">latlon0</span><span class="p">,</span> <span class="n">latlon1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">geodesic</span><span class="p">(</span><span class="n">latlon0</span><span class="p">,</span> <span class="n">latlon1</span><span class="p">)</span><span class="o">.</span><span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dfmeta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">(</span><span class="s2">&quot;range_test_raw.csv&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>File <code class="docutils literal notranslate"><span class="pre">range_test_raw.csv</span></code> does not have further metainfo merged in. This will be fixed with additional code, below.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dfmeta</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date and Time (UTC)</th>
+      <th>Receiver</th>
+      <th>Transmitter</th>
+      <th>Transmitter Name</th>
+      <th>Transmitter Serial</th>
+      <th>Sensor Value</th>
+      <th>Sensor Unit</th>
+      <th>Station Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>2016-03-09 13:25:33</td>
+      <td>VR4-UWM-250473</td>
+      <td>A69-1601-31341</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2016-03-09 13:25:33</td>
+      <td>VR2W-100928</td>
+      <td>A69-1601-31341</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>2016-03-09 13:25:35</td>
+      <td>VR2W-128559</td>
+      <td>A69-1601-31341</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>2016-03-09 13:25:41</td>
+      <td>VR2W-100928</td>
+      <td>A69-1601-31341</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>2016-03-09 13:25:43</td>
+      <td>VR2W-128559</td>
+      <td>A69-1601-31341</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Ingest-metadata,-data-dictionary,-and-deployment-info">
+<h1>Ingest metadata, data dictionary, and deployment info<a class="headerlink" href="#Ingest-metadata,-data-dictionary,-and-deployment-info" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Load data sheets</p></li>
+<li><p>Correct column names, convert integers, convert datetimes</p></li>
+<li><p>Merge Recv/Tag info with meta data, calculate geodesic distances</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">metadata_file</span> <span class="o">=</span> <span class="n">file_path</span><span class="p">(</span><span class="s2">&quot;metadata-from-initial-range-test.xls&quot;</span><span class="p">)</span>
+<span class="n">sheet_skips</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Data Dictionary&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Deployment&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="n">dfmeta_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">sname</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">metadata_file</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="n">sname</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="n">skipr</span><span class="p">))</span>
+                   <span class="k">for</span> <span class="n">sname</span><span class="p">,</span> <span class="n">skipr</span> <span class="ow">in</span> <span class="n">sheet_skips</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dfmeta_datadict</span> <span class="o">=</span> <span class="n">dfmeta_data</span><span class="p">[</span><span class="s1">&#39;Data Dictionary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Field Name&#39;</span><span class="p">)</span>
+<span class="n">dfmeta_deploy</span> <span class="o">=</span> <span class="n">dfmeta_data</span><span class="p">[</span><span class="s1">&#39;Deployment&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># address possibly inconsistent use of _NUMBER vs _NO, by renaming all to _NO</span>
+<span class="n">dfmeta_datadict</span> <span class="o">=</span> <span class="n">dfmeta_datadict</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">dfmeta_datadict</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;NUMBER&#39;</span><span class="p">,</span><span class="s1">&#39;NO&#39;</span><span class="p">))</span>
+<span class="n">dfmeta_deploy</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">dfmeta_deploy</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;NUMBER&#39;</span><span class="p">,</span><span class="s1">&#39;NO&#39;</span><span class="p">)</span>
+<span class="n">units_col</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="s1">&#39;units&#39;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">dfmeta_datadict</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># remove (format) part from column names in deployment table</span>
+<span class="n">col_names_split</span> <span class="o">=</span> <span class="n">dfmeta_deploy</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dfmeta_deploy</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">col_names_split</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">col_formats</span> <span class="o">=</span> <span class="n">col_names_split</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># add Format column to data dictionary</span>
+<span class="n">dfmeta_datadict</span><span class="p">[</span><span class="s1">&#39;Format&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">col_names_split</span><span class="o">.</span><span class="n">str</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">paren_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\((.*)\)&#39;</span>
+<span class="n">dfmeta_datadict</span><span class="p">[</span><span class="s1">&#39;Format&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfmeta_datadict</span><span class="p">[</span><span class="s1">&#39;Format&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">paren_regex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># remove NaN rows that do not have OTN_ARRAY specified</span>
+<span class="n">dfmeta_deploy</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;OTN_ARRAY&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># determine columns that have format: integer ... in data dictionary</span>
+<span class="n">integer_cols</span> <span class="o">=</span> <span class="p">(</span><span class="n">dfmeta_datadict</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">dfmeta_datadict</span><span class="p">[</span><span class="n">units_col</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.*format: (integer.*)&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+                <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;INS_SERIAL_NO&#39;</span><span class="p">,</span> <span class="s1">&#39;AR_SERIAL_NO&#39;</span><span class="p">])</span>
+<span class="n">dfmeta_datadict</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">integer_cols</span><span class="p">,</span><span class="s1">&#39;Format&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;integer&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># perform type conversion of integer columns, use special int to fill NaNs</span>
+<span class="n">NANINT</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">dfmeta_deploy</span><span class="p">[</span><span class="n">integer_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfmeta_deploy</span><span class="p">[</span><span class="n">integer_cols</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">:</span><span class="n">NANINT</span><span class="p">})</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">convert_otn_datetime_format_str</span><span class="p">(</span><span class="n">format_str</span><span class="p">,</span> <span class="n">split_char</span> <span class="o">=</span> <span class="s2">&quot;T&quot;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">replace_all</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">repdict</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">repdict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s</span>
+    <span class="n">date_replacements</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;yyyy&quot;</span><span class="p">:</span><span class="s2">&quot;%Y&quot;</span><span class="p">,</span> <span class="s2">&quot;mm&quot;</span><span class="p">:</span><span class="s2">&quot;%m&quot;</span><span class="p">,</span> <span class="s2">&quot;dd&quot;</span><span class="p">:</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">}</span>
+    <span class="n">time_replacements</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;hh&quot;</span><span class="p">:</span><span class="s2">&quot;%H&quot;</span><span class="p">,</span> <span class="s2">&quot;mm&quot;</span><span class="p">:</span><span class="s2">&quot;%M&quot;</span><span class="p">,</span> <span class="s2">&quot;ss&quot;</span><span class="p">:</span><span class="s2">&quot;%S&quot;</span><span class="p">}</span>
+    <span class="n">date_part</span><span class="p">,</span> <span class="n">time_part</span> <span class="o">=</span> <span class="n">format_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
+    <span class="n">date_part</span> <span class="o">=</span> <span class="n">replace_all</span><span class="p">(</span><span class="n">date_part</span><span class="p">,</span> <span class="n">date_replacements</span><span class="p">)</span>
+    <span class="n">time_part</span> <span class="o">=</span> <span class="n">replace_all</span><span class="p">(</span><span class="n">time_part</span><span class="p">,</span> <span class="n">time_replacements</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">date_part</span> <span class="o">+</span> <span class="n">split_char</span> <span class="o">+</span> <span class="n">time_part</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">dfmeta_datadict</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">dfmeta_datadict</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;.*DATE_TIME.*&#39;</span><span class="p">)]:</span>
+    <span class="n">format_str</span> <span class="o">=</span> <span class="n">convert_otn_datetime_format_str</span><span class="p">(</span><span class="n">dfmeta_datadict</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">col</span><span class="p">,</span> <span class="s1">&#39;Format&#39;</span><span class="p">])</span>
+    <span class="n">dfmeta_deploy</span><span class="p">[</span><span class="n">col</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;DATE_TIME&quot;</span><span class="p">,</span> <span class="s2">&quot;DATETIME&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">dfmeta_deploy</span><span class="p">[</span><span class="n">col</span><span class="p">],</span>
+                                                                         <span class="nb">format</span><span class="o">=</span><span class="n">format_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">option_context</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span>
+                       <span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span>
+                       <span class="s1">&#39;display.max_colwidth&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### Data dictionary&quot;</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">dfmeta_datadict</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### Deployment info&quot;</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">dfmeta_deploy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="Data-dictionary">
+<h2>Data dictionary<a class="headerlink" href="#Data-dictionary" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Units/format example</th>
+      <th>Definition</th>
+      <th>Format</th>
+    </tr>
+    <tr>
+      <th>Field Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OTN_ARRAY</td>
+      <td>as in: HFX; format: 3 letters</td>
+      <td>This field is mandatory and is a unique 3-digit acronym assigned by OTN HQ. Leave blank for projects new to OTN (a unique acronym will be assigned when data are uploaded to the OTN database) or if you are uncertain of the acronym that has been assigned to your array.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>STATION_NO</td>
+      <td>as in: 001; format: integer  or name you gave station.</td>
+      <td>Sequential position of the mooring assembly on the array, generally from inshore to offshore or from North to South. If your array consists of more than one subarray, use an acronym to qualify the station name. For example, for two subarrays located in East Bay and West Bay, use EB001 and WB001.</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td>DEPLOY_DATE_TIME</td>
+      <td>as in: 2009-02-26T14:05:00; format: yyyy-mm-ddThh:mm:ss</td>
+      <td>Date and time that the equipment was deployed, in 24-hour UTC. Corresponds to the time of the captured waypoint.</td>
+      <td>yyyy-mm-ddThh:mm:ss</td>
+    </tr>
+    <tr>
+      <td>DEPLOY_LAT</td>
+      <td>as in: 44.47815; format: dd.ddddd; places: to 5 decimals</td>
+      <td>Latitude of the actual deployment location, in decimal degrees. Note: in the southern hemisphere all latitudes must be negative.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>DEPLOY_LONG</td>
+      <td>as in: -063.53337; format: ddd.ddddd; places: to 5 decimals</td>
+      <td>Longitude of the actual deployment location, in decimal degrees. Note: in the western hemisphere all longitudes must be negative.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>BOTTOM_DEPTH</td>
+      <td>as in: 75; format: integer</td>
+      <td>Depth at deployment location as recorded by the vessel's depth sounder, in meters.</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td>RISER_LENGTH</td>
+      <td>as in: 50; format: integer</td>
+      <td>Length from the anchor to the topmost float or structure of the mooring assembly, in meters.</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td>INSTRUMENT_DEPTH</td>
+      <td>as in: 20; format: integer</td>
+      <td>Depth of the instrument, in meters.</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td>INS_MODEL_NO</td>
+      <td>as in: VR2W (for receiver), as in: Microcat SBE 37-SM V2.6 (for Sea-Bird Electronics Microcat CTD), as in ADCP-RDI (for RDI Instruments ADCP), as in BPOD-Satlantic-yyyy-mm-dd (for Satlantic benthic pod); format: free text, not otherwise specified</td>
+      <td>Model number of the instrument as provided by the manufacturer, if NOT a receiver then prefix with instrument type and manufacturer's name or acronym. For a benthic pod, append with date of current configuration.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>INS_SERIAL_NO</td>
+      <td>as in: 104514; format: free text, not otherwise specified</td>
+      <td>Serial number of the instrument as provided by the manufacturer. For benthic pod, the serial numbers of the instruments associated with the pod are provided in a separate configuration file according to date because these may change with time.</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td>AR_MODEL_NO</td>
+      <td>as in: 867; format: free text, not otherwise specified</td>
+      <td>Model number of the acoustic release as provided by the manufacturer.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>AR_SERIAL_NO</td>
+      <td>as in: 48635; format: free text, not otherwise specified</td>
+      <td>Serial number of the acoustic release as provided by the manufacturer.</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td>DEPLOYED_BY</td>
+      <td>as in: Bates D, Barthelotte J; format: Last name first initial</td>
+      <td>Names of the lead technicians responsible for the deployment.</td>
+      <td>Lead Technicians</td>
+    </tr>
+    <tr>
+      <td>RECOVERED</td>
+      <td>as in: y; format: y, n, l, f, moved, or failed</td>
+      <td>Was the equipment recovered successfully?  Enter "y" if it was successfully recovered. Enter "moved" if the instrument was recovered at a substantial distance from its deployment location and complete RECOVER_LAT and RECOVER_LONG fields. Enter "n" if the instrument was dowloaded but not recovered. Enter "failed" if the recovery attempt was not successful. Enter "l" if the equipment is presumed lost after one or more unsuccessful recovery attempts. Enter "f" if a piece of equipment that was previously reported as lost is subsequently found.</td>
+      <td>y/n/l</td>
+    </tr>
+    <tr>
+      <td>RECOVER_DATE_TIME</td>
+      <td>as in: 2009-02-26T14:05:00; format: yyyy-mm-ddThh:mm:ss</td>
+      <td>Date and time that the equipment was recovered, in 24-hour UTC. Please provide date and time for both successful recoveries and unsuccessful recovery attempts that occur on different days.\n</td>
+      <td>yyyy-mm-ddThh:mm:ss</td>
+    </tr>
+    <tr>
+      <td>RECOVER_LAT</td>
+      <td>as in: 44.47815; format: dd.ddddd; places: to 5 decimals</td>
+      <td>Latitude where the equipment was recovered, in decimal degrees. Unless it is found a substantial distance from its expected location, this can be left blank. For failed recovery attempts, use this field to record the central latitude of the recovery search or the last known latitude of the equipment. Note: in the southern hemisphere all latitudes must be negative.\n</td>
+      <td>dd.ddddd</td>
+    </tr>
+    <tr>
+      <td>RECOVER_LONG</td>
+      <td>as in: -063.53337; format: ddd.ddddd; places: to 5 decimals</td>
+      <td>Longitude where the equipment was recovered, in decimal degrees. Unless it is found a substantial distance from its expected location, this can be left blank. For failed recovery attempts, use this field to record the central longitude of the recovery search or the last known longitude of the equipment. Note: in the western hemisphere all longitudes must be negative.</td>
+      <td>ddd.ddddd</td>
+    </tr>
+    <tr>
+      <td>DATA_DOWNLOADED</td>
+      <td>as in: y; format: y or n.</td>
+      <td>Were data downloaded? Yes or no. If no, please add comment.</td>
+      <td>y/n</td>
+    </tr>
+    <tr>
+      <td>DOWNLOAD_DATE_TIME</td>
+      <td>as in: 2009-02-26T14:05:00; format: yyyy-mm-ddThh:mm:ss</td>
+      <td>Date and time that data were downloaded, in 24-hour UTC. If a file is saved to disk, this could correspond to the time in the file or filename.</td>
+      <td>yyyy-mm-ddThh:mm:ss</td>
+    </tr>
+    <tr>
+      <td>FILENAME</td>
+      <td>as in: VR3UWM_000000304_D2009.07.09T23.26.47_69KHz.vr2; format: free text, not otherwise specified</td>
+      <td>Filename of the logfile downloaded from the instrument. Please copy and paste filename to avoid making data entry mistakes.</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="Deployment-info">
+<h2>Deployment info<a class="headerlink" href="#Deployment-info" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>OTN_ARRAY</th>
+      <th>STATION_NO</th>
+      <th>DEPLOY_DATE_TIME</th>
+      <th>DEPLOY_LAT</th>
+      <th>DEPLOY_LONG</th>
+      <th>BOTTOM_DEPTH</th>
+      <th>RISER_LENGTH</th>
+      <th>INSTRUMENT_DEPTH</th>
+      <th>INS_MODEL_NO</th>
+      <th>INS_SERIAL_NO</th>
+      <th>AR_MODEL_NO</th>
+      <th>AR_SERIAL_NO</th>
+      <th>DEPLOYED_BY</th>
+      <th>RECOVERED</th>
+      <th>RECOVER_DATE_TIME</th>
+      <th>RECOVER_LAT</th>
+      <th>RECOVER_LONG</th>
+      <th>DATA_DOWNLOADED</th>
+      <th>DOWNLOAD_DATE_TIME</th>
+      <th>FILENAME</th>
+      <th>COMMENTS</th>
+      <th>DEPLOY_DATETIME</th>
+      <th>RECOVER_DATETIME</th>
+      <th>DOWNLOAD_DATETIME</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>MBT</td>
+      <td>1</td>
+      <td>2016-03-09T13:14:52</td>
+      <td>44.554133</td>
+      <td>-64.17682</td>
+      <td>203</td>
+      <td>20</td>
+      <td>183</td>
+      <td>VR4-UWM</td>
+      <td>250473</td>
+      <td>PORTMFE</td>
+      <td>36176</td>
+      <td>D Bates, G Graca</td>
+      <td>y</td>
+      <td>2016-04-04T17:56:40</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>y</td>
+      <td>2016-04-08T13:09:53</td>
+      <td>VR4-UWM_250473_20160408_1.vrl</td>
+      <td>520.7205m from 002 &amp; 822.416m from 003</td>
+      <td>2016-03-09 13:14:52</td>
+      <td>2016-04-04 17:56:40</td>
+      <td>2016-04-08 13:09:53</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>MBT</td>
+      <td>1</td>
+      <td>2016-03-09T13:14:52</td>
+      <td>44.554133</td>
+      <td>-64.17682</td>
+      <td>203</td>
+      <td>5</td>
+      <td>198</td>
+      <td>VR2W</td>
+      <td>128559</td>
+      <td>PORTMFE</td>
+      <td>36176</td>
+      <td>D Bates, G Graca</td>
+      <td>y</td>
+      <td>2016-04-04T17:56:40</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>y</td>
+      <td>2016-04-06T14:07:03</td>
+      <td>VR2W_128559_20160406_1.vrl</td>
+      <td>NaN</td>
+      <td>2016-03-09 13:14:52</td>
+      <td>2016-04-04 17:56:40</td>
+      <td>2016-04-06 14:07:03</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>MBT</td>
+      <td>1</td>
+      <td>2016-03-09T13:14:52</td>
+      <td>44.554133</td>
+      <td>-64.17682</td>
+      <td>203</td>
+      <td>10</td>
+      <td>193</td>
+      <td>VR2W</td>
+      <td>100928</td>
+      <td>PORTMFE</td>
+      <td>36176</td>
+      <td>D Bates, G Graca</td>
+      <td>y</td>
+      <td>2016-04-04T17:56:40</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>y</td>
+      <td>2016-04-06T14:18:57</td>
+      <td>VR2W_100928_20160406_1.vrl</td>
+      <td>NaN</td>
+      <td>2016-03-09 13:14:52</td>
+      <td>2016-04-04 17:56:40</td>
+      <td>2016-04-06 14:18:57</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>MBT</td>
+      <td>1</td>
+      <td>2016-03-09T13:14:52</td>
+      <td>44.554133</td>
+      <td>-64.17682</td>
+      <td>203</td>
+      <td>15</td>
+      <td>188</td>
+      <td>VMT</td>
+      <td>1188739</td>
+      <td>PORTMFE</td>
+      <td>36176</td>
+      <td>D Bates, G Graca</td>
+      <td>y</td>
+      <td>2016-04-04T17:56:40</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>y</td>
+      <td>2016-04-06T16:53:06</td>
+      <td>VMT_1188739_20160406_105449.vrl</td>
+      <td>receiver was initialized and offloaded in local time (ADT)</td>
+      <td>2016-03-09 13:14:52</td>
+      <td>2016-04-04 17:56:40</td>
+      <td>2016-04-06 16:53:06</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>MBT</td>
+      <td>2</td>
+      <td>2016-03-09T14:22:37</td>
+      <td>44.558760</td>
+      <td>-64.17783</td>
+      <td>190</td>
+      <td>25</td>
+      <td>165</td>
+      <td>V9</td>
+      <td>31341</td>
+      <td>PORTMFE</td>
+      <td>35880</td>
+      <td>D Bates, G Graca</td>
+      <td>y</td>
+      <td>2016-04-04T18:06:15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>n</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>415.4623m from 003</td>
+      <td>2016-03-09 14:22:37</td>
+      <td>2016-04-04 18:06:15</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>MBT</td>
+      <td>2</td>
+      <td>2016-03-09T14:22:37</td>
+      <td>44.558760</td>
+      <td>-64.17783</td>
+      <td>190</td>
+      <td>27</td>
+      <td>163</td>
+      <td>V13</td>
+      <td>31340</td>
+      <td>PORTMFE</td>
+      <td>35880</td>
+      <td>D Bates, G Graca</td>
+      <td>y</td>
+      <td>2016-04-04T18:06:15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>n</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2016-03-09 14:22:37</td>
+      <td>2016-04-04 18:06:15</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>MBT</td>
+      <td>2</td>
+      <td>2016-03-09T14:22:37</td>
+      <td>44.558760</td>
+      <td>-64.17783</td>
+      <td>190</td>
+      <td>29</td>
+      <td>161</td>
+      <td>DST tilt</td>
+      <td>111</td>
+      <td>PORTMFE</td>
+      <td>35880</td>
+      <td>D Bates, G Graca</td>
+      <td>y</td>
+      <td>2016-04-04T18:06:15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>y</td>
+      <td>2016-04-12T14:00:00</td>
+      <td>0-15H0111.DAT</td>
+      <td>NaN</td>
+      <td>2016-03-09 14:22:37</td>
+      <td>2016-04-04 18:06:15</td>
+      <td>2016-04-12 14:00:00</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>MBT</td>
+      <td>3</td>
+      <td>2016-03-17T14:48:08</td>
+      <td>44.560260</td>
+      <td>-64.18262</td>
+      <td>180</td>
+      <td>25</td>
+      <td>155</td>
+      <td>v9</td>
+      <td>3134</td>
+      <td>PORTMFE</td>
+      <td>36189</td>
+      <td>D Bates, G Graca, Schornagel</td>
+      <td>y</td>
+      <td>2016-04-04T18:14:59</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>n</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2016-03-17 14:48:08</td>
+      <td>2016-04-04 18:14:59</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>MBT</td>
+      <td>3</td>
+      <td>2016-03-17T14:48:08</td>
+      <td>44.560260</td>
+      <td>-64.18262</td>
+      <td>180</td>
+      <td>27</td>
+      <td>153</td>
+      <td>v13</td>
+      <td>31339</td>
+      <td>PORTMFE</td>
+      <td>36189</td>
+      <td>D Bates, G Graca, Schornagel</td>
+      <td>y</td>
+      <td>2016-04-04T18:14:59</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>n</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2016-03-17 14:48:08</td>
+      <td>2016-04-04 18:14:59</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>MBT</td>
+      <td>3</td>
+      <td>2016-03-17T14:48:08</td>
+      <td>44.560260</td>
+      <td>-64.18262</td>
+      <td>180</td>
+      <td>29</td>
+      <td>151</td>
+      <td>v16</td>
+      <td>31335</td>
+      <td>PORTMFE</td>
+      <td>36189</td>
+      <td>D Bates, G Graca, Schornagel</td>
+      <td>y</td>
+      <td>2016-04-04T18:14:59</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>n</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2016-03-17 14:48:08</td>
+      <td>2016-04-04 18:14:59</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>MBT</td>
+      <td>3</td>
+      <td>2016-03-17T14:48:08</td>
+      <td>44.560260</td>
+      <td>-64.18262</td>
+      <td>180</td>
+      <td>30</td>
+      <td>150</td>
+      <td>DST tilt</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>y</td>
+      <td>2016-04-04T18:14:59</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>n</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2016-03-17 14:48:08</td>
+      <td>2016-04-04 18:14:59</td>
+      <td>NaT</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">deploy_lat_lon</span> <span class="o">=</span> <span class="n">dfmeta_deploy</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;STATION_NO&#39;</span><span class="p">)[[</span><span class="s1">&#39;DEPLOY_LAT&#39;</span><span class="p">,</span><span class="s1">&#39;DEPLOY_LONG&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">nth</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#deploy_lat_lon</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">station_dists_m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">deploy_lat_lon</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">deploy_lat_lon</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">stationA</span> <span class="ow">in</span> <span class="n">deploy_lat_lon</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+    <span class="n">station_dists_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stationA</span><span class="p">,</span> <span class="n">stationA</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">stationB</span> <span class="ow">in</span> <span class="n">deploy_lat_lon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stationA</span><span class="o">+</span><span class="mi">1</span><span class="p">:,:]</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="n">dABm</span> <span class="o">=</span> <span class="n">dist_m</span><span class="p">(</span><span class="n">deploy_lat_lon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stationA</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                      <span class="n">deploy_lat_lon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stationB</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="n">station_dists_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stationA</span><span class="p">,</span> <span class="n">stationB</span><span class="p">]</span> <span class="o">=</span> <span class="n">dABm</span>
+        <span class="n">station_dists_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stationB</span><span class="p">,</span> <span class="n">stationA</span><span class="p">]</span> <span class="o">=</span> <span class="n">dABm</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;### Station distances</span>
+<span class="s2">* geodesic</span>
+<span class="s2">* in meters</span>
+<span class="s2">* ignoring depth difference</span>
+
+<span class="s2">Distance between stations 2 and 3 does not occur in detections, since there are no receivers at these stations.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
+<span class="n">station_dists_m</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="Station-distances">
+<h2>Station distances<a class="headerlink" href="#Station-distances" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>geodesic</p></li>
+<li><p>in meters</p></li>
+<li><p>ignoring depth difference</p></li>
+</ul>
+<p>Distance between stations 2 and 3 does not occur in detections, since there are no receivers at these stations.</p>
+</div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>STATION_NO</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <th>STATION_NO</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>520.358</td>
+      <td>822.112</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>520.358</td>
+      <td>0</td>
+      <td>415.462</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>822.112</td>
+      <td>415.462</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">tag_specs_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">(</span><span class="s2">&quot;tag-specs-Mahone-Bay-range-test&quot;</span><span class="p">,</span> <span class="s2">&quot;tag-summary-mahone-bay-range-test.xls&quot;</span><span class="p">))</span>
+<span class="c1">#tag_specs.columns</span>
+<span class="n">tag_specs</span> <span class="o">=</span> <span class="n">tag_specs_df</span><span class="p">[[</span><span class="s1">&#39;Tag Family&#39;</span><span class="p">,</span><span class="s1">&#39;ID Code&#39;</span><span class="p">,</span><span class="s1">&#39;VUE Tag ID</span><span class="se">\n</span><span class="s1">(Freq-Space-ID)&#39;</span><span class="p">,</span><span class="s1">&#39;Power</span><span class="se">\n</span><span class="s1">(L/H)&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">tag_specs</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;VUE Tag ID</span><span class="se">\n</span><span class="s1">(Freq-Space-ID)&#39;</span><span class="p">:</span><span class="s1">&#39;VUE Tag&#39;</span><span class="p">,</span>
+                          <span class="s1">&#39;Power</span><span class="se">\n</span><span class="s1">(L/H)&#39;</span><span class="p">:</span><span class="s1">&#39;Power&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tag_specs</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;VUE Tag&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tag_specs</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tag Family</th>
+      <th>ID Code</th>
+      <th>Power</th>
+    </tr>
+    <tr>
+      <th>VUE Tag</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A69-1601-31335</td>
+      <td>V16-5x</td>
+      <td>31335</td>
+      <td>H</td>
+    </tr>
+    <tr>
+      <td>A69-1601-31336</td>
+      <td>V16-5x</td>
+      <td>31336</td>
+      <td>H</td>
+    </tr>
+    <tr>
+      <td>A69-1601-31341</td>
+      <td>V9-2x</td>
+      <td>31341</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <td>A69-1601-31342</td>
+      <td>V9-2x</td>
+      <td>31342</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <td>A69-1601-31339</td>
+      <td>V13-1x</td>
+      <td>31339</td>
+      <td>H</td>
+    </tr>
+    <tr>
+      <td>A69-1601-31340</td>
+      <td>V13-1x</td>
+      <td>31340</td>
+      <td>H</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;### Merge tag ID Code with INS_SERIAL_NO to get metadata</span>
+<span class="s2">The tags that have missing info here, turn out to be unimportant later, due to insufficient detection count.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
+<span class="n">tag_specs</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfmeta_deploy</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;ID Code&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;INS_SERIAL_NO&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="Merge-tag-ID-Code-with-INS_SERIAL_NO-to-get-metadata">
+<h2>Merge tag ID Code with INS_SERIAL_NO to get metadata<a class="headerlink" href="#Merge-tag-ID-Code-with-INS_SERIAL_NO-to-get-metadata" title="Permalink to this headline">¶</a></h2>
+<p>The tags that have missing info here, turn out to be unimportant later, due to insufficient detection count.</p>
+</div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tag Family</td>
+      <td>V16-5x</td>
+      <td>V16-5x</td>
+      <td>V9-2x</td>
+      <td>V9-2x</td>
+      <td>V13-1x</td>
+      <td>V13-1x</td>
+    </tr>
+    <tr>
+      <td>ID Code</td>
+      <td>31335</td>
+      <td>31336</td>
+      <td>31341</td>
+      <td>31342</td>
+      <td>31339</td>
+      <td>31340</td>
+    </tr>
+    <tr>
+      <td>Power</td>
+      <td>H</td>
+      <td>H</td>
+      <td>L</td>
+      <td>L</td>
+      <td>H</td>
+      <td>H</td>
+    </tr>
+    <tr>
+      <td>OTN_ARRAY</td>
+      <td>MBT</td>
+      <td>NaN</td>
+      <td>MBT</td>
+      <td>NaN</td>
+      <td>MBT</td>
+      <td>MBT</td>
+    </tr>
+    <tr>
+      <td>STATION_NO</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>DEPLOY_DATE_TIME</td>
+      <td>2016-03-17T14:48:08</td>
+      <td>NaN</td>
+      <td>2016-03-09T14:22:37</td>
+      <td>NaN</td>
+      <td>2016-03-17T14:48:08</td>
+      <td>2016-03-09T14:22:37</td>
+    </tr>
+    <tr>
+      <td>DEPLOY_LAT</td>
+      <td>44.5603</td>
+      <td>NaN</td>
+      <td>44.5588</td>
+      <td>NaN</td>
+      <td>44.5603</td>
+      <td>44.5588</td>
+    </tr>
+    <tr>
+      <td>DEPLOY_LONG</td>
+      <td>-64.1826</td>
+      <td>NaN</td>
+      <td>-64.1778</td>
+      <td>NaN</td>
+      <td>-64.1826</td>
+      <td>-64.1778</td>
+    </tr>
+    <tr>
+      <td>BOTTOM_DEPTH</td>
+      <td>180</td>
+      <td>NaN</td>
+      <td>190</td>
+      <td>NaN</td>
+      <td>180</td>
+      <td>190</td>
+    </tr>
+    <tr>
+      <td>RISER_LENGTH</td>
+      <td>29</td>
+      <td>NaN</td>
+      <td>25</td>
+      <td>NaN</td>
+      <td>27</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td>INSTRUMENT_DEPTH</td>
+      <td>151</td>
+      <td>NaN</td>
+      <td>165</td>
+      <td>NaN</td>
+      <td>153</td>
+      <td>163</td>
+    </tr>
+    <tr>
+      <td>INS_MODEL_NO</td>
+      <td>v16</td>
+      <td>NaN</td>
+      <td>V9</td>
+      <td>NaN</td>
+      <td>v13</td>
+      <td>V13</td>
+    </tr>
+    <tr>
+      <td>INS_SERIAL_NO</td>
+      <td>31335</td>
+      <td>NaN</td>
+      <td>31341</td>
+      <td>NaN</td>
+      <td>31339</td>
+      <td>31340</td>
+    </tr>
+    <tr>
+      <td>AR_MODEL_NO</td>
+      <td>PORTMFE</td>
+      <td>NaN</td>
+      <td>PORTMFE</td>
+      <td>NaN</td>
+      <td>PORTMFE</td>
+      <td>PORTMFE</td>
+    </tr>
+    <tr>
+      <td>AR_SERIAL_NO</td>
+      <td>36189</td>
+      <td>NaN</td>
+      <td>35880</td>
+      <td>NaN</td>
+      <td>36189</td>
+      <td>35880</td>
+    </tr>
+    <tr>
+      <td>DEPLOYED_BY</td>
+      <td>D Bates, G Graca, Schornagel</td>
+      <td>NaN</td>
+      <td>D Bates, G Graca</td>
+      <td>NaN</td>
+      <td>D Bates, G Graca, Schornagel</td>
+      <td>D Bates, G Graca</td>
+    </tr>
+    <tr>
+      <td>RECOVERED</td>
+      <td>y</td>
+      <td>NaN</td>
+      <td>y</td>
+      <td>NaN</td>
+      <td>y</td>
+      <td>y</td>
+    </tr>
+    <tr>
+      <td>RECOVER_DATE_TIME</td>
+      <td>2016-04-04T18:14:59</td>
+      <td>NaN</td>
+      <td>2016-04-04T18:06:15</td>
+      <td>NaN</td>
+      <td>2016-04-04T18:14:59</td>
+      <td>2016-04-04T18:06:15</td>
+    </tr>
+    <tr>
+      <td>RECOVER_LAT</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>RECOVER_LONG</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>DATA_DOWNLOADED</td>
+      <td>n</td>
+      <td>NaN</td>
+      <td>n</td>
+      <td>NaN</td>
+      <td>n</td>
+      <td>n</td>
+    </tr>
+    <tr>
+      <td>DOWNLOAD_DATE_TIME</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>FILENAME</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>COMMENTS</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>415.4623m from 003</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>DEPLOY_DATETIME</td>
+      <td>2016-03-17 14:48:08</td>
+      <td>NaT</td>
+      <td>2016-03-09 14:22:37</td>
+      <td>NaT</td>
+      <td>2016-03-17 14:48:08</td>
+      <td>2016-03-09 14:22:37</td>
+    </tr>
+    <tr>
+      <td>RECOVER_DATETIME</td>
+      <td>2016-04-04 18:14:59</td>
+      <td>NaT</td>
+      <td>2016-04-04 18:06:15</td>
+      <td>NaT</td>
+      <td>2016-04-04 18:14:59</td>
+      <td>2016-04-04 18:06:15</td>
+    </tr>
+    <tr>
+      <td>DOWNLOAD_DATETIME</td>
+      <td>NaT</td>
+      <td>NaT</td>
+      <td>NaT</td>
+      <td>NaT</td>
+      <td>NaT</td>
+      <td>NaT</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_device_id</span><span class="p">(</span><span class="n">device_str</span><span class="p">):</span>
+    <span class="s2">&quot;Return last part of &#39;-&#39;-separated string as int. Works on str and DataFrames of strings.&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">device_str</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">device_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">rt_info</span><span class="p">(</span><span class="n">grdf</span><span class="p">):</span>
+    <span class="c1"># get receiver and transmitter IDs of first detection and merge metadata</span>
+    <span class="n">rt_inf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">get_device_id</span><span class="p">(</span><span class="n">grdf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:][[</span><span class="s1">&#39;Receiver&#39;</span><span class="p">,</span><span class="s1">&#39;Transmitter&#39;</span><span class="p">]]))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+    <span class="n">rt_inf</span> <span class="o">=</span> <span class="n">rt_inf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfmeta_deploy</span><span class="o">.</span><span class="n">add_prefix</span><span class="p">(</span><span class="s1">&#39;RECV_&#39;</span><span class="p">),</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Receiver&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;RECV_INS_SERIAL_NO&#39;</span><span class="p">)</span>
+    <span class="n">rt_inf</span> <span class="o">=</span> <span class="n">rt_inf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfmeta_deploy</span><span class="o">.</span><span class="n">add_prefix</span><span class="p">(</span><span class="s1">&#39;TAG_&#39;</span><span class="p">),</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Transmitter&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;TAG_INS_SERIAL_NO&#39;</span><span class="p">)</span>
+    <span class="n">rt_inf</span> <span class="o">=</span> <span class="n">rt_inf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">rt_inf</span><span class="p">[</span><span class="s1">&#39;RT_DISTANCE_M&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">station_dists_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rt_inf</span><span class="p">[</span><span class="s1">&#39;RECV_STATION_NO&#39;</span><span class="p">],</span> <span class="n">rt_inf</span><span class="p">[</span><span class="s1">&#39;TAG_STATION_NO&#39;</span><span class="p">]]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">rt_inf</span>
+
+<span class="k">def</span> <span class="nf">rt_dist</span><span class="p">(</span><span class="n">grdf</span><span class="p">):</span>
+    <span class="n">rt_inf</span> <span class="o">=</span> <span class="n">rt_info</span><span class="p">(</span><span class="n">grdf</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">rt_inf</span><span class="p">[</span><span class="s1">&#39;RT_DISTANCE_M&#39;</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="c1">#print(rt_inf)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="k">def</span> <span class="nf">rt_name</span><span class="p">(</span><span class="n">grdf</span><span class="p">,</span> <span class="n">dist_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">metainf</span> <span class="o">=</span> <span class="n">tag_specs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">grdf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;Transmitter&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Tag Family&#39;</span><span class="p">,</span><span class="s1">&#39;Power&#39;</span><span class="p">]]</span>
+        <span class="n">metainf</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metainf</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">dist_str</span><span class="p">:</span>
+            <span class="n">metainf</span> <span class="o">+=</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">dist_str</span><span class="p">(</span><span class="n">rt_dist</span><span class="p">(</span><span class="n">grdf</span><span class="p">))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">metainf</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">rt</span> <span class="o">=</span> <span class="n">grdf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][[</span><span class="s2">&quot;Receiver&quot;</span><span class="p">,</span><span class="s2">&quot;Transmitter&quot;</span><span class="p">]]</span>
+    <span class="n">rt</span><span class="p">[</span><span class="s2">&quot;Transmitter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;tag-</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">get_device_id</span><span class="p">(</span><span class="n">rt</span><span class="p">[</span><span class="s2">&quot;Transmitter&quot;</span><span class="p">])</span>
+    <span class="n">dscr</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rt</span><span class="p">)</span> <span class="o">+</span> <span class="n">metainf</span>
+    <span class="k">return</span> <span class="n">dscr</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sec1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s2">&quot;1s&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">calc_intervals</span><span class="p">(</span><span class="n">grdf</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">grdf</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">sec1</span>
+<span class="k">def</span> <span class="nf">group_info</span><span class="p">(</span><span class="n">grdf</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">grdf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="s2">&quot;min_interval&quot;</span><span class="p">,</span> <span class="s2">&quot;max_interval&quot;</span><span class="p">,</span> <span class="s2">&quot;Receiver/Transmitter&quot;</span><span class="p">,</span> <span class="s2">&quot;dist_m&quot;</span>
+    <span class="n">ivs</span> <span class="o">=</span> <span class="n">calc_intervals</span><span class="p">(</span><span class="n">grdf</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">grdf</span><span class="p">),</span> <span class="n">ivs</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">ivs</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">rt_name</span><span class="p">(</span><span class="n">grdf</span><span class="p">),</span> <span class="n">rt_dist</span><span class="p">(</span><span class="n">grdf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+
+<span></span><span class="n">gsdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="n">group_info</span><span class="p">(</span><span class="n">grdf</span><span class="p">)</span> <span class="k">for</span> <span class="n">grdf</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">),</span>
+                    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="o">*</span><span class="n">group_info</span><span class="p">()]</span>
+                   <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">d_min</span><span class="p">,</span> <span class="n">d_max</span> <span class="o">=</span> <span class="n">gsdf</span><span class="p">[</span><span class="s1">&#39;dist_m&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">gsdf</span><span class="p">[</span><span class="s1">&#39;dist_m&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">dist_th</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">d_min</span><span class="p">,</span> <span class="n">d_max</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">dist_str</span><span class="p">(</span><span class="n">dist</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">dist</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;U&quot;</span>
+    <span class="k">elif</span> <span class="n">dist</span> <span class="o">&gt;</span> <span class="n">dist_th</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;F&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;N&quot;</span>
+<span class="n">gsdf</span><span class="p">[</span><span class="s1">&#39;Receiver/Transmitter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gsdf</span><span class="p">[</span><span class="s1">&#39;Receiver/Transmitter&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">gsdf</span><span class="p">[</span><span class="s1">&#39;dist_m&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">dist_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">printmd</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;# Summary of detections by Receiver/Transmitter pair</span>
+<span class="s2">**R/T name format:**</span>
+<span class="s2">Receiver/Transmitter/Tag Family/Power(H,L)/Distance(Near,Far)</span>
+
+<span class="s2">**Distances:**</span>
+<span class="s2">near = </span><span class="si">%.2f</span><span class="s2"> m</span>
+<span class="s2">far = </span><span class="si">%.2f</span><span class="s2"> m</span>
+<span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d_min</span><span class="p">,</span> <span class="n">d_max</span><span class="p">))</span>
+<span class="n">gsdf</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Receiver/Transmitter&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="section" id="Summary-of-detections-by-Receiver/Transmitter-pair">
+<h2>Summary of detections by Receiver/Transmitter pair<a class="headerlink" href="#Summary-of-detections-by-Receiver/Transmitter-pair" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>R/T name format:</strong></div>
+<div class="line">Receiver/Transmitter/Tag Family/Power(H,L)/Distance(Near,Far)</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Distances:</strong></div>
+<div class="line">near = 822.11 m</div>
+<div class="line">far = 520.36 m</div>
+</div>
+</div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>min_interval</th>
+      <th>max_interval</th>
+      <th>Receiver/Transmitter</th>
+      <th>dist_m</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>21</td>
+      <td>41</td>
+      <td>8.0</td>
+      <td>412585.0</td>
+      <td>VR4-UWM-250473/tag-31342/V9-2x-L-U</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>2449</td>
+      <td>8.0</td>
+      <td>43120.0</td>
+      <td>VR4-UWM-250473/tag-31341/V9-2x-L-N</td>
+      <td>520.35822</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>4680</td>
+      <td>8.0</td>
+      <td>14553.0</td>
+      <td>VR4-UWM-250473/tag-31340/V13-1x-H-N</td>
+      <td>520.35822</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>769</td>
+      <td>8.0</td>
+      <td>439208.0</td>
+      <td>VR4-UWM-250473/tag-31339/V13-1x-H-F</td>
+      <td>822.11224</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>3992</td>
+      <td>8.0</td>
+      <td>7320.0</td>
+      <td>VR4-UWM-250473/tag-31335/V16-5x-H-F</td>
+      <td>822.11224</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>5</td>
+      <td>1138.0</td>
+      <td>1369251.0</td>
+      <td>VR2W-128559/tag-31342/V9-2x-L-U</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>4061</td>
+      <td>8.0</td>
+      <td>43082.0</td>
+      <td>VR2W-128559/tag-31341/V9-2x-L-N</td>
+      <td>520.35822</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>7056</td>
+      <td>8.0</td>
+      <td>9438.0</td>
+      <td>VR2W-128559/tag-31340/V13-1x-H-N</td>
+      <td>520.35822</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>755</td>
+      <td>8.0</td>
+      <td>521763.0</td>
+      <td>VR2W-128559/tag-31339/V13-1x-H-F</td>
+      <td>822.11224</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>5075</td>
+      <td>8.0</td>
+      <td>9684.0</td>
+      <td>VR2W-128559/tag-31335/V16-5x-H-F</td>
+      <td>822.11224</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>VR2W-128559/tag-14945-U</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>74</td>
+      <td>7.0</td>
+      <td>423850.0</td>
+      <td>VR2W-100928/tag-31342/V9-2x-L-U</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>5376</td>
+      <td>8.0</td>
+      <td>20264.0</td>
+      <td>VR2W-100928/tag-31341/V9-2x-L-N</td>
+      <td>520.35822</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>7281</td>
+      <td>8.0</td>
+      <td>8438.0</td>
+      <td>VR2W-100928/tag-31340/V13-1x-H-N</td>
+      <td>520.35822</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>1514</td>
+      <td>8.0</td>
+      <td>370290.0</td>
+      <td>VR2W-100928/tag-31339/V13-1x-H-F</td>
+      <td>822.11224</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>5093</td>
+      <td>8.0</td>
+      <td>8026.0</td>
+      <td>VR2W-100928/tag-31335/V16-5x-H-F</td>
+      <td>822.11224</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>2</td>
+      <td>1544472.0</td>
+      <td>1544472.0</td>
+      <td>VR2W-100928/tag-14945-U</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>VR2W-100928/tag-11228-U</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>98</td>
+      <td>8.0</td>
+      <td>323765.0</td>
+      <td>VMT-1188739/tag-31341/V9-2x-L-N</td>
+      <td>520.35822</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>4877</td>
+      <td>8.0</td>
+      <td>29890.0</td>
+      <td>VMT-1188739/tag-31340/V13-1x-H-N</td>
+      <td>520.35822</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>80</td>
+      <td>276.0</td>
+      <td>789759.0</td>
+      <td>VMT-1188739/tag-31339/V13-1x-H-F</td>
+      <td>822.11224</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>3153</td>
+      <td>8.0</td>
+      <td>697579.0</td>
+      <td>VMT-1188739/tag-31335/V16-5x-H-F</td>
+      <td>822.11224</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="section" id="Plots-of-detection-density-and-interval-lengths--against-tidal-phase-(t2)-and-water-velocity">
+<h2>Plots of detection density and interval lengths  against tidal phase (t2) and water velocity<a class="headerlink" href="#Plots-of-detection-density-and-interval-lengths--against-tidal-phase-(t2)-and-water-velocity" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">make_detection_rate</span><span class="p">(</span><span class="n">tdfok</span><span class="p">,</span> <span class="n">exp_interval_s</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">num_time_bins</span><span class="o">=</span><span class="mi">200</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;calculate detection rate&quot;&quot;&quot;</span>
+    <span class="c1"># shift time stamps to start at 0 for first measurement iloc[0]</span>
+    <span class="n">time_stamps</span> <span class="o">=</span> <span class="p">(</span><span class="n">tdfok</span><span class="o">.</span><span class="n">datetime</span> <span class="o">-</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">sec1</span>
+    <span class="n">dtcnt</span><span class="p">,</span> <span class="n">bins_dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">time_stamps</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">num_time_bins</span><span class="p">)</span>
+    <span class="n">expcount</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">((</span><span class="n">bins_dt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">bins_dt</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">exp_interval_s</span><span class="p">)</span> <span class="c1"># expected count per bin if no ping is lost</span>
+    <span class="n">bins_rt</span> <span class="o">=</span> <span class="n">bins_dt</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">sec1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">tdfok</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># shift bin timestamps back to actual time</span>
+    <span class="n">det_rate</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">dtcnt</span><span class="o">/</span><span class="n">expcount</span><span class="p">,</span>  <span class="c1"># detected count normalized by expected count (may be &gt; 1)</span>
+                         <span class="n">index</span><span class="o">=</span><span class="n">bins_rt</span><span class="p">,</span>
+                         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;detection_rate&quot;</span><span class="p">)</span>
+    <span class="n">tdfok</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">tdfok</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">),</span> <span class="n">det_rate</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;pad&quot;</span><span class="p">)</span>
+    <span class="n">tdfok</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;datetime&quot;</span>
+    <span class="k">return</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">5</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.max_open_warning&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">t2bin_stepsize</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">t2bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">+</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">t2bin_stepsize</span><span class="p">)</span>
+<span class="n">interval_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t2bins</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mean_ping_interval</span> <span class="o">=</span> <span class="mi">300</span> <span class="c1"># sec</span>
+<span class="n">num_time_bins</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">MIN_DETECTIONS</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># skip receiver/transmitter combinations that have less than this number of detections</span>
+<span class="n">rt_name_dist</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">gr</span><span class="p">:</span> <span class="n">rt_name</span><span class="p">(</span><span class="n">gr</span><span class="p">,</span> <span class="n">dist_str</span><span class="p">)</span>
+
+<span class="n">skipmsg</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="c1"># each group contains all detections for a particular receiver/transmitter combination</span>
+<span class="k">for</span> <span class="n">gr</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">gr</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MIN_DETECTIONS</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">skipmsg</span><span class="p">:</span>
+            <span class="n">printmd</span><span class="p">(</span><span class="s2">&quot;Skipping receiver/transmitter combinations due to insufficient detections:&quot;</span><span class="p">)</span>
+            <span class="n">skipmsg</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">printmd</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_name_dist</span><span class="p">(</span><span class="n">gr</span><span class="p">)))</span>
+        <span class="k">continue</span>
+
+    <span class="c1"># add interval length and water velocity calculations to dataframe</span>
+    <span class="n">tdf</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">tdf</span><span class="p">[</span><span class="s2">&quot;interval&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calc_intervals</span><span class="p">(</span><span class="n">tdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">))</span>
+    <span class="n">tdf</span><span class="p">[</span><span class="s2">&quot;water_vel&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">tdf</span><span class="o">.</span><span class="n">water_u</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">tdf</span><span class="o">.</span><span class="n">water_v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">)</span>
+    <span class="c1">#tdf[&quot;water_vel&quot;] = (tdf.water_u_bottom**2+tdf.water_v_bottom**2).apply(np.sqrt)</span>
+    <span class="c1">#tdf[&quot;water_vel&quot;] = tdf[&quot;dheight_cm_per_hr&quot;]</span>
+    <span class="c1">#colnames = [&#39;salinity_bottom&#39;, &#39;water_temp_bottom&#39;, &#39;water_u_bottom&#39;, &#39;water_v_bottom&#39;,</span>
+    <span class="c1">#            &#39;salinity&#39;, &#39;water_temp&#39;, &#39;water_u&#39;, &#39;water_v&#39;]</span>
+    <span class="c1">#tdf[&quot;water_vel&quot;] = tdf[&quot;salinity&quot;]</span>
+
+    <span class="c1"># ignore date range with short signal intervals at beginning</span>
+    <span class="n">cutoff_t</span> <span class="o">=</span> <span class="n">tdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tdf</span><span class="p">[</span><span class="n">tdf</span><span class="o">.</span><span class="n">interval</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">**</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+                       <span class="s2">&quot;datetime&quot;</span><span class="p">]</span>
+    <span class="n">tdfok</span> <span class="o">=</span> <span class="n">tdf</span><span class="p">[</span><span class="n">tdf</span><span class="o">.</span><span class="n">datetime</span><span class="o">&gt;</span><span class="n">cutoff_t</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="n">tdfok</span> <span class="o">=</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tdfok</span><span class="p">[</span><span class="s2">&quot;interval&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">**</span><span class="mi">13</span><span class="p">]</span>
+    <span class="n">tdfok</span> <span class="o">=</span> <span class="n">make_detection_rate</span><span class="p">(</span><span class="n">tdfok</span><span class="p">,</span> <span class="n">exp_interval_s</span><span class="o">=</span><span class="n">mean_ping_interval</span><span class="p">,</span> <span class="n">num_time_bins</span><span class="o">=</span><span class="n">num_time_bins</span><span class="p">)</span>
+    <span class="c1"># TODO add tdfok to list for later pd.concat</span>
+
+    <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">tdfok</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)[[</span><span class="s2">&quot;detection_rate&quot;</span><span class="p">,</span><span class="s2">&quot;water_vel&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">rt_name_dist</span><span class="p">(</span><span class="n">gr</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="n">base_interval</span> <span class="o">=</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">interval</span><span class="p">[</span><span class="n">tdfok</span><span class="o">.</span><span class="n">interval</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">**</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># should be 5 min = 300 sec</span>
+    <span class="n">tdfmean</span> <span class="o">=</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">tdfok</span><span class="p">[</span><span class="s2">&quot;t2&quot;</span><span class="p">],</span> <span class="n">t2bins</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">tdfcount</span> <span class="o">=</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">tdfok</span><span class="p">[</span><span class="s2">&quot;t2&quot;</span><span class="p">],</span> <span class="n">t2bins</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="n">tdfcount</span><span class="p">[</span><span class="s2">&quot;bins&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tdfcount</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">left</span><span class="o">+</span><span class="n">i</span><span class="o">.</span><span class="n">right</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">interval_all</span> <span class="o">+=</span> <span class="n">tdfcount</span><span class="p">[</span><span class="s2">&quot;t2&quot;</span><span class="p">]</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">rt_name_dist</span><span class="p">(</span><span class="n">gr</span><span class="p">))</span>
+
+    <span class="c1"># plot over tidal phase t2: interval lengths, detection density, mean water_velocity</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;t2&quot;</span><span class="p">,</span> <span class="s2">&quot;interval&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="n">basey</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;tidal phase&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;interval lengths</span><span class="se">\n</span><span class="s2">detection count</span><span class="se">\n</span><span class="s2">mean water velocity&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="c1">#tfivs = (tdfok.datetime.max()-tdfok.datetime.min())/sec1/(len(tdfok)/len(t2bins))/tdfcount[&quot;t2&quot;].values</span>
+    <span class="n">tfivs</span> <span class="o">=</span> <span class="n">tdfcount</span><span class="p">[</span><span class="s2">&quot;t2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tdfcount</span><span class="p">[</span><span class="s2">&quot;bins&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">tfivs</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="c1">#ax = tdfmean.plot(&quot;t2&quot;, &quot;water_vel&quot;, alpha=1, ax=axs[0], c=&quot;darkgreen&quot;, linewidth=1)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">tdfmean</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;t2&quot;</span><span class="p">,</span> <span class="s2">&quot;water_vel&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;darkgreen&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;detection count&quot;</span><span class="p">,</span> <span class="s2">&quot;water velocity&quot;</span><span class="p">],</span>
+              <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># interval lengths over date range</span>
+    <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">tdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)[</span><span class="s2">&quot;interval&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.1</span><span class="p">)</span>
+        <span class="n">tdfok</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">water_vel</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;darkgreen&quot;</span><span class="p">)</span>
+        <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">cutoff_t</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="n">tdfok</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">max</span><span class="p">()],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;darkorange&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="n">basey</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;interval (blue dots)&#39;</span><span class="p">,</span> <span class="s1">&#39;water velocity&#39;</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1">#ax = tdfmean.plot(&quot;t2&quot;,&quot;interval&quot;, alpha=1, ax=ax1, c=&quot;darkgrey&quot;, linewidth=2)</span>
+    <span class="k">elif</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">tdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)[</span><span class="s2">&quot;interval&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.1</span><span class="p">)</span>
+        <span class="n">tdfok</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)[[</span><span class="s2">&quot;water_vel&quot;</span><span class="p">,</span> <span class="s2">&quot;detection_rate&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="n">basey</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;interval (blue dots)&#39;</span><span class="p">,</span> <span class="s1">&#39;water velocity&#39;</span><span class="p">,</span> <span class="s1">&#39;detection_rate&#39;</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1">#tdfok.set_index(&quot;datetime&quot;)[[&quot;water_vel&quot;, &quot;detection_rate&quot;]].plot(ax=axs[1], grid=True)</span>
+        <span class="c1"># plot detection_rate and water_velocity in two vertically stacked plots</span>
+        <span class="n">mainax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">l</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="n">mainax</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span><span class="o">.</span><span class="n">bounds</span>
+        <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+        <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="n">l</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="o">*</span><span class="mf">.45</span><span class="p">])</span>
+        <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="n">l</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="o">*</span><span class="mf">.45</span><span class="p">])</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)[</span><span class="s2">&quot;water_vel&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkorange&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)[</span><span class="s2">&quot;detection_rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># detection density per water_vel density</span>
+    <span class="c1">#division = np.arange(0, 0.25001, 0.25/100)</span>
+    <span class="n">v_min</span> <span class="o">=</span> <span class="n">tdfok</span><span class="p">[</span><span class="s2">&quot;water_vel&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">v_max</span> <span class="o">=</span> <span class="n">tdfok</span><span class="p">[</span><span class="s2">&quot;water_vel&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">division</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">v_min</span><span class="p">,</span> <span class="n">v_max</span><span class="o">+</span><span class="mf">1e-5</span><span class="p">,</span> <span class="p">(</span><span class="n">v_max</span><span class="o">-</span><span class="n">v_min</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">counts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">tdfok</span><span class="p">[</span><span class="s2">&quot;water_vel&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">division</span><span class="p">)</span>
+    <span class="n">vel_grid</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">tdfok</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">tdfok</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;1h&quot;</span><span class="p">)</span>
+    <span class="n">count_denom</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">tdfok</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">vel_grid</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)[</span><span class="s2">&quot;water_vel&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">division</span><span class="p">)</span>
+    <span class="n">nzi</span> <span class="o">=</span> <span class="n">count_denom</span> <span class="o">!=</span> <span class="mi">0</span>
+    <span class="n">counts_norm</span> <span class="o">=</span> <span class="n">counts</span>
+    <span class="n">counts_norm</span><span class="p">[</span><span class="n">nzi</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="n">nzi</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">count_denom</span><span class="p">[</span><span class="n">nzi</span><span class="p">]</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">count_denom</span><span class="p">))</span>
+    <span class="n">counts_norm</span> <span class="o">=</span> <span class="n">counts_norm</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts_norm</span><span class="p">)</span>
+    <span class="c1"># print(counts)</span>
+    <span class="c1">#tdfok[&quot;water_vel&quot;].hist(bins=division)</span>
+    <span class="c1">#plt.bar(x=division[1:], height=counts, width=0.25/100)    #text=ax.text(0,0, &quot;&quot;, va=&quot;bottom&quot;, ha=&quot;left&quot;)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">division</span><span class="p">[</span><span class="mi">1</span><span class="p">:][</span><span class="n">nzi</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">counts_norm</span><span class="p">[</span><span class="n">nzi</span><span class="p">])</span>    <span class="c1">#text=ax.text(0,0, &quot;&quot;, va=&quot;bottom&quot;, ha=&quot;left&quot;)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;water velocity&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;detection density&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">rt_name_dist</span><span class="p">(</span><span class="n">gr</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>Skipping receiver/transmitter combinations due to insufficient detections:</p>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>VMT-1188739/tag-31339/V13-1x-H-F</p>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>VMT-1188739/tag-31341/V9-2x-L-N</p>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>VR2W-100928/tag-11228</p>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>VR2W-100928/tag-14945</p>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>VR2W-100928/tag-31342/V9-2x-L-U</p>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>VR2W-128559/tag-14945</p>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>VR2W-128559/tag-31342/V9-2x-L-U</p>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<p>VR4-UWM-250473/tag-31342/V9-2x-L-U</p>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_9.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_9.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_10.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_10.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_11.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_11.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_12.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_12.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_13.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_13.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_14.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_14.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_15.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_15.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_16.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_16.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_17.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_17.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_18.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_18.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_19.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_19.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_20.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_20.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_21.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_21.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_22.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_22.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_23.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_23.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_24.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_24.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_25.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_25.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_26.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_26.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_27.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_27.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_28.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_28.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_29.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_29.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_30.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_30.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_31.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_31.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_32.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_32.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_33.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_33.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_34.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_34.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_35.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_35.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_36.png" src="../../_images/tutorials_MahoneBay2016_tidal_analysis_rt_57_36.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Discussion">
+<h2>Discussion<a class="headerlink" href="#Discussion" title="Permalink to this headline">¶</a></h2>
+<p>In the above visual summary, the <strong>H-N</strong> combinations, i.e. high-power, near distance, are the ones where water velocity shows the least effect on variations in detection rate (detection density). This confirms expectations and shows promise for the proposed study method. Next steps include:</p>
+<ul class="simple">
+<li><p>Continue to work with detection rate (DR) as calculated in a fixed grid of time windows</p></li>
+<li><p>Compare variations of DR with respect to other environmental variables</p></li>
+<li><p>Import other environmental variables automatically via data source APIs (ERDDAP, kadlu.fetch)</p></li>
+<li><p>Determine suitable numerical measure of factor importance in addition to visual analysis</p></li>
+</ul>
+</div>
+<div class="section" id="Acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#Acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>The above analysis was performed using <a class="reference external" href="http://members.devel.oceantrack.org/erddap/tabledap/otnunit_aat_detections.html">data from OTN</a> (provided by Jonathan Pye of OTN), in combination with HYCOM environmental data and tidal data provided by Casey Hilliard (Meridian/Dal), with a synthesized dataset prepared by Matthew Berkowitz (SFU), with project definition and guidance provided by Oliver Kirsebom (Dal) and Ines Hessler (Dal) as part of the <a class="reference external" href="https://meridian.cs.dal.ca">Meridian Network</a>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SFU.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
