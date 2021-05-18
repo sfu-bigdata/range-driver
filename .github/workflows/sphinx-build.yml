@@ -40,7 +40,7 @@ jobs:
           path: data.zip
           key: ${{ runner.os }}-data
       - name: Download data
-        if: ${{ !env.ACT }} && steps.cache-data.outputs.cache-hit != 'true'
+        if: ${{ !env.ACT }} && {{steps.cache-data.outputs.cache-hit != 'true'}}
         uses: wei/wget@v1
         with:
           args: -O data.zip "https://vault.sfu.ca/index.php/s/GFlTJ9maTYjuMlP/download"
