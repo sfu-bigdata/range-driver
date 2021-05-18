@@ -21,8 +21,7 @@ jobs:
         with:
           path: ~/conda_pkgs_dir
           key:
-            ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{
-            hashFiles('environment.yml') }}
+            ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('environment.yml') }}
       - uses: conda-incubator/setup-miniconda@v2
         with:
           miniconda-version: "latest"
@@ -34,8 +33,14 @@ jobs:
       - name: Install range_driver
         run: |
           pip install -e .
+      - name: Cache data
+        id: cache-data
+        uses: actions/cache@v2
+        with:
+          path: data.zip
+          key: ${{ runner.os }}-data
       - name: Download data
-        if: ${{ !env.ACT }}
+        if: ${{ !env.ACT }} && steps.cache-data.outputs.cache-hit != 'true'
         uses: wei/wget@v1
         with:
           args: -O data.zip "https://vault.sfu.ca/index.php/s/GFlTJ9maTYjuMlP/download"
