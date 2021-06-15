@@ -114,7 +114,8 @@ with $1$ corresponding to low tide.""")
 
 def show_group_plots(dets, gn, gr, params, column_name):
     """Show a collection of plots that give a summary for one receiver/transmitter group"""
-    rt_name = dets.mdb.rt_groups.loc[gn, 'Receiver/Transmitter']
+    # rt_name = dets.mdb.rt_groups.loc[gn, 'Receiver/Transmitter']
+    rt_name = gn
     events_df, bins_df = dets.get_events_bins(gr)
     tdfok = bins_df
     if tdfok.empty:
@@ -145,68 +146,95 @@ def show_group_plots(dets, gn, gr, params, column_name):
     plt.subplots_adjust(wspace=.3)
 
 
-def report_all_group_plots(dets, column=None):
+def report_all_group_plots(dets, groups=None, grouping_feature=None, column=None):
+    """
+
+    :param dets: The Detections object containing study and environmental data.
+    :type dets: range_driver.detections.Detections
+
+    :param groups: The GroupBy object containing the groups to plot. Optional, defaults to None.
+    :type groups: pandas.core.groupby.generic.DataFrameGroupBy
+
+    :param grouping_feature: The feature (column) in dets to use for grouping. Only used if groups
+    is None. Optional, defaults to None.
+    :type grouping_feature: str
+
+    :param column: The column to plot for comparison to detection rate.
+    :type column: str
+
+    :return: Nothing. Plots are displayed.
+    """
     rcParams.update(dets.config.view.rcParams)
     params = make_params(dets.config)
+
+    # Find the column to plot for comparison
     _, colnames, ccolumn = get_column_info(dets.config)
     if column is None:
         column = ccolumn
     column_name = (column, colnames[column])
-    skipmsg = False
-    # each group contains all detections for a particular receiver/transmitter combination
-    for gn, gr in dets.rt_group_detections:
-        gn = tuple(reversed(gn)) # TODO check this when changing T/R groupby key order
-        rt_name = dets.mdb.rt_groups.loc[gn, 'Receiver/Transmitter']
-        if len(gr) < params.min_detections:
-            if not skipmsg:
-                displaymd("**Skipping receiver/transmitter combinations that have insufficient detections:**")
-                skipmsg = True
-            displaymd("{}".format(rt_name))
-            continue
-        show_group_plots(dets, gn, gr, params, column_name=column_name)
+
+    # If groups aren't provided, try to use the grouping_feature to cluster the data. If that isn't
+    # provided, don't group the data and instead plot all the data together.
+    if groups is None:
+        if grouping_feature is None:
+            groups = [("All Detections", dets.df_detections_env)]
+        else:
+            groups = dets.df_detections_env.groupby(grouping_feature, as_index=False)
+
+    # Plot each group
+    for group_name, group_data in groups:
+        if len(group_data) < params.min_detections:
+            displaymd("**Skipping groups that have insufficient detections:**")
+        else:
+            show_group_plots(dets, group_name, group_data, params, column_name)
 
 
 def report_map_view(dets):
     plot_bounds(dets.bounds, dets.receiver_locations, dets.receiver_info, dets.node_locations)
 
 
-def report_heatmap(dets, grouping_feature=None):
+def report_heatmap(dets, groups=None, grouping_feature=None):
     """
     Generate & display a series of heat-maps showing the correlation between the quantitative
-    features in Detections object's Binned DataFrame. One heat-map will be created for each unique
-    value of the grouping_feature. If no grouping feature is provided, a single heat-map will be
-    created, showing the correlation of features across the entire dataset.
+    features in Detections object's event data.
+
+    One heat-map will be created for each group of data, specified by groups or grouping_feature. If
+    neither groups or grouping_featuer are specified, a single heat-map will be created, showing the
+    correlation of features across the entire dataset.
 
     :param dets: The Detections object containing study & environmental data.
     :type dets: range_driver.detections.Detections
 
-    :param grouping_feature: The feature used for grouping data into  of the feature that is
+    :param groups: The GroupBy object containing the groups to plot. Optional, defaults to None.
+    :type groups: pandas.core.groupby.generic.DataFrameGroupBy
+
+    :param grouping_feature: The feature (column) in dets to use for grouping. Only used if groups
+    is None. Optional, defaults to None.
     :type grouping_feature: str
 
     :return: Nothing is returned. Plots are displayed.
     """
-    det_df = dets.detection_bins_df
-
     default_exclude_cols = ['datetime', 'Receiver', 'Transmitter', 'Receiver.ID', 'Transmitter.ID',
                             'Receiver.lat', 'Receiver.lon', 'STATION_NO', 'DEPLOY_LONG',
                             'DEPLOY_LAT', 'INS_SERIAL_NO', 'interval', 'datetimeb',
                             'Transmitter.Tag Family', 'Transmitter.Power', 'Transmitter.Min delay',
                             'Transmitter.Max delay', 'Transmitter.Avg delay']
 
-    feature_cols = [c for c in det_df.columns if (c not in default_exclude_cols) |
-                                                 (c == grouping_feature)]
-    features = det_df[feature_cols]
+    if groups is None:
+        if grouping_feature is None:
+            groups = [("All Detections", dets.df_detections_env)]
+        else:
+            groups = dets.df_detections_env.groupby(grouping_feature, as_index=False)
 
-    if grouping_feature:
-        groups = features.groupby(grouping_feature, as_index=False)
-        for name, group in groups:
-            title = f"{grouping_feature} == {name}"
-            if grouping_feature in group.columns:
-                group = group.drop(grouping_feature, axis=1)
-            heatmaps.plot_feature_heatmap(group, title=title)
-
-    else:
-        heatmaps.plot_feature_heatmap(features)
+    for name, group in groups:
+        feature_cols = [c for c in group.columns if (c not in default_exclude_cols) |
+                        (c == grouping_feature)]
+        features = group[feature_cols]
+        if grouping_feature:
+            name = f"{grouping_feature} == {name}"
+        if grouping_feature in features.columns:
+            features = features.drop(grouping_feature, axis=1)
+        heatmaps.plot_feature_heatmap(features, title=name)
 
 
 def report_tidal(dets):

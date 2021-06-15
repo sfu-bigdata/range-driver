@@ -108,7 +108,7 @@ class Detections:
 
     def prepare_group_data(self):
         self.detection_events_df, self.detection_bins_df = self.get_events_bins(self.df_detections_env)
-        self.rt_group_detections = list(self.df_detections_env.groupby(['Transmitter', 'Receiver']))
+        self.rt_group_detections = list(self.df_detections_env.groupby(['Receiver', 'Transmitter']))
 
     def get_events_bins(self, df=None):
         if df is None:
